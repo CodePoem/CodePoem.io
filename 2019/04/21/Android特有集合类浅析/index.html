@@ -1,0 +1,1189 @@
+<!DOCTYPE html>
+<html style="display: none;" lang="zh">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.5.6 -->
+    <script>
+        window.materialVersion = "1.5.6"
+        // Delete localstorage with these tags
+        window.oldVersion = [
+            'codestartv1',
+            '1.3.4',
+            '1.4.0',
+            '1.4.0b1',
+            '1.5.0',
+            '1.5.2',
+            '1.5.5'
+        ]
+    </script>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net/gh/viosey/hexo-theme-material@latest/source"/>
+
+
+
+    <link rel="dns-prefetch" href="https://busuanzi.ibruce.info"/>
+
+
+
+    <link rel="dns-prefetch" href="https://codepoem.disqus.com"/>
+
+
+
+
+
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com"/>
+
+
+
+
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!-- Title -->
+    
+    <title>
+        
+            Android特有集合类浅析 | 
+        
+        梦半觉
+    </title>
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/v_half.webp">
+    <link rel="icon" href="/img/v_half.webp">
+
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="description" itemprop="description" content="Code a poem and poem a code~">
+    <meta name="keywords" content="CodePoem,Android,数据结构,集合">
+    <meta name="theme-color" content="#FF3C3C">
+
+    <!-- Disable Fucking Bloody Baidu Tranformation -->
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(a){try{localStorage.removeItem(a)}catch(b){}};lsloader.setLS=function(a,c){try{localStorage.setItem(a,c)}catch(b){}};lsloader.getLS=function(a){var c="";try{c=localStorage.getItem(a)}catch(b){c=""}return c};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var b=[];for(var a=0;a<localStorage.length;a++){b.push(localStorage.key(a))}b.forEach(function(e){var f=lsloader.getLS(e);if(window.oldVersion){var d=window.oldVersion.reduce(function(g,h){return g||f.indexOf("/*"+h+"*/")!==-1},false);if(d){lsloader.removeLS(e)}}})}catch(c){}};lsloader.clean();lsloader.load=function(f,a,b,d){if(typeof b==="boolean"){d=b;b=undefined}d=d||false;b=b||function(){};var e;e=this.getLS(f);if(e&&e.indexOf(versionString)===-1){this.removeLS(f);this.requestResource(f,a,b,d);return}if(e){var c=e.split(versionString)[0];if(c!=a){console.log("reload:"+a);this.removeLS(f);this.requestResource(f,a,b,d);return}e=e.split(versionString)[1];if(d){this.jsRunSequence.push({name:f,code:e});this.runjs(a,f,e)}else{document.getElementById(f).appendChild(document.createTextNode(e));b()}}else{this.requestResource(f,a,b,d)}};lsloader.requestResource=function(b,e,a,c){var d=this;if(c){this.iojs(e,b,function(h,f,g){d.setLS(f,h+versionString+g);d.runjs(h,f,g)})}else{this.iocss(e,b,function(f){document.getElementById(b).appendChild(document.createTextNode(f));d.setLS(b,e+versionString+f)},a)}};lsloader.iojs=function(d,b,g){var a=this;a.jsRunSequence.push({name:b,code:""});try{var f=new XMLHttpRequest();f.open("get",d,true);f.onreadystatechange=function(){if(f.readyState==4){if((f.status>=200&&f.status<300)||f.status==304){if(f.response!=""){g(d,b,f.response);return}}a.jsfallback(d,b)}};f.send(null)}catch(c){a.jsfallback(d,b)}};lsloader.iocss=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.iofonts=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.runjs=function(f,c,e){if(!!c&&!!e){for(var b in this.jsRunSequence){if(this.jsRunSequence[b].name==c){this.jsRunSequence[b].code=e}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var a=document.createElement("script");a.appendChild(document.createTextNode(this.jsRunSequence[0].code));a.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(a);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else{if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var d=this;var a=document.createElement("script");a.src=this.jsRunSequence[0].path;a.type="text/javascript";this.jsRunSequence[0].status="loading";a.onload=function(){d.jsRunSequence.shift();if(d.jsRunSequence.length>0){d.runjs()}};document.body.appendChild(a)}}};lsloader.tagLoad=function(b,a){this.jsRunSequence.push({name:a,code:"",path:b,status:"failed"});this.runjs()};lsloader.jsfallback=function(c,b){if(!!this.jsnamemap[b]){return}else{this.jsnamemap[b]=b}for(var a in this.jsRunSequence){if(this.jsRunSequence[a].name==b){this.jsRunSequence[a].code="";this.jsRunSequence[a].status="failed";this.jsRunSequence[a].path=c}}this.runjs()};lsloader.cssfallback=function(e,c,b){if(!!this.cssnamemap[c]){return}else{this.cssnamemap[c]=1}var d=document.createElement("link");d.type="text/css";d.href=e;d.rel="stylesheet";d.onload=d.onerror=b;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(d,a)};lsloader.runInlineScript=function(c,b){var a=document.getElementById(b).innerText;this.jsRunSequence.push({name:c,code:a});this.runjs()}})();</script>
+
+    <!-- Import queue -->
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Import CSS -->
+    
+        <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","https://cdn.jsdelivr.net/gh/viosey/hexo-theme-material@latest/source/css/material.min.css",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","https://cdn.jsdelivr.net/gh/viosey/hexo-theme-material@latest/source/css/style.min.css",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+        
+            
+                <style id="prettify_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_css","https://cdn.jsdelivr.net/gh/viosey/hexo-theme-material@latest/source/css/prettify.min.css",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+                <style id="prettify_theme"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_theme","https://cdn.jsdelivr.net/gh/viosey/hexo-theme-material@latest/source/css/prettify/github-v2.min.css",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+            
+        
+
+    
+
+    
+
+    <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    overflow-x: hidden !important;
+  }
+  
+  code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  a {
+    color: #000000;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #000000 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #000000 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #000000 !important;
+  }
+
+  .toTop {
+    background: #000000 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #000000;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #000000;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #000000;
+  }
+
+  .post-toc a:hover {
+    color: #000000;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-image: url(/img/v_bg.webp);
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+<!-- Import Font -->
+<!-- Import Roboto -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+
+
+<!-- Import Material Icons -->
+
+
+    <style id="material_icons"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_icons","https://cdn.jsdelivr.net/gh/viosey/hexo-theme-material@latest/source/css/material-icons.css",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+
+
+
+    <!-- Import jQuery -->
+    
+        <script>lsloader.load("jq_js","https://cdn.jsdelivr.net/gh/viosey/hexo-theme-material@latest/source/js/jquery.min.js", true)</script>
+    
+
+    <!-- WebAPP Icons -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="梦半觉">
+    <meta name="msapplication-starturl" content="https://codepoem.github.io/2019/04/21/Android%E7%89%B9%E6%9C%89%E9%9B%86%E5%90%88%E7%B1%BB%E6%B5%85%E6%9E%90/">
+    <meta name="msapplication-navbutton-color" content="#FF3C3C">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="梦半觉">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="/img/v_half.webp">
+
+    <!-- Site Verification -->
+    
+    
+
+    <!-- RSS -->
+    
+        
+            <link rel=alternate type="application/atom+xml" href="/atom.xml">
+        
+    
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="https://codepoem.github.io/2019/04/21/Android%E7%89%B9%E6%9C%89%E9%9B%86%E5%90%88%E7%B1%BB%E6%B5%85%E6%9E%90/">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="Android特有集合类浅析 | 梦半觉">
+    <meta property="og:image" content="/img/v_half.webp">
+    <meta property="og:description" content="Code a poem and poem a code~">
+    <meta property="og:article:tag" content="Android"> <meta property="og:article:tag" content="数据结构"> <meta property="og:article:tag" content="集合"> 
+
+    
+        <meta property="article:published_time" content="Sun Apr 21 2019 10:02:19 GMT+0800">
+        <meta property="article:modified_time" content="Sun Apr 21 2019 02:02:25 GMT+0000">
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="https://codepoem.github.io/2019/04/21/Android%E7%89%B9%E6%9C%89%E9%9B%86%E5%90%88%E7%B1%BB%E6%B5%85%E6%9E%90/index.html" />
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "https://codepoem.github.io/2019/04/21/Android%E7%89%B9%E6%9C%89%E9%9B%86%E5%90%88%E7%B1%BB%E6%B5%85%E6%9E%90/index.html",
+    "headline": "Android特有集合类浅析",
+    "datePublished": "Sun Apr 21 2019 10:02:19 GMT+0800",
+    "dateModified": "Sun Apr 21 2019 02:02:25 GMT+0000",
+    "author": {
+        "@type": "Person",
+        "name": "CodePoem",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/v_half.webp"
+        },
+        "description": "大梦谁先觉，平生我自知~,Code a poem and poem a code~"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "梦半觉",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/v_half.webp"
+        }
+    },
+    "keywords": ",Android,数据结构,集合CodePoem",
+    "description": "Code a poem and poem a code~",
+}
+</script>
+
+
+    
+
+    <!-- Analytics -->
+    
+    
+    
+
+    <!-- Custom Head -->
+    
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span id="MD-burger-id" class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#设计这些Android特有的集合类的意义"><span class="post-toc-number">1.</span> <span class="post-toc-text">设计这些Android特有的集合类的意义</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#ArrayMap"><span class="post-toc-number">2.</span> <span class="post-toc-text">ArrayMap</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#设计目的"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">设计目的</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#HashMap实现方式"><span class="post-toc-number">2.1.1.</span> <span class="post-toc-text">HashMap实现方式</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#HashMap碰撞冲突解决方式"><span class="post-toc-number">2.1.2.</span> <span class="post-toc-text">HashMap碰撞冲突解决方式</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#HashMap扩容机制"><span class="post-toc-number">2.1.3.</span> <span class="post-toc-text">HashMap扩容机制</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#HashMap总结"><span class="post-toc-number">2.1.4.</span> <span class="post-toc-text">HashMap总结</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#设计原理"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">设计原理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#ArrayMap实现方式"><span class="post-toc-number">2.2.1.</span> <span class="post-toc-text">ArrayMap实现方式</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#ArrayMap解决碰撞冲突方式"><span class="post-toc-number">2.2.2.</span> <span class="post-toc-text">ArrayMap解决碰撞冲突方式</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#ArrayMap扩容机制"><span class="post-toc-number">2.2.3.</span> <span class="post-toc-text">ArrayMap扩容机制</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#ArrayMap总结"><span class="post-toc-number">2.2.4.</span> <span class="post-toc-text">ArrayMap总结</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#ArraySet"><span class="post-toc-number">3.</span> <span class="post-toc-text">ArraySet</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#设计目的-1"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">设计目的</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#设计原理-1"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">设计原理</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#SparseArray"><span class="post-toc-number">4.</span> <span class="post-toc-text">SparseArray</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#设计目的-2"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">设计目的</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#设计原理-2"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">设计原理</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#SparseIntArray"><span class="post-toc-number">5.</span> <span class="post-toc-text">SparseIntArray</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#设计目的-3"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">设计目的</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#SparseBooleanArray"><span class="post-toc-number">6.</span> <span class="post-toc-text">SparseBooleanArray</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#设计目的-4"><span class="post-toc-number">6.1.</span> <span class="post-toc-text">设计目的</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#SparseLongArray"><span class="post-toc-number">7.</span> <span class="post-toc-text">SparseLongArray</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#设计目的-5"><span class="post-toc-number">7.1.</span> <span class="post-toc-text">设计目的</span></a></li></ol></li></ol>
+    </ul>
+    
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 16 + 1);
+
+    $('.post_thumbnail-random').attr('data-original', '/img/random/v-random-' + randomNum + '.webp');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                Android特有集合类浅析
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/v_half.webp" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>CodePoem</strong>
+        <span>4月 21, 2019</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">devices other</i>
+    <span class="visuallyhidden">devices other</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+    <li class="mdl-menu__item">在其它设备中阅读本文章</li>
+    
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASYAAAEmCAAAAADqr2IGAAAEJ0lEQVR42u3aS3LbMBAFQN3/0skBUlbemyFdFNRYuSybApoLzO/1xwrWCwEmTJgwYcJkYcKECdPjmV7x+s9Dg//Kn/bvfyW7nf3Xj0/AhAkTJkwHMeUbfb+VnDL5dIae/CY5IyZMmDBhOo/pp22953j/lwlxtOn4Om+DA0yYMGHChCnZRPL79nj5Bf/+9WDChAkTJkwtU7vyonB+wSdBAyZMmDBhwtQWQPOrd1YUbou8bUP0l2rhmDBhwoTpYUyz6/mzfv7V+SZMmDBhwvQYpnZFXzBKaDdpbd5GLU6KCRMmTJiOYMovzjwZnj0/OV5eOG5fGyZMmDBhOpVpFhBsRnZm3DlWG3DcmPpiwoQJE6bHMLVX7Oww+VWdf3ptqRoTJkyYMJ3HNLs4Z+XaWVKdv6rZ39cVAkyYMGHC9IFMbRMx/3RfGp41NWehCSZMmDBhOpspv1bzEnBeGk7S401TM985JkyYMGE6iSm/vGfHvvtbZsNAw8EdTJgwYcL0gUz7BLVNjNu0Nk96E/TidJgwYcKE6QimdqRmc+m2ozZ5w3LTvFzNN2HChAkTpscz5YMs0bBLfIAkoW0T4CKtTV4zJkyYMGE6gmnfOMyP3Y6QzorIs7AjipswYcKECdMRTLPtzkq3d5SM83ABEyZMmDB9G9PsEp0lmfsi7yYUGLYzMWHChAnTBzJtGoQ5VttcbMOL/OUVT8CECRMmTEcwJW3Iq1LN/LtyrKSInJ8FEyZMmDCdyjQr5s7S1DywyMu+s4DjPzvEhAkTJkxHMLWjNkmpN7meh8M0ZWK8KVVjwoQJE6YzmK4qns5ChGLTcaiRlJiHXV9MmDBhwvSBTPnlvQ8gigJrHHYkr2fGjQkTJkyYTmKaXbo5R1FaHbU/2xcfFZExYcKECdMRTDnZ7BreNB1nCfZloQMmTJgwYTqIqW0rJpf3HenofqAnPy8mTJgwYTqJaVao3Vz5yad5WTlPiYuXgQkTJkyYDmIqmnxlq7IdzWlRrgpcMGHChAnTqUzDVt9i7GaWDL/fVZsw3zK4gwkTJkyYHsw0K7/OGoqbsnK7k3YPmDBhwoTpPKak/JoHB3no0I77tDvM0etaOCZMmDBh+kCmO76mLfLmh98PsNapLyZMmDBh+limWeMwaWfu26JtaJI/P0LEhAkTJkxHMO0v+BylDQg25eYLXg8mTJgwYTqC6RWvvCjcXuezFukdz8eECRMmTKcyta3NWVtxVnjNk9VNQIAJEyZMmL6BKT/eZly1LcK2DcvLQhxMmDBhwvTFTHkheFb2zZupeWH6giIvJkyYMGH6eqb84t+nyi1lMqKECRMmTJjOZmpblTOs/ajNfpDo9nYmJkyYMGF6GFNeEp21IfM0uA0C2u/KsTBhwoQJ0xlMVhQQWJgwYcKECRMmCxMmTE9ZfwE7uO2djFg2lwAAAABJRU5ErkJggg==">
+    
+</ul>
+
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/Android/" rel="tag">Android</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">数据结构</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/%E9%9B%86%E5%90%88/" rel="tag">集合</a>
+    </ul>
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+        
+            <!-- Busuanzi Views -->
+            <a class="post_share-link" href="#">
+                <li class="mdl-menu__item">
+                    <span id="busuanzi_container_page_pv">
+                        <span id="busuanzi_value_page_pv"></span>&nbsp;浏览量
+                    </span>
+                </li>
+            </a>
+        
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Android特有集合类浅析&url=https://codepoem.github.io/2019/04/21/Android%E7%89%B9%E6%9C%89%E9%9B%86%E5%90%88%E7%B1%BB%E6%B5%85%E6%9E%90/index.html&pic=https://codepoem.github.io/img/v_half.webp&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Android特有集合类浅析&url=https://codepoem.github.io/2019/04/21/Android%E7%89%B9%E6%9C%89%E9%9B%86%E5%90%88%E7%B1%BB%E6%B5%85%E6%9E%90/index.html&via=CodePoem" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://codepoem.github.io/2019/04/21/Android%E7%89%B9%E6%9C%89%E9%9B%86%E5%90%88%E7%B1%BB%E6%B5%85%E6%9E%90/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=https://codepoem.github.io/2019/04/21/Android%E7%89%B9%E6%9C%89%E9%9B%86%E5%90%88%E7%B1%BB%E6%B5%85%E6%9E%90/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+        <a class="post_share-link" href="https://www.linkedin.com/shareArticle?mini=true&url=https://codepoem.github.io/2019/04/21/Android%E7%89%B9%E6%9C%89%E9%9B%86%E5%90%88%E7%B1%BB%E6%B5%85%E6%9E%90/index.html&title=Android特有集合类浅析" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 LinkedIn
+            </li>
+        </a>
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=梦半觉&title=Android特有集合类浅析&summary=Code a poem and poem a code~&pics=https://codepoem.github.io/img/v_half.webp&url=https://codepoem.github.io/2019/04/21/Android%E7%89%B9%E6%9C%89%E9%9B%86%E5%90%88%E7%B1%BB%E6%B5%85%E6%9E%90/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+        <a class="post_share-link" href="https://telegram.me/share/url?url=https://codepoem.github.io/2019/04/21/Android%E7%89%B9%E6%9C%89%E9%9B%86%E5%90%88%E7%B1%BB%E6%B5%85%E6%9E%90/index.html&text=Android特有集合类浅析" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Telegram
+            </li>
+        </a>
+    
+</ul>
+
+    
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <ul>
+<li>ArrayMap</li>
+<li>ArraySet</li>
+<li>SparseArray</li>
+<li>SparseIntArray</li>
+<li>SparseBooleanArray</li>
+<li>SparseLongArray</li>
+</ul>
+<h2 id="设计这些Android特有的集合类的意义"><a href="#设计这些Android特有的集合类的意义" class="headerlink" title="设计这些Android特有的集合类的意义"></a>设计这些Android特有的集合类的意义</h2><p>为什么要设计这些Android特有的集合类呢?</p>
+<p>主要目的： 优化内存占用。在移动设备端内存资源很珍贵，Java原本的集合类为实现快速查询带来了很大内存的浪费。</p>
+<h2 id="ArrayMap"><a href="#ArrayMap" class="headerlink" title="ArrayMap"></a>ArrayMap</h2><h3 id="设计目的"><a href="#设计目的" class="headerlink" title="设计目的"></a>设计目的</h3><p>代替HashMap&lt;Object,Object&gt;，且key唯一。</p>
+<h4 id="HashMap实现方式"><a href="#HashMap实现方式" class="headerlink" title="HashMap实现方式"></a>HashMap实现方式</h4><p>我们先来简单回忆下HashMap，HashMap是用散列表（数组+链表）实现：</p>
+<p><img src="/assert/img/androidmap/hashmap.jpg" alt="HashMap"></p>
+<h4 id="HashMap碰撞冲突解决方式"><a href="#HashMap碰撞冲突解决方式" class="headerlink" title="HashMap碰撞冲突解决方式"></a>HashMap碰撞冲突解决方式</h4><p>HashMap用<strong>链地址法</strong>解决hashCode冲突，这就是链表的设计目的，碰撞冲突就用头插法在对应key的链表插入value。</p>
+<p>顺便提一下解决碰撞冲突的常用四个方法：</p>
+<ol>
+<li>链地址法</li>
+<li>再Hash法</li>
+<li>开放地址法(线性探测,二次探测,伪随机探测)</li>
+<li>建立公共溢出区</li>
+</ol>
+<h4 id="HashMap扩容机制"><a href="#HashMap扩容机制" class="headerlink" title="HashMap扩容机制"></a>HashMap扩容机制</h4><p>HasMap默认初始容量16，加载因子0.75。<br>HasMap扩容机制：元素个数超过数组容量 *负载因子，扩大为2倍。</p>
+<h4 id="HashMap总结"><a href="#HashMap总结" class="headerlink" title="HashMap总结"></a>HashMap总结</h4><p>HashMap的存取速度都是相对比较快的，在一般情况下都能实现<strong>O(1)</strong>的速度。但是代价是什么呢？<br>但是从初始容量和负载因子都可以看出，这种快速的读是通消耗更多内存来换取的(<strong>空间换时间</strong>)。</p>
+<h3 id="设计原理"><a href="#设计原理" class="headerlink" title="设计原理"></a>设计原理</h3><p>对比上面回忆的HashMap特征来看ArrayMap。</p>
+<h4 id="ArrayMap实现方式"><a href="#ArrayMap实现方式" class="headerlink" title="ArrayMap实现方式"></a>ArrayMap实现方式</h4><p>ArrayMap是用双数组实现：</p>
+<p>一个int[]数组，用于保存每个item的<strong>hashCode</strong>.<br>一个Object[]数组，保存key/value键值对。容量是上一个数组的<strong>两倍</strong>。</p>
+<p><img src="/assert/img/androidmap/arraymap.jpg" alt="ArrayMap"></p>
+<h4 id="ArrayMap解决碰撞冲突方式"><a href="#ArrayMap解决碰撞冲突方式" class="headerlink" title="ArrayMap解决碰撞冲突方式"></a>ArrayMap解决碰撞冲突方式</h4><p>ArrayMap会对key<strong>从小到大排序</strong>，使用<strong>二分法查询</strong>key对应在数组中的下标。<br>先对存储hashCode的int[]数组使用<strong>二分查找法</strong>得到相应的index，通过index换算，可以得到Object[]数组的<strong>key下标（index*2）</strong>和<strong>value下标（index*2+1）</strong>。</p>
+<p>那么如果出现hashCode冲突，该怎么办呢？<br>ArrayMap采用自己的<strong>开放地址法</strong>来解决碰撞冲突。</p>
+<p>以put一个键值对key/value为例子：</p>
+<p><img src="/assert/img/androidmap/arraymap_put.jpg" alt="ArrayMap进行put"></p>
+<p>hashCode碰撞时会发生这样的情景， 存储hashCode的int[]数组<strong>二分查找</strong>后得到的index不为负数（因为如果该hashCode存储过数据，index必然大于等于0，也就是能在int[]数组中查找到值），且同时根据index换算后得到的key下标和value下标在Object[]数组也已存有数据。<br>ArrayMap会以当前换算好的key下标为<strong>中心点</strong>，<strong>向后和向前遍历</strong>，查询对比是否有<strong>相同key值</strong>。<br>相同则说明重复put了；向后和向前遍历都没有找到相同key值的，最后将在向后遍历的最后一个下标后插入当前key/value。</p>
+<h4 id="ArrayMap扩容机制"><a href="#ArrayMap扩容机制" class="headerlink" title="ArrayMap扩容机制"></a>ArrayMap扩容机制</h4><p>ArrayMap默认容量为0。</p>
+<p>ArrayMap扩容机制：</p>
+<ol>
+<li>如果容量大于等于8，则扩容一半</li>
+<li>否则容量大于等于4，则扩容到8</li>
+<li>否则扩容到4</li>
+<li>扩容时只需要数组拷贝工作，不需要重建哈希表</li>
+</ol>
+<p>为什么4是扩容默认的size， 因为4是相对效率较高的大小。</p>
+<h4 id="ArrayMap总结"><a href="#ArrayMap总结" class="headerlink" title="ArrayMap总结"></a>ArrayMap总结</h4><p>从存储方式和扩容机制可以看出，ArrayMap将内存的使用率提高了很多，但是读取的复杂度却是<strong>O(lgN)</strong>（因为二分法查找）。在数据量不是很大（<strong>千级以内</strong>）的时候，使用ArrapMap可以优化内存，并且存取速度几乎是不受什么影响的。</p>
+<p>尚未提及的一点是，ArrayMap在删除元素时，如果集合剩余元素少于一定阈值，还有<strong>收缩（shrunk）</strong>功能。（等以后研究一下后补上）</p>
+<p>可以看出 ArrayMap 和 HashMap 大体上是时间和空间的权衡罢了。</p>
+<h2 id="ArraySet"><a href="#ArraySet" class="headerlink" title="ArraySet"></a>ArraySet</h2><h3 id="设计目的-1"><a href="#设计目的-1" class="headerlink" title="设计目的"></a>设计目的</h3><p>代替HashSet,只保存value，value唯一</p>
+<h3 id="设计原理-1"><a href="#设计原理-1" class="headerlink" title="设计原理"></a>设计原理</h3><p>和ArrayMap类似，不做展开。</p>
+<h2 id="SparseArray"><a href="#SparseArray" class="headerlink" title="SparseArray"></a>SparseArray</h2><h3 id="设计目的-2"><a href="#设计目的-2" class="headerlink" title="设计目的"></a>设计目的</h3><p>代替HashMap&lt;Integer,Object&gt;，SparseArray只能在key为int的时候才能使用，注意是int而不是Integer。<br>这样做就是为了进步一优化ArrayMap，避免装箱拆箱的操作，从而节省内存和提高效率。</p>
+<h3 id="设计原理-2"><a href="#设计原理-2" class="headerlink" title="设计原理"></a>设计原理</h3><p>原理和Arraymap基本一致，也是基于双数组和二分查找，这里就不展开。</p>
+<h2 id="SparseIntArray"><a href="#SparseIntArray" class="headerlink" title="SparseIntArray"></a>SparseIntArray</h2><h3 id="设计目的-3"><a href="#设计目的-3" class="headerlink" title="设计目的"></a>设计目的</h3><p>代替HashMap&lt;Integer,Integer&gt;，进一步优化SparseArray，避免value为Integer的时候的装箱拆箱操作。</p>
+<h2 id="SparseBooleanArray"><a href="#SparseBooleanArray" class="headerlink" title="SparseBooleanArray"></a>SparseBooleanArray</h2><h3 id="设计目的-4"><a href="#设计目的-4" class="headerlink" title="设计目的"></a>设计目的</h3><p>代替HashMap&lt;Integer,Boolean&gt;，进一步优化SparseArray，避免value为Boolean的时候的装箱拆箱操作。</p>
+<h2 id="SparseLongArray"><a href="#SparseLongArray" class="headerlink" title="SparseLongArray"></a>SparseLongArray</h2><h3 id="设计目的-5"><a href="#设计目的-5" class="headerlink" title="设计目的"></a>设计目的</h3><p>代替HashMap&lt;Integer,Long&gt;，进一步优化SparseArray，避免value为Long的时候的装箱拆箱操作。</p>
+
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用 DISQUS_CLICK -->
+<div id="disqus-comment">
+    <div id="disqus_thread"></div>
+
+<!-- add animation -->
+<style>
+	.disqus_click_btn {
+            line-height: 30px;
+            margin: 0;
+            min-width: 50px;
+            padding: 0 14px;
+            display: inline-block;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            overflow: hidden;
+            will-change: box-shadow;
+            transition: box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1), color .2s cubic-bezier(.4, 0, .2, 1);
+            outline: 0;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            vertical-align: middle;
+            border: 0;
+            background: rgba(158, 158, 158, .2);
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+            color: #fff;
+            background-color: #000000;
+            text-shadow: 0;
+            display: none
+        }
+</style>
+	
+<div class="btn_click_load"> 
+    <button class="disqus_click_btn">阅读评论（请确保 disqus 可以正常加载）</button>
+</div>
+
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'https://codepoem.github.io/2019/04/21/Android%E7%89%B9%E6%9C%89%E9%9B%86%E5%90%88%E7%B1%BB%E6%B5%85%E6%9E%90/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'https://codepoem.github.io/2019/04/21/Android%E7%89%B9%E6%9C%89%E9%9B%86%E5%90%88%E7%B1%BB%E6%B5%85%E6%9E%90/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+</script>
+
+<script type="text/ls-javascript" id="disqus-lazy-load-script">
+    $.ajax({
+        url: 'https://disqus.com/next/config.json',
+        timeout: 4000,
+        type: 'GET',
+        success: (function() {
+            var d = document;
+            var s = d.createElement('script');
+            s.src = '//codepoem.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', + new Date());
+            (d.head || d.body).appendChild(s);
+            $('.disqus_click_btn').css('display','none');
+        })(),
+        error: function() {
+          $('.disqus_click_btn').css('display','block');
+        }
+    });
+    $('.btn_click_load').click(function() {  //click to load comments
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document;
+            var s = d.createElement('script');
+            s.src = '//codepoem.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', + new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+        $('.disqus_click_btn').css('display','none');
+    });
+</script>
+  	
+
+</div>
+<style>
+    #disqus-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2019/05/05/Android%E5%AD%98%E5%82%A8%E7%9B%AE%E5%BD%95/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2019/02/22/%E6%B5%85%E8%B0%88%E4%BA%8C%E7%BB%B4%E7%A0%81%E2%91%A1%E4%B8%8E%E4%B8%96%E6%B5%AE%E6%B2%89/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/v_side.jpg);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/v_half.webp" alt="CodePoem's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        codepoetdream@gmail.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="mailto:codepoetdream@gmail.com" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    归档
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2021/06/">六月 2021<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/12/">十二月 2020<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/11/">十一月 2020<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/04/">四月 2020<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/03/">三月 2020<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/01/">一月 2020<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/11/">十一月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/10/">十月 2019<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/09/">九月 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/08/">八月 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/05/">五月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/04/">四月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/02/">二月 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/02/">二月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/12/">十二月 2016<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/11/">十一月 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/10/">十月 2016<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/03/">三月 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/01/">一月 2016<span class="sidebar_archives-count">1</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
+                
+                分类
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                <a class="sidebar_archives-link" href="/categories/Android/">Android<span class="sidebar_archives-count">19</span></a></li><li><a class="sidebar_archives-link" href="/categories/Java/">Java<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/%E4%B8%87%E4%B8%88%E9%AB%98%E6%A5%BC%E5%B9%B3%E5%9C%B0%E8%B5%B7/">万丈高楼平地起<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/%E4%BA%8C%E7%BB%B4%E7%A0%81/">二维码<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/%E6%A8%A1%E6%9D%BF/">模板<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">设计模式<span class="sidebar_archives-count">8</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Pages  -->
+    
+        <li>
+            <a href="/tags" title="Tags">
+                
+                    <i class="material-icons sidebar-material-icons">label</i>
+                
+                Tags
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/timeline" title="Timeline">
+                
+                    <i class="material-icons sidebar-material-icons">timeline</i>
+                
+                Timeline
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/gallery" title="Gallery">
+                
+                    <i class="material-icons sidebar-material-icons">album</i>
+                
+                Gallery
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/links" title="Links">
+                
+                    <i class="material-icons sidebar-material-icons">link</i>
+                
+                Links
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/about" title="About">
+                
+                    <i class="material-icons sidebar-material-icons">person</i>
+                
+                About
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/resume" title="Resume">
+                
+                    <i class="material-icons sidebar-material-icons">notes</i>
+                
+                Resume
+            </a>
+        </li>
+        
+    
+
+    <!-- Article Number  -->
+    
+        <li>
+            <a href="/archives">
+                文章总数
+                <span class="sidebar-badge">38</span>
+            </a>
+        </li>
+        
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+
+<!-- Theme Material -->
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+
+    <!-- Facebook -->
+    
+
+    <!-- Google + -->
+    
+
+    <!-- Weibo -->
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+        <a href="https://github.com/CodePoem" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-github">
+                <span class="visuallyhidden">Github</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+
+    <!-- V2EX -->
+    
+
+    <!-- Segmentfault -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©&nbsp;<span year></span>&nbsp;梦半觉
+            
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import JS File -->
+
+    <script>lsloader.load("lazyload_js","https://cdn.jsdelivr.net/gh/viosey/hexo-theme-material@latest/source/js/lazyload.min.js", true)</script>
+
+
+
+    <script>lsloader.load("js_js","https://cdn.jsdelivr.net/gh/viosey/hexo-theme-material@latest/source/js/js.min.js", true)</script>
+
+
+
+    <script>lsloader.load("np_js","https://cdn.jsdelivr.net/gh/viosey/hexo-theme-material@latest/source/js/nprogress.js", true)</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#FF3C3C'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #FF3C3C, 0 0 15px #FF3C3C'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#FF3C3C',
+        'border-left-color': '#FF3C3C'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+
+
+    <!-- Busuanzi -->
+    <script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+   <!-- 使用 DISQUS js 代码 -->
+
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('
+<link rel="stylesheet" href="/css/uc.css">
+');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Import prettify js  -->
+
+    
+        
+            <script>lsloader.load("prettify_js","https://cdn.jsdelivr.net/gh/viosey/hexo-theme-material@latest/source/js/prettify.min.js", true)</script>
+        
+    
+
+
+    
+        <script>lsloader.load("hanabi","https://cdn.jsdelivr.net/gh/viosey/hexo-theme-material@latest/source/js/hanabi-browser-bundle.js", true)</script>
+    
+
+
+<!-- Window Load -->
+<!-- add class for prettify -->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+
+    
+        
+            $(function() {
+                $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+                prettyPrint();
+                })
+        
+    
+    
+        
+        
+        HanabiBrowser.start('pre code',true);
+    
+</script>
+
+<!-- MathJax Load-->
+
+
+<!-- Bing Background -->
+
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Custom Footer -->
+
+
+
+<script>
+    var copyrightNow = new Date().getFullYear();
+    var textContent = document.querySelector('span[year]')
+
+    copyrightSince = 0000;
+    if (copyrightSince === copyrightNow||copyrightSince === 0000) {
+        textContent.textContent = copyrightNow
+    } else {
+        textContent.textContent = copyrightSince + ' - ' + copyrightNow
+    }
+
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.5.6 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+                </main>
+            </div>
+        </body>
+    
+</html>

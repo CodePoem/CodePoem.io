@@ -1,0 +1,1239 @@
+<!DOCTYPE html>
+<html style="display: none;" lang="zh">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.5.6 -->
+    <script>
+        window.materialVersion = "1.5.6"
+        // Delete localstorage with these tags
+        window.oldVersion = [
+            'codestartv1',
+            '1.3.4',
+            '1.4.0',
+            '1.4.0b1',
+            '1.5.0',
+            '1.5.2',
+            '1.5.5'
+        ]
+    </script>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net/gh/viosey/hexo-theme-material@latest/source"/>
+
+
+
+    <link rel="dns-prefetch" href="https://busuanzi.ibruce.info"/>
+
+
+
+    <link rel="dns-prefetch" href="https://codepoem.disqus.com"/>
+
+
+
+
+
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com"/>
+
+
+
+
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!-- Title -->
+    
+    <title>
+        
+            模板整理之Travis CI | 
+        
+        梦半觉
+    </title>
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/v_half.webp">
+    <link rel="icon" href="/img/v_half.webp">
+
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="description" itemprop="description" content="Code a poem and poem a code~">
+    <meta name="keywords" content="CodePoem,Android,模板,Travis CI">
+    <meta name="theme-color" content="#FF3C3C">
+
+    <!-- Disable Fucking Bloody Baidu Tranformation -->
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(a){try{localStorage.removeItem(a)}catch(b){}};lsloader.setLS=function(a,c){try{localStorage.setItem(a,c)}catch(b){}};lsloader.getLS=function(a){var c="";try{c=localStorage.getItem(a)}catch(b){c=""}return c};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var b=[];for(var a=0;a<localStorage.length;a++){b.push(localStorage.key(a))}b.forEach(function(e){var f=lsloader.getLS(e);if(window.oldVersion){var d=window.oldVersion.reduce(function(g,h){return g||f.indexOf("/*"+h+"*/")!==-1},false);if(d){lsloader.removeLS(e)}}})}catch(c){}};lsloader.clean();lsloader.load=function(f,a,b,d){if(typeof b==="boolean"){d=b;b=undefined}d=d||false;b=b||function(){};var e;e=this.getLS(f);if(e&&e.indexOf(versionString)===-1){this.removeLS(f);this.requestResource(f,a,b,d);return}if(e){var c=e.split(versionString)[0];if(c!=a){console.log("reload:"+a);this.removeLS(f);this.requestResource(f,a,b,d);return}e=e.split(versionString)[1];if(d){this.jsRunSequence.push({name:f,code:e});this.runjs(a,f,e)}else{document.getElementById(f).appendChild(document.createTextNode(e));b()}}else{this.requestResource(f,a,b,d)}};lsloader.requestResource=function(b,e,a,c){var d=this;if(c){this.iojs(e,b,function(h,f,g){d.setLS(f,h+versionString+g);d.runjs(h,f,g)})}else{this.iocss(e,b,function(f){document.getElementById(b).appendChild(document.createTextNode(f));d.setLS(b,e+versionString+f)},a)}};lsloader.iojs=function(d,b,g){var a=this;a.jsRunSequence.push({name:b,code:""});try{var f=new XMLHttpRequest();f.open("get",d,true);f.onreadystatechange=function(){if(f.readyState==4){if((f.status>=200&&f.status<300)||f.status==304){if(f.response!=""){g(d,b,f.response);return}}a.jsfallback(d,b)}};f.send(null)}catch(c){a.jsfallback(d,b)}};lsloader.iocss=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.iofonts=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.runjs=function(f,c,e){if(!!c&&!!e){for(var b in this.jsRunSequence){if(this.jsRunSequence[b].name==c){this.jsRunSequence[b].code=e}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var a=document.createElement("script");a.appendChild(document.createTextNode(this.jsRunSequence[0].code));a.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(a);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else{if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var d=this;var a=document.createElement("script");a.src=this.jsRunSequence[0].path;a.type="text/javascript";this.jsRunSequence[0].status="loading";a.onload=function(){d.jsRunSequence.shift();if(d.jsRunSequence.length>0){d.runjs()}};document.body.appendChild(a)}}};lsloader.tagLoad=function(b,a){this.jsRunSequence.push({name:a,code:"",path:b,status:"failed"});this.runjs()};lsloader.jsfallback=function(c,b){if(!!this.jsnamemap[b]){return}else{this.jsnamemap[b]=b}for(var a in this.jsRunSequence){if(this.jsRunSequence[a].name==b){this.jsRunSequence[a].code="";this.jsRunSequence[a].status="failed";this.jsRunSequence[a].path=c}}this.runjs()};lsloader.cssfallback=function(e,c,b){if(!!this.cssnamemap[c]){return}else{this.cssnamemap[c]=1}var d=document.createElement("link");d.type="text/css";d.href=e;d.rel="stylesheet";d.onload=d.onerror=b;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(d,a)};lsloader.runInlineScript=function(c,b){var a=document.getElementById(b).innerText;this.jsRunSequence.push({name:c,code:a});this.runjs()}})();</script>
+
+    <!-- Import queue -->
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Import CSS -->
+    
+        <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","https://cdn.jsdelivr.net/gh/viosey/hexo-theme-material@latest/source/css/material.min.css",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","https://cdn.jsdelivr.net/gh/viosey/hexo-theme-material@latest/source/css/style.min.css",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+        
+            
+                <style id="prettify_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_css","https://cdn.jsdelivr.net/gh/viosey/hexo-theme-material@latest/source/css/prettify.min.css",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+                <style id="prettify_theme"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_theme","https://cdn.jsdelivr.net/gh/viosey/hexo-theme-material@latest/source/css/prettify/github-v2.min.css",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+            
+        
+
+    
+
+    
+
+    <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    overflow-x: hidden !important;
+  }
+  
+  code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  a {
+    color: #000000;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #000000 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #000000 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #000000 !important;
+  }
+
+  .toTop {
+    background: #000000 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #000000;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #000000;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #000000;
+  }
+
+  .post-toc a:hover {
+    color: #000000;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-image: url(/img/v_bg.webp);
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+<!-- Import Font -->
+<!-- Import Roboto -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+
+
+<!-- Import Material Icons -->
+
+
+    <style id="material_icons"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_icons","https://cdn.jsdelivr.net/gh/viosey/hexo-theme-material@latest/source/css/material-icons.css",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+
+
+
+    <!-- Import jQuery -->
+    
+        <script>lsloader.load("jq_js","https://cdn.jsdelivr.net/gh/viosey/hexo-theme-material@latest/source/js/jquery.min.js", true)</script>
+    
+
+    <!-- WebAPP Icons -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="梦半觉">
+    <meta name="msapplication-starturl" content="https://codepoem.github.io/2019/10/09/%E6%A8%A1%E6%9D%BF%E6%95%B4%E7%90%86%E4%B9%8BTravis%20CI/">
+    <meta name="msapplication-navbutton-color" content="#FF3C3C">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="梦半觉">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="/img/v_half.webp">
+
+    <!-- Site Verification -->
+    
+    
+
+    <!-- RSS -->
+    
+        
+            <link rel=alternate type="application/atom+xml" href="/atom.xml">
+        
+    
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="https://codepoem.github.io/2019/10/09/%E6%A8%A1%E6%9D%BF%E6%95%B4%E7%90%86%E4%B9%8BTravis%20CI/">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="模板整理之Travis CI | 梦半觉">
+    <meta property="og:image" content="/img/v_half.webp">
+    <meta property="og:description" content="Code a poem and poem a code~">
+    <meta property="og:article:tag" content="Android"> <meta property="og:article:tag" content="模板"> <meta property="og:article:tag" content="Travis CI"> 
+
+    
+        <meta property="article:published_time" content="Wed Oct 09 2019 16:54:30 GMT+0800">
+        <meta property="article:modified_time" content="Wed Oct 09 2019 08:54:33 GMT+0000">
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="https://codepoem.github.io/2019/10/09/%E6%A8%A1%E6%9D%BF%E6%95%B4%E7%90%86%E4%B9%8BTravis%20CI/index.html" />
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "https://codepoem.github.io/2019/10/09/%E6%A8%A1%E6%9D%BF%E6%95%B4%E7%90%86%E4%B9%8BTravis%20CI/index.html",
+    "headline": "模板整理之Travis CI",
+    "datePublished": "Wed Oct 09 2019 16:54:30 GMT+0800",
+    "dateModified": "Wed Oct 09 2019 08:54:33 GMT+0000",
+    "author": {
+        "@type": "Person",
+        "name": "CodePoem",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/v_half.webp"
+        },
+        "description": "大梦谁先觉，平生我自知~,Code a poem and poem a code~"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "梦半觉",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/v_half.webp"
+        }
+    },
+    "keywords": ",Android,模板,Travis CICodePoem",
+    "description": "Code a poem and poem a code~",
+}
+</script>
+
+
+    
+
+    <!-- Analytics -->
+    
+    
+    
+
+    <!-- Custom Head -->
+    
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span id="MD-burger-id" class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#使用步骤"><span class="post-toc-number">1.</span> <span class="post-toc-text">使用步骤</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#实现工作流"><span class="post-toc-number">2.</span> <span class="post-toc-text">实现工作流</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#构建"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">构建</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#release签名证书安全"><span class="post-toc-number">2.1.1.</span> <span class="post-toc-text">release签名证书安全</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#加密证书文件："><span class="post-toc-number">2.1.1.1.</span> <span class="post-toc-text">加密证书文件：</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#加密证书密码"><span class="post-toc-number">2.1.1.2.</span> <span class="post-toc-text">加密证书密码</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#实现本地和Travis-CI构建release包互不干扰"><span class="post-toc-number">2.1.1.3.</span> <span class="post-toc-text">实现本地和Travis-CI构建release包互不干扰</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#部署"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">部署</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#GitHub-Release"><span class="post-toc-number">2.2.1.</span> <span class="post-toc-text">GitHub Release</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Fir-im"><span class="post-toc-number">2.2.2.</span> <span class="post-toc-text">Fir.im</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#通知"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">通知</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#SendCloud邮件通知"><span class="post-toc-number">2.3.1.</span> <span class="post-toc-text">SendCloud邮件通知</span></a></li></ol></li></ol></li></ol>
+    </ul>
+    
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 16 + 1);
+
+    $('.post_thumbnail-random').attr('data-original', '/img/random/v-random-' + randomNum + '.webp');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                模板整理之Travis CI
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/v_half.webp" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>CodePoem</strong>
+        <span>10月 09, 2019</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">devices other</i>
+    <span class="visuallyhidden">devices other</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+    <li class="mdl-menu__item">在其它设备中阅读本文章</li>
+    
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQ4AAAEOCAAAAABd2qZ5AAADjklEQVR42u3aS3IiMRAFQN//0p7tRDjA71VJphfZKwKalpQsivp8fbv+u74Q4MCBAwcOHDhw4MDxYI6v+Hr1rZ/vv3r981vtusnq9Vlw4MCBA8cFjl9CUbCtV4dMnvz+zvdHevU6PwsOHDhw4LjHkS/5fhMtRMu9D+04cODAgeNpHGdDYMK93xsOHDhw4HgyR7LpPGS2oTovTeLAgQMHjs9ytIFw06Bqy44PrZXiwIEDB471QMPzX//pfAcOHDhw4PjB0V6zreT3tIlfElx/OREOHDhw4DjKsd9u21iapYjJiu3+ceDAgQPHDY68YXP20+T+s4MXUXEQBw4cOHCsOdokqi29tU2gdgDiPXG0Fg4cOHDgOMqRLNCWBX8ZICgDbZuqtT8PDhw4cOA4y9EeIEnJkjLf+9B76pmrWikOHDhw4FhwJA2k/VHbpCsJ/EmhcJXR4sCBAweOEUfSzmk33TaTNkMVSbnwwHwHDhw4cOBYFAfPYg2Tq0NNrAO1Uhw4cODAseiztAlS3qDaFxzf7zBvoeHAgQMHjr/haA82axHNynz5yEU9HoEDBw4cOK5xnHqnDZP74mCefNb/O3DgwIEDx4JjNtzQtpQSjlnZsX0+Dhw4cOC4x7EfO9sExVk614Z2HDhw4MDxlxx5oG3H19r2Vb5ie+fL5+PAgQMHjgsc7dBA23bK07OkcfUdXMWdOHDgwIHjKMf+eHlYzdtObXGwXR0HDhw4cNzjaEfZ2pLf/jDDAbh4Jzhw4MCB4wbHpw7Wtovy8t/7e3DgwIEDxz2OfXqWl/PyJtOsgNgOyeHAgQMHjhscm2WSxG8WOGdNr7akiAMHDhw4bnDkYwRtMynhyIN9O6hXoOPAgQMHjqMcs/CWjKklT06KgznKrLiJAwcOHDhuc7Sht03Y8pGItvA3+yFx4MCBA8c9jk2qNiMbhsb1Wjhw4MCB47Mcs+RqRrwJve3+ceDAgQPHDY72OrWhWRrWpoVR+ocDBw4cOI5yHAhUizQsLyy2jasEAgcOHDhw3ONIgms+dpAX7xKmdnChfR8HDhw4cNzjOBzAAug8LZwlkNFfARw4cODA8QCONny2yd4m/OflQhw4cODA8RyOPKAm427Jd9tkryg+4sCBAweOaxxJSGuTrhlTnjrm3FfaTjhw4MCBYz3QMCvYzY46KzjWPwwOHDhw4DjK4cKBAwcOHDhw4MCBA8fDrn9e0uHLBXLahAAAAABJRU5ErkJggg==">
+    
+</ul>
+
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/Android/" rel="tag">Android</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/Travis-CI/" rel="tag">Travis CI</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/%E6%A8%A1%E6%9D%BF/" rel="tag">模板</a>
+    </ul>
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+        
+            <!-- Busuanzi Views -->
+            <a class="post_share-link" href="#">
+                <li class="mdl-menu__item">
+                    <span id="busuanzi_container_page_pv">
+                        <span id="busuanzi_value_page_pv"></span>&nbsp;浏览量
+                    </span>
+                </li>
+            </a>
+        
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=模板整理之Travis CI&url=https://codepoem.github.io/2019/10/09/%E6%A8%A1%E6%9D%BF%E6%95%B4%E7%90%86%E4%B9%8BTravis%20CI/index.html&pic=https://codepoem.github.io/img/v_half.webp&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=模板整理之Travis CI&url=https://codepoem.github.io/2019/10/09/%E6%A8%A1%E6%9D%BF%E6%95%B4%E7%90%86%E4%B9%8BTravis%20CI/index.html&via=CodePoem" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://codepoem.github.io/2019/10/09/%E6%A8%A1%E6%9D%BF%E6%95%B4%E7%90%86%E4%B9%8BTravis%20CI/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=https://codepoem.github.io/2019/10/09/%E6%A8%A1%E6%9D%BF%E6%95%B4%E7%90%86%E4%B9%8BTravis%20CI/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+        <a class="post_share-link" href="https://www.linkedin.com/shareArticle?mini=true&url=https://codepoem.github.io/2019/10/09/%E6%A8%A1%E6%9D%BF%E6%95%B4%E7%90%86%E4%B9%8BTravis%20CI/index.html&title=模板整理之Travis CI" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 LinkedIn
+            </li>
+        </a>
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=梦半觉&title=模板整理之Travis CI&summary=Code a poem and poem a code~&pics=https://codepoem.github.io/img/v_half.webp&url=https://codepoem.github.io/2019/10/09/%E6%A8%A1%E6%9D%BF%E6%95%B4%E7%90%86%E4%B9%8BTravis%20CI/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+        <a class="post_share-link" href="https://telegram.me/share/url?url=https://codepoem.github.io/2019/10/09/%E6%A8%A1%E6%9D%BF%E6%95%B4%E7%90%86%E4%B9%8BTravis%20CI/index.html&text=模板整理之Travis CI" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Telegram
+            </li>
+        </a>
+    
+</ul>
+
+    
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <p><a href="https://docs.travis-ci.com/" target="_blank" rel="noopener">官方文档</a></p>
+<p>免费Travis-CI（针对开源项目）：<a href="https://travis-ci.org" target="_blank" rel="noopener">https://travis-ci.org</a></p>
+<p>收费Travis-CI（针对私有和商业项目）：<a href="https://travis-ci.com" target="_blank" rel="noopener">https://travis-ci.com</a></p>
+<h2 id="使用步骤"><a href="#使用步骤" class="headerlink" title="使用步骤"></a>使用步骤</h2><ol>
+<li>登录 Travis CI 并对指定的项目启用。</li>
+<li>配置 .travis.yml ，参考官方文档。</li>
+<li>push（或其他方式）触发Travis-CI。</li>
+</ol>
+<h2 id="实现工作流"><a href="#实现工作流" class="headerlink" title="实现工作流"></a>实现工作流</h2><ol>
+<li>构建。开发一些新功能，提交代码后自动构建出一个APK（可以是测试版，也可以是发布版）。</li>
+<li>部署。将 APK 上传到 Github Release / <a href="https://fir.im/" target="_blank" rel="noopener">Fir.im</a> / <a href="https://www.pgyer.com/" target="_blank" rel="noopener">蒲公英</a>等。</li>
+<li>通知。发出通知（邮件、消息等形式）。</li>
+</ol>
+<h3 id="构建"><a href="#构建" class="headerlink" title="构建"></a>构建</h3><h4 id="release签名证书安全"><a href="#release签名证书安全" class="headerlink" title="release签名证书安全"></a>release签名证书安全</h4><p>Android 项目发布需要证书文件、密码、别名、别名密码。无论是开源项目还是私有项目，任何时候都不应该将原始证书或密码放入代码库（原则上来讲证书和密码也不应该交于开发人员，而应该只能通过发布服务器进行编译）</p>
+<p>Travis CI 为此提供了 2 种解决方案：</p>
+<ol>
+<li>对敏感信息、密码、证书等进行对称加密，在 CI 构建环境时解密。</li>
+<li>将密码等通过 Travis CI 控制台设置为构建时的环境变量。</li>
+</ol>
+<p>个人倾向使用第二种方案，但 Travis CI 控制台无法上传文件，因此涉及到文件加密的部分，选择第一种方案。</p>
+<h5 id="加密证书文件："><a href="#加密证书文件：" class="headerlink" title="加密证书文件："></a>加密证书文件：</h5><ol>
+<li>本地安装 Travis CLI 命令行工具。</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gem install travis</span><br></pre></td></tr></table></figure>
+
+<p>这一步如果遇到错误, 尝试加sudo，请升级一下 ruby 版本。</p>
+<ol start="2">
+<li>命令行登录 Travis（第一次登录才要），并输入 GitHub 的用户名和密码。</li>
+</ol>
+<p>针对免费版 <a href="https://travis-ci.org：">https://travis-ci.org：</a></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">travis login --org</span><br></pre></td></tr></table></figure>
+
+<p>针对收费版Travis-C <a href="https://travis-ci.com：">https://travis-ci.com：</a></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">travis login --pro</span><br></pre></td></tr></table></figure>
+
+<p>这一步如果遇到travis命令找不到, 尝试找到travis安装的bin目录，并配置上环境变量。</p>
+<ol start="3">
+<li>进入项目根目录，加密证书。</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">travis encrypt-file XXX.jks --add</span><br></pre></td></tr></table></figure>
+
+<p>命令执行结果：</p>
+<ol>
+<li>在 Travis CI 控制台自动生成一对秘钥。</li>
+<li>基于秘钥通过 openssl 对文件进行加密，并在根目录生成 XXX.jks.enc 文件。</li>
+<li>在 .travis.yml 中自动生成 Travis CI 环境下解密文件的配置。</li>
+</ol>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">before_install:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">openssl</span> <span class="string">aes-256-cbc</span> <span class="string">-K</span> <span class="string">$encrypted_cd91ae131fae_key</span> <span class="string">-iv</span> <span class="string">$encrypted_cd91ae131fae_iv</span></span><br><span class="line">    <span class="string">-in</span> <span class="string">mrd@vdreamers.enc</span> <span class="string">-out</span> <span class="string">mrd@vdreamers</span> <span class="string">-d</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="加密证书密码"><a href="#加密证书密码" class="headerlink" title="加密证书密码"></a>加密证书密码</h5><p>在Travis CI控制台配置证书密码、证书别名、证书别名密码三个环境变量（KEYSTORE_PWD、KEYSTORE_ALIAS、KEYSTORE_ALIAS_PWD）。</p>
+<h5 id="实现本地和Travis-CI构建release包互不干扰"><a href="#实现本地和Travis-CI构建release包互不干扰" class="headerlink" title="实现本地和Travis-CI构建release包互不干扰"></a>实现本地和Travis-CI构建release包互不干扰</h5><p>基本思路，判断环境变量 CI 是否 为 true，通过 System.getenv(“CI”) 去获取环境变量 CI 的值，fals e即为本地构建，true 即为 Travis-CI 构建。<br>本地构建去 local.properties 中读取证书配置；Travis-CI 构建通过 System.getenv 去读取环境变量的证书配置。</p>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line">apply plugin: <span class="string">'com.android.application'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> keystorePWD = <span class="string">''</span></span><br><span class="line"><span class="keyword">def</span> keystoreAlias = <span class="string">''</span></span><br><span class="line"><span class="keyword">def</span> keystoreAliasPWD = <span class="string">''</span></span><br><span class="line"><span class="comment">// local.properties file in the root director</span></span><br><span class="line"><span class="keyword">def</span> keyFile = <span class="keyword">project</span>.rootProject.<span class="keyword">file</span>(<span class="string">'local.properties'</span>)</span><br><span class="line"></span><br><span class="line">Properties properties = <span class="keyword">new</span> Properties()</span><br><span class="line"><span class="comment">// local.properties exists</span></span><br><span class="line"><span class="keyword">if</span> (keyFile.exists()) &#123;</span><br><span class="line">    properties.load(keyFile.newDataInputStream())</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    keyFile = <span class="keyword">file</span>(<span class="string">"../no_exists_keystore.tmp"</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// local.properties contains keystore.path</span></span><br><span class="line"><span class="keyword">if</span> (properties.containsKey(<span class="string">"keystore.path"</span>)) &#123;</span><br><span class="line">    keyFile = <span class="keyword">file</span>(properties.getProperty(<span class="string">"keystore.path"</span>))</span><br><span class="line">    keystorePWD = properties.getProperty(<span class="string">"keystore.password"</span>)</span><br><span class="line">    keystoreAlias = properties.getProperty(<span class="string">"keystore.alias"</span>)</span><br><span class="line">    keystoreAliasPWD = properties.getProperty(<span class="string">"keystore.alias_password"</span>)</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    keyFile = <span class="keyword">file</span>(<span class="string">"../no_exists_keystore.tmp"</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> isRunningOnTravis = System.getenv(<span class="string">"CI"</span>) == <span class="string">"true"</span></span><br><span class="line"><span class="keyword">if</span> (isRunningOnTravis) &#123;</span><br><span class="line">    keyFile = <span class="keyword">file</span>(<span class="string">"../mrd@vdreamers"</span>)</span><br><span class="line">    keystorePWD = System.getenv(<span class="string">"KEYSTORE_PWD"</span>)</span><br><span class="line">    keystoreAlias = System.getenv(<span class="string">"KEYSTORE_ALIAS"</span>)</span><br><span class="line">    keystoreAliasPWD = System.getenv(<span class="string">"KEYSTORE_ALIAS_PWD"</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">android &#123;</span><br><span class="line">    signingConfigs &#123;</span><br><span class="line">        release &#123;</span><br><span class="line">            keyAlias keystoreAlias</span><br><span class="line">            keyPassword keystoreAliasPWD</span><br><span class="line">            storeFile keyFile</span><br><span class="line">            storePassword keystorePWD</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    buildTypes &#123;</span><br><span class="line">        debug &#123;</span><br><span class="line">            minifyEnabled <span class="keyword">false</span></span><br><span class="line">            proguardFiles getDefaultProguardFile(<span class="string">'proguard-android-optimize.txt'</span>), <span class="string">'proguard-rules.pro'</span></span><br><span class="line">            signingConfig signingConfigs.debug</span><br><span class="line">        &#125;</span><br><span class="line">        release &#123;</span><br><span class="line">            minifyEnabled <span class="keyword">false</span></span><br><span class="line">            proguardFiles getDefaultProguardFile(<span class="string">'proguard-android-optimize.txt'</span>), <span class="string">'proguard-rules.pro'</span></span><br><span class="line">            <span class="keyword">if</span> (keyFile.exists() || isRunningOnTravis) &#123;</span><br><span class="line">                <span class="keyword">println</span>(<span class="string">"WITH -&gt; buildTypes -&gt; release: using jks key"</span>)</span><br><span class="line">                signingConfig signingConfigs.release</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">println</span>(<span class="string">"WITH -&gt; buildTypes -&gt; release: using default key"</span>)</span><br><span class="line">                signingConfig signingConfigs.debug</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>本地构建需要在本地local.properties中配置好证书路径keystore.path、证书密码keystore.password、证书别名keystore.alias、证书别名密码keystore.alias_password；<br>分别对应着Travis CI控制台加密的证书秘钥对和环境变量证书密码KEYSTORE_PWD、证书别名KEYSTORE_ALIAS、证书别名密码KEYSTORE_ALIAS_PWD。</p>
+<h3 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h3><h4 id="GitHub-Release"><a href="#GitHub-Release" class="headerlink" title="GitHub Release"></a>GitHub Release</h4><ol>
+<li>命令行自动生成 deploy 配置。</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">travis setup releases</span><br></pre></td></tr></table></figure>
+
+<p>需要输入 GitHub 账户名和密码以及 apk 路径，如 app/build/outputs/apk/app-release.apk<br>执行完后会自动在 .travis.yml 添加如下配置：</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">provider:</span> <span class="string">releases</span></span><br><span class="line">  <span class="attr">api_key:</span></span><br><span class="line">    <span class="attr">secure:</span> <span class="string">qOr4mGdf8lESDCiMo7ZJbGqLEHI3cXuV4UlQ2ZzvjSpDQyXrQ2l8wHMdgTkFxmlJWReOUuumHK346StBlGA2mQ5ufc6LhtHaCJWNpnk2Nixd2qFma9ySgPakz+7NoMml4wvkgMnn4HBCTV13ucJPxEzVt8KkX1JAiN9s5rh8SkB36i9KC4i/SuAPNPx2vHbglnoPFtToBlQa+cMLRSlXVkLHYYVdWRZOBRneu/H79oPkw5ajfsSG5u7RCCcEaaAfY1oU7ho1mrB1Kogq64BemGZSkIHgF5TCmmWgNypDlAm92tCN0G3uP0xffUZZsUqYoHiflXTjyXoYG4gXXC+SCCmkkFah0DZPcTZ6AHerBJ/8YgJX6/8tV3sH89PuM6HEuPmHbE3xEsGzUZWNrkJWHdJBLi5bXZnuSRvq+JDM/0CYSYuTx+lHCcCUiODIKTXFwHOaB+J+bKUTvvz91Rd7ELodUiBTAI/hXDYmWBAgY9Snw8+qBXiA7Ocp+ykcRuiUXXxvYlLgIzqtTEnoODBOsZ5ukjJoUs2GObcOgyBt4eedv7EfUcUKxHdf7ECZbhCEvhtVvHGzzIN5BN3R8+YJKnb0CmsO6FyCgCSnTyvKlFVfSX5s0v9E7XVFrCOo1gVDoL28v7AmrDZsl1mEaRSvVcOHtAXEhZEyF0CdafJ6s5A=</span></span><br><span class="line">  <span class="attr">file:</span> <span class="string">app/build/outputs/apk/app-release.apk</span></span><br><span class="line">  <span class="comment"># 这句手动添加</span></span><br><span class="line">  <span class="attr">skip_cleanup:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">on:</span></span><br><span class="line">    <span class="attr">repo:</span> <span class="string">CodePoem/VTemplate</span></span><br><span class="line">    <span class="comment"># 这句手动添加</span></span><br><span class="line">    <span class="attr">tags:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>provider：发布目标为 GitHub Release ，除了 GitHub 外，Travis CI还支持发布到 AWS 、Google App Engine 等数十种 provider 。</li>
+<li>secure：是加密后的 GitHub Access Token 。</li>
+<li>file：发布的文件。</li>
+<li>skip_cleanup：默认情况下 Travis CI 在完成编译后会清除所有生成的文件，因此要将 skip_cleanup 设置为 true 来忽略此操作。</li>
+<li>on：发布的时机，这里配置为 tags : true，即只在有 tag 的情况才发布。</li>
+</ul>
+<ol start="2">
+<li>打 Tag 后 Push 代码触发 CI 。</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git tag -a v0.0.1-alpha-1 -m "这里是Tag注释，说清楚这个版本的主要改动，也可以省略-m参数直接写长文本"</span><br><span class="line">git push origin --tags</span><br></pre></td></tr></table></figure>
+
+<h4 id="Fir-im"><a href="#Fir-im" class="headerlink" title="Fir.im"></a><a href="https://fir.im/" target="_blank" rel="noopener">Fir.im</a></h4><ol>
+<li>登录 Fir.im 获取 API Token 。</li>
+<li>将获取的 API Toke n配置到 Travis CI 的环境变量 FIR_API_TOKEN。</li>
+<li>添加配置。</li>
+</ol>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">before_install:</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">gem</span> <span class="string">install</span> <span class="string">fir-cli</span></span><br><span class="line"><span class="attr">after_deploy:</span></span><br><span class="line"><span class="bullet">-</span> <span class="string">fir</span> <span class="string">p</span> <span class="string">app/build/outputs/apk/release/app-release.apk</span> <span class="string">-T</span> <span class="string">$FIR_API_TOKEN</span> <span class="string">-c</span> <span class="string">"`git cat-file tag $TRAVIS_TAG`"</span></span><br></pre></td></tr></table></figure>
+<ol start="4">
+<li>打 Tag 后 Push 代码触发 CI 。</li>
+</ol>
+<h3 id="通知"><a href="#通知" class="headerlink" title="通知"></a>通知</h3><h4 id="SendCloud邮件通知"><a href="#SendCloud邮件通知" class="headerlink" title="SendCloud邮件通知"></a>SendCloud邮件通知</h4><ol>
+<li>注册 SendCloud 。</li>
+<li>创建触发式模板 update_template 。</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">%TRAVIS_REPO_SLUG%新版本%TRAVIS_TAG%已经发布了，功能更新：</span><br><span class="line">   </span><br><span class="line">   </span><br><span class="line">%TAG_DESCRIPTION%</span><br><span class="line">   </span><br><span class="line">去下载：</span><br><span class="line">https:&#x2F;&#x2F;fir.im&#x2F;ep8s</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>添加配置，调用发送邮件 API 。</li>
+</ol>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">after_deploy:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">curl</span> <span class="string">-d</span> <span class="string">"apiUser=******&amp;apiKey=******&amp;from=test@test.com&amp;fromName=testTitle&amp;subject=测试&amp;replyTo=test@test.com&amp;templateInvokeName=update_template"</span></span><br><span class="line">    <span class="string">--data-urlencode</span> <span class="string">"xsmtpapi=&#123;'to':['806957428@qq.com'],'sub':&#123;'%TRAVIS_REPO_SLUG%':['$TRAVIS_REPO_SLUG'],'%TRAVIS_TAG%':['$TRAVIS_TAG'],'%TAG_DESCRIPTION%':['$(git cat-file tag $TRAVIS_TAG)']&#125;&#125;"</span> <span class="string">http://api.sendcloud.net/apiv2/mail/sendtemplate</span></span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>打 Tag 后 Push 代码触发 CI 。</li>
+</ol>
+<hr>
+<ul>
+<li>模板整理<a href="https://github.com/CodePoem/VTemplate" target="_blank" rel="noopener">GitHub</a></li>
+</ul>
+
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用 DISQUS_CLICK -->
+<div id="disqus-comment">
+    <div id="disqus_thread"></div>
+
+<!-- add animation -->
+<style>
+	.disqus_click_btn {
+            line-height: 30px;
+            margin: 0;
+            min-width: 50px;
+            padding: 0 14px;
+            display: inline-block;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            overflow: hidden;
+            will-change: box-shadow;
+            transition: box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1), color .2s cubic-bezier(.4, 0, .2, 1);
+            outline: 0;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            vertical-align: middle;
+            border: 0;
+            background: rgba(158, 158, 158, .2);
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+            color: #fff;
+            background-color: #000000;
+            text-shadow: 0;
+            display: none
+        }
+</style>
+	
+<div class="btn_click_load"> 
+    <button class="disqus_click_btn">阅读评论（请确保 disqus 可以正常加载）</button>
+</div>
+
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'https://codepoem.github.io/2019/10/09/%E6%A8%A1%E6%9D%BF%E6%95%B4%E7%90%86%E4%B9%8BTravis%20CI/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'https://codepoem.github.io/2019/10/09/%E6%A8%A1%E6%9D%BF%E6%95%B4%E7%90%86%E4%B9%8BTravis%20CI/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+</script>
+
+<script type="text/ls-javascript" id="disqus-lazy-load-script">
+    $.ajax({
+        url: 'https://disqus.com/next/config.json',
+        timeout: 4000,
+        type: 'GET',
+        success: (function() {
+            var d = document;
+            var s = d.createElement('script');
+            s.src = '//codepoem.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', + new Date());
+            (d.head || d.body).appendChild(s);
+            $('.disqus_click_btn').css('display','none');
+        })(),
+        error: function() {
+          $('.disqus_click_btn').css('display','block');
+        }
+    });
+    $('.btn_click_load').click(function() {  //click to load comments
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document;
+            var s = d.createElement('script');
+            s.src = '//codepoem.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', + new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+        $('.disqus_click_btn').css('display','none');
+    });
+</script>
+  	
+
+</div>
+<style>
+    #disqus-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2019/10/09/%E6%A8%A1%E6%9D%BF%E6%95%B4%E7%90%86%E4%B9%8B%E4%B8%8A%E4%BC%A0%E4%BB%93%E5%BA%93/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2019/09/25/Crash%E6%B2%BB%E7%90%86%E4%B9%8BTimeoutException/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/v_side.jpg);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/v_half.webp" alt="CodePoem's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        codepoetdream@gmail.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="mailto:codepoetdream@gmail.com" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    归档
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2021/06/">六月 2021<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/12/">十二月 2020<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/11/">十一月 2020<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/04/">四月 2020<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/03/">三月 2020<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/01/">一月 2020<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/11/">十一月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/10/">十月 2019<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/09/">九月 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/08/">八月 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/05/">五月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/04/">四月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/02/">二月 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/02/">二月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/12/">十二月 2016<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/11/">十一月 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/10/">十月 2016<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/03/">三月 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/01/">一月 2016<span class="sidebar_archives-count">1</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
+                
+                分类
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                <a class="sidebar_archives-link" href="/categories/Android/">Android<span class="sidebar_archives-count">19</span></a></li><li><a class="sidebar_archives-link" href="/categories/Java/">Java<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/%E4%B8%87%E4%B8%88%E9%AB%98%E6%A5%BC%E5%B9%B3%E5%9C%B0%E8%B5%B7/">万丈高楼平地起<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/%E4%BA%8C%E7%BB%B4%E7%A0%81/">二维码<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/%E6%A8%A1%E6%9D%BF/">模板<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">设计模式<span class="sidebar_archives-count">8</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Pages  -->
+    
+        <li>
+            <a href="/tags" title="Tags">
+                
+                    <i class="material-icons sidebar-material-icons">label</i>
+                
+                Tags
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/timeline" title="Timeline">
+                
+                    <i class="material-icons sidebar-material-icons">timeline</i>
+                
+                Timeline
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/gallery" title="Gallery">
+                
+                    <i class="material-icons sidebar-material-icons">album</i>
+                
+                Gallery
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/links" title="Links">
+                
+                    <i class="material-icons sidebar-material-icons">link</i>
+                
+                Links
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/about" title="About">
+                
+                    <i class="material-icons sidebar-material-icons">person</i>
+                
+                About
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/resume" title="Resume">
+                
+                    <i class="material-icons sidebar-material-icons">notes</i>
+                
+                Resume
+            </a>
+        </li>
+        
+    
+
+    <!-- Article Number  -->
+    
+        <li>
+            <a href="/archives">
+                文章总数
+                <span class="sidebar-badge">38</span>
+            </a>
+        </li>
+        
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+
+<!-- Theme Material -->
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+
+    <!-- Facebook -->
+    
+
+    <!-- Google + -->
+    
+
+    <!-- Weibo -->
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+        <a href="https://github.com/CodePoem" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-github">
+                <span class="visuallyhidden">Github</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+
+    <!-- V2EX -->
+    
+
+    <!-- Segmentfault -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©&nbsp;<span year></span>&nbsp;梦半觉
+            
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import JS File -->
+
+    <script>lsloader.load("lazyload_js","https://cdn.jsdelivr.net/gh/viosey/hexo-theme-material@latest/source/js/lazyload.min.js", true)</script>
+
+
+
+    <script>lsloader.load("js_js","https://cdn.jsdelivr.net/gh/viosey/hexo-theme-material@latest/source/js/js.min.js", true)</script>
+
+
+
+    <script>lsloader.load("np_js","https://cdn.jsdelivr.net/gh/viosey/hexo-theme-material@latest/source/js/nprogress.js", true)</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#FF3C3C'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #FF3C3C, 0 0 15px #FF3C3C'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#FF3C3C',
+        'border-left-color': '#FF3C3C'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+
+
+    <!-- Busuanzi -->
+    <script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+   <!-- 使用 DISQUS js 代码 -->
+
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('
+<link rel="stylesheet" href="/css/uc.css">
+');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Import prettify js  -->
+
+    
+        
+            <script>lsloader.load("prettify_js","https://cdn.jsdelivr.net/gh/viosey/hexo-theme-material@latest/source/js/prettify.min.js", true)</script>
+        
+    
+
+
+    
+        <script>lsloader.load("hanabi","https://cdn.jsdelivr.net/gh/viosey/hexo-theme-material@latest/source/js/hanabi-browser-bundle.js", true)</script>
+    
+
+
+<!-- Window Load -->
+<!-- add class for prettify -->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+
+    
+        
+            $(function() {
+                $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+                prettyPrint();
+                })
+        
+    
+    
+        
+        
+        HanabiBrowser.start('pre code',true);
+    
+</script>
+
+<!-- MathJax Load-->
+
+
+<!-- Bing Background -->
+
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Custom Footer -->
+
+
+
+<script>
+    var copyrightNow = new Date().getFullYear();
+    var textContent = document.querySelector('span[year]')
+
+    copyrightSince = 0000;
+    if (copyrightSince === copyrightNow||copyrightSince === 0000) {
+        textContent.textContent = copyrightNow
+    } else {
+        textContent.textContent = copyrightSince + ' - ' + copyrightNow
+    }
+
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.5.6 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+                </main>
+            </div>
+        </body>
+    
+</html>

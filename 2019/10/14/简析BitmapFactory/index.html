@@ -1,0 +1,1261 @@
+<!DOCTYPE html>
+<html style="display: none;" lang="zh">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.5.6 -->
+    <script>
+        window.materialVersion = "1.5.6"
+        // Delete localstorage with these tags
+        window.oldVersion = [
+            'codestartv1',
+            '1.3.4',
+            '1.4.0',
+            '1.4.0b1',
+            '1.5.0',
+            '1.5.2',
+            '1.5.5'
+        ]
+    </script>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net/gh/viosey/hexo-theme-material@latest/source"/>
+
+
+
+    <link rel="dns-prefetch" href="https://busuanzi.ibruce.info"/>
+
+
+
+    <link rel="dns-prefetch" href="https://codepoem.disqus.com"/>
+
+
+
+
+
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com"/>
+
+
+
+
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!-- Title -->
+    
+    <title>
+        
+            简析BitmapFactory | 
+        
+        梦半觉
+    </title>
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/v_half.webp">
+    <link rel="icon" href="/img/v_half.webp">
+
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="description" itemprop="description" content="Code a poem and poem a code~">
+    <meta name="keywords" content="CodePoem,Android,图片,Bitmap">
+    <meta name="theme-color" content="#FF3C3C">
+
+    <!-- Disable Fucking Bloody Baidu Tranformation -->
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(a){try{localStorage.removeItem(a)}catch(b){}};lsloader.setLS=function(a,c){try{localStorage.setItem(a,c)}catch(b){}};lsloader.getLS=function(a){var c="";try{c=localStorage.getItem(a)}catch(b){c=""}return c};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var b=[];for(var a=0;a<localStorage.length;a++){b.push(localStorage.key(a))}b.forEach(function(e){var f=lsloader.getLS(e);if(window.oldVersion){var d=window.oldVersion.reduce(function(g,h){return g||f.indexOf("/*"+h+"*/")!==-1},false);if(d){lsloader.removeLS(e)}}})}catch(c){}};lsloader.clean();lsloader.load=function(f,a,b,d){if(typeof b==="boolean"){d=b;b=undefined}d=d||false;b=b||function(){};var e;e=this.getLS(f);if(e&&e.indexOf(versionString)===-1){this.removeLS(f);this.requestResource(f,a,b,d);return}if(e){var c=e.split(versionString)[0];if(c!=a){console.log("reload:"+a);this.removeLS(f);this.requestResource(f,a,b,d);return}e=e.split(versionString)[1];if(d){this.jsRunSequence.push({name:f,code:e});this.runjs(a,f,e)}else{document.getElementById(f).appendChild(document.createTextNode(e));b()}}else{this.requestResource(f,a,b,d)}};lsloader.requestResource=function(b,e,a,c){var d=this;if(c){this.iojs(e,b,function(h,f,g){d.setLS(f,h+versionString+g);d.runjs(h,f,g)})}else{this.iocss(e,b,function(f){document.getElementById(b).appendChild(document.createTextNode(f));d.setLS(b,e+versionString+f)},a)}};lsloader.iojs=function(d,b,g){var a=this;a.jsRunSequence.push({name:b,code:""});try{var f=new XMLHttpRequest();f.open("get",d,true);f.onreadystatechange=function(){if(f.readyState==4){if((f.status>=200&&f.status<300)||f.status==304){if(f.response!=""){g(d,b,f.response);return}}a.jsfallback(d,b)}};f.send(null)}catch(c){a.jsfallback(d,b)}};lsloader.iocss=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.iofonts=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.runjs=function(f,c,e){if(!!c&&!!e){for(var b in this.jsRunSequence){if(this.jsRunSequence[b].name==c){this.jsRunSequence[b].code=e}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var a=document.createElement("script");a.appendChild(document.createTextNode(this.jsRunSequence[0].code));a.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(a);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else{if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var d=this;var a=document.createElement("script");a.src=this.jsRunSequence[0].path;a.type="text/javascript";this.jsRunSequence[0].status="loading";a.onload=function(){d.jsRunSequence.shift();if(d.jsRunSequence.length>0){d.runjs()}};document.body.appendChild(a)}}};lsloader.tagLoad=function(b,a){this.jsRunSequence.push({name:a,code:"",path:b,status:"failed"});this.runjs()};lsloader.jsfallback=function(c,b){if(!!this.jsnamemap[b]){return}else{this.jsnamemap[b]=b}for(var a in this.jsRunSequence){if(this.jsRunSequence[a].name==b){this.jsRunSequence[a].code="";this.jsRunSequence[a].status="failed";this.jsRunSequence[a].path=c}}this.runjs()};lsloader.cssfallback=function(e,c,b){if(!!this.cssnamemap[c]){return}else{this.cssnamemap[c]=1}var d=document.createElement("link");d.type="text/css";d.href=e;d.rel="stylesheet";d.onload=d.onerror=b;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(d,a)};lsloader.runInlineScript=function(c,b){var a=document.getElementById(b).innerText;this.jsRunSequence.push({name:c,code:a});this.runjs()}})();</script>
+
+    <!-- Import queue -->
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Import CSS -->
+    
+        <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","https://cdn.jsdelivr.net/gh/viosey/hexo-theme-material@latest/source/css/material.min.css",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","https://cdn.jsdelivr.net/gh/viosey/hexo-theme-material@latest/source/css/style.min.css",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+        
+            
+                <style id="prettify_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_css","https://cdn.jsdelivr.net/gh/viosey/hexo-theme-material@latest/source/css/prettify.min.css",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+                <style id="prettify_theme"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_theme","https://cdn.jsdelivr.net/gh/viosey/hexo-theme-material@latest/source/css/prettify/github-v2.min.css",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+            
+        
+
+    
+
+    
+
+    <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    overflow-x: hidden !important;
+  }
+  
+  code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  a {
+    color: #000000;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #000000 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #000000 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #000000 !important;
+  }
+
+  .toTop {
+    background: #000000 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #000000;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #000000;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #000000;
+  }
+
+  .post-toc a:hover {
+    color: #000000;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-image: url(/img/v_bg.webp);
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+<!-- Import Font -->
+<!-- Import Roboto -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+
+
+<!-- Import Material Icons -->
+
+
+    <style id="material_icons"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_icons","https://cdn.jsdelivr.net/gh/viosey/hexo-theme-material@latest/source/css/material-icons.css",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+
+
+
+    <!-- Import jQuery -->
+    
+        <script>lsloader.load("jq_js","https://cdn.jsdelivr.net/gh/viosey/hexo-theme-material@latest/source/js/jquery.min.js", true)</script>
+    
+
+    <!-- WebAPP Icons -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="梦半觉">
+    <meta name="msapplication-starturl" content="https://codepoem.github.io/2019/10/14/%E7%AE%80%E6%9E%90BitmapFactory/">
+    <meta name="msapplication-navbutton-color" content="#FF3C3C">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="梦半觉">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="/img/v_half.webp">
+
+    <!-- Site Verification -->
+    
+    
+
+    <!-- RSS -->
+    
+        
+            <link rel=alternate type="application/atom+xml" href="/atom.xml">
+        
+    
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="https://codepoem.github.io/2019/10/14/%E7%AE%80%E6%9E%90BitmapFactory/">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="简析BitmapFactory | 梦半觉">
+    <meta property="og:image" content="/img/v_half.webp">
+    <meta property="og:description" content="Code a poem and poem a code~">
+    <meta property="og:article:tag" content="Android"> <meta property="og:article:tag" content="图片"> <meta property="og:article:tag" content="Bitmap"> 
+
+    
+        <meta property="article:published_time" content="Mon Oct 14 2019 16:59:44 GMT+0800">
+        <meta property="article:modified_time" content="Mon Oct 14 2019 08:59:46 GMT+0000">
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="https://codepoem.github.io/2019/10/14/%E7%AE%80%E6%9E%90BitmapFactory/index.html" />
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "https://codepoem.github.io/2019/10/14/%E7%AE%80%E6%9E%90BitmapFactory/index.html",
+    "headline": "简析BitmapFactory",
+    "datePublished": "Mon Oct 14 2019 16:59:44 GMT+0800",
+    "dateModified": "Mon Oct 14 2019 08:59:46 GMT+0000",
+    "author": {
+        "@type": "Person",
+        "name": "CodePoem",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/v_half.webp"
+        },
+        "description": "大梦谁先觉，平生我自知~,Code a poem and poem a code~"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "梦半觉",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/v_half.webp"
+        }
+    },
+    "keywords": ",Android,图片,BitmapCodePoem",
+    "description": "Code a poem and poem a code~",
+}
+</script>
+
+
+    
+
+    <!-- Analytics -->
+    
+    
+    
+
+    <!-- Custom Head -->
+    
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span id="MD-burger-id" class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#静态内部类Options"><span class="post-toc-number">1.</span> <span class="post-toc-text">静态内部类Options</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Bitmap-inBitmap"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">Bitmap inBitmap</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#boolean-inMutable"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">boolean inMutable</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#boolean-inJustDecodeBounds"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">boolean inJustDecodeBounds</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#int-inSampleSize"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">int inSampleSize</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Bitmap-Config-inPreferredConfig"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">Bitmap.Config inPreferredConfig</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#ColorSpace-inPreferredColorSpace"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">ColorSpace inPreferredColorSpace</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#boolean-inPremultiplied"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">boolean inPremultiplied</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#boolean-inDither"><span class="post-toc-number">1.8.</span> <span class="post-toc-text">boolean inDither</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#int-inDensity"><span class="post-toc-number">1.9.</span> <span class="post-toc-text">int inDensity</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#int-inTargetDensity"><span class="post-toc-number">1.10.</span> <span class="post-toc-text">int inTargetDensity</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#int-inScreenDensity"><span class="post-toc-number">1.11.</span> <span class="post-toc-text">int inScreenDensity</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#boolean-inScaled"><span class="post-toc-number">1.12.</span> <span class="post-toc-text">boolean inScaled</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#boolean-inPurgeable"><span class="post-toc-number">1.13.</span> <span class="post-toc-text">boolean inPurgeable</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#boolean-inInputShareable"><span class="post-toc-number">1.14.</span> <span class="post-toc-text">boolean inInputShareable</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#boolean-inPreferQualityOverSpeed"><span class="post-toc-number">1.15.</span> <span class="post-toc-text">boolean inPreferQualityOverSpeed</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#int-outWidth"><span class="post-toc-number">1.16.</span> <span class="post-toc-text">int outWidth</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#int-outHeight"><span class="post-toc-number">1.17.</span> <span class="post-toc-text">int outHeight</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#String-outMimeType"><span class="post-toc-number">1.18.</span> <span class="post-toc-text">String outMimeType</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Bitmap-Config-outConfig"><span class="post-toc-number">1.19.</span> <span class="post-toc-text">Bitmap.Config outConfig</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#ColorSpace-outColorSpace"><span class="post-toc-number">1.20.</span> <span class="post-toc-text">ColorSpace outColorSpace</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#byte-inTempStorage"><span class="post-toc-number">1.21.</span> <span class="post-toc-text">byte[] inTempStorage</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#boolean-mCancel"><span class="post-toc-number">1.22.</span> <span class="post-toc-text">boolean mCancel</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#public-void-requestCancelDecode"><span class="post-toc-number">1.23.</span> <span class="post-toc-text">public void requestCancelDecode()</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#decode-方法"><span class="post-toc-number">2.</span> <span class="post-toc-text">decode 方法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#decode-方法简析"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">decode 方法简析</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Bitmap-decodeFile-String-pathName-Options-opts"><span class="post-toc-number">2.1.1.</span> <span class="post-toc-text">Bitmap decodeFile(String pathName, Options opts)</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Bitmap-decodeFile-String-pathName"><span class="post-toc-number">2.1.2.</span> <span class="post-toc-text">Bitmap decodeFile(String pathName)</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Bitmap-decodeResourceStream-Nullable-Resources-res-Nullable-TypedValue-value-Nullable-InputStream-is-Nullable-Rect-pad-Nullable-Options-opts"><span class="post-toc-number">2.1.3.</span> <span class="post-toc-text">Bitmap decodeResourceStream(@Nullable Resources res, @Nullable TypedValue value, @Nullable InputStream is, @Nullable Rect pad, @Nullable Options opts)</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Bitmap-decodeResource-Resources-res-int-id-Options-opts"><span class="post-toc-number">2.1.4.</span> <span class="post-toc-text">Bitmap decodeResource(Resources res, int id, Options opts)</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Bitmap-decodeResource-Resources-res-int-id"><span class="post-toc-number">2.1.5.</span> <span class="post-toc-text">Bitmap decodeResource(Resources res, int id)</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Bitmap-decodeByteArray-byte-data-int-offset-int-length-Options-opts"><span class="post-toc-number">2.1.6.</span> <span class="post-toc-text">Bitmap decodeByteArray(byte[] data, int offset, int length, Options opts)</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Bitmap-decodeByteArray-byte-data-int-offset-int-length"><span class="post-toc-number">2.1.7.</span> <span class="post-toc-text">Bitmap decodeByteArray(byte[] data, int offset, int length)</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Bitmap-decodeStream-Nullable-InputStream-is-Nullable-Rect-outPadding-Nullable-Options-opts"><span class="post-toc-number">2.1.8.</span> <span class="post-toc-text">Bitmap decodeStream(@Nullable InputStream is, @Nullable Rect outPadding, @Nullable Options opts)</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#decodeStream-InputStream-is"><span class="post-toc-number">2.1.9.</span> <span class="post-toc-text">decodeStream(InputStream is)</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Bitmap-decodeFileDescriptor-FileDescriptor-fd-Rect-outPadding-Options-opts"><span class="post-toc-number">2.1.10.</span> <span class="post-toc-text">Bitmap decodeFileDescriptor(FileDescriptor fd, Rect outPadding, Options opts)</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Bitmap-decodeFileDescriptor-FileDescriptor-fd"><span class="post-toc-number">2.1.11.</span> <span class="post-toc-text">Bitmap decodeFileDescriptor(FileDescriptor fd)</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#decode-方法总结"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">decode 方法总结</span></a></li></ol></li></ol>
+    </ul>
+    
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 16 + 1);
+
+    $('.post_thumbnail-random').attr('data-original', '/img/random/v-random-' + randomNum + '.webp');
+    $('.post_thumbnail-random').addClass('lazy');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                简析BitmapFactory
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/v_half.webp" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>CodePoem</strong>
+        <span>10月 14, 2019</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+        <button id="article-functions-qrcode-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">devices other</i>
+    <span class="visuallyhidden">devices other</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
+    <li class="mdl-menu__item">在其它设备中阅读本文章</li>
+    
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAAC0UlEQVR42u3ay27CQAwFUP7/p9ttpQp6bQc1eE5WUQiTOWFh/Hh8HXk8sLGxsbGxsbGxsW/JfsTHs/t/Xk/WvABQ3DM2Njb2CezkMa/Zvz+tfvf1rp6tWVgBGxsb+wB2NTgl1ORZeQjs7RkbGxsbO2FMEpv8u9jY2NjY1waw1/dUw1IS8LCxsbGx50WlPFwl28oD1XzP2NjY2LvZkzTgv87/ob+NjY2NfUv2fGhmMmrTax4094yNjY29lP2OEn9+noz79F5WOQPDxsbG/lj264D0R8H9Isyo6B+3HLCxsbG3sichJ3llSYl/PtYz6opgY2Njr2D3QlE+anNVO7maRGFjY2Ofxk5CUULqjeDkgbA6uImNjY29m/2ORm++raS5O38WNjY29m527y9+rymbl5CSdcqNBGxsbOwD2L0Bx8LQTCsU5Q3g5qQSNjY29oezm6X24lhk9Xq1YJSsgI2Njb2VPW+v5htNUppJMWtUVMLGxsb+WPYkmL2j2DRPUZqNXmxsbOwPZ/dCS3Vkp9p+yH+S6E5sbGzspeze4GPecK2+iDxAltMYbGxs7GPYvTHHfHOFIZs4iDbbA9jY2Ngr2JNC0qRVXE1pqmEVGxsb+2T2pJVbLf3kBaNeWwIbGxv7BPZV45V5+amaeCThM1oHGxsbezW7+hc/5/VCYH591B7AxsbGXsSet28nKU0vCSmHW2xsbOzV7HlZvzqOM7+n+tKxsbGxT2Bf1WrNm8G9nfSGMrGxsbG3sqvHpHzfayEka0aJEzY2NvZSdjUYVMcu8yJR/txm6QobGxt7NTsPWtW2a68YlKQW5fQJGxsb+wB2dVu9dfKmcrN4hI2NjY3dCjBJCCxvtEXFxsbGxs4LSdW0ISk85c3gy4pK2NjY2IvY+cMmIzi9dm/+U72lloaNjY19e/ak0VsFzxOV/Ao2Njb2CexzDmxsbGxsbGxsbOzbHN9ZE7nMQPTJVgAAAABJRU5ErkJggg==">
+    
+</ul>
+
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        <a class="post_tag-link" href="/tags/Android/" rel="tag">Android</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/Bitmap/" rel="tag">Bitmap</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/%E5%9B%BE%E7%89%87/" rel="tag">图片</a>
+    </ul>
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+        
+            <!-- Busuanzi Views -->
+            <a class="post_share-link" href="#">
+                <li class="mdl-menu__item">
+                    <span id="busuanzi_container_page_pv">
+                        <span id="busuanzi_value_page_pv"></span>&nbsp;浏览量
+                    </span>
+                </li>
+            </a>
+        
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=简析BitmapFactory&url=https://codepoem.github.io/2019/10/14/%E7%AE%80%E6%9E%90BitmapFactory/index.html&pic=https://codepoem.github.io/img/v_half.webp&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=简析BitmapFactory&url=https://codepoem.github.io/2019/10/14/%E7%AE%80%E6%9E%90BitmapFactory/index.html&via=CodePoem" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://codepoem.github.io/2019/10/14/%E7%AE%80%E6%9E%90BitmapFactory/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=https://codepoem.github.io/2019/10/14/%E7%AE%80%E6%9E%90BitmapFactory/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+        <a class="post_share-link" href="https://www.linkedin.com/shareArticle?mini=true&url=https://codepoem.github.io/2019/10/14/%E7%AE%80%E6%9E%90BitmapFactory/index.html&title=简析BitmapFactory" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 LinkedIn
+            </li>
+        </a>
+    
+
+    <!-- Share QQ -->
+    
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=梦半觉&title=简析BitmapFactory&summary=Code a poem and poem a code~&pics=https://codepoem.github.io/img/v_half.webp&url=https://codepoem.github.io/2019/10/14/%E7%AE%80%E6%9E%90BitmapFactory/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 QQ
+            </li>
+        </a>
+    
+
+    <!-- Share Telegram -->
+    
+        <a class="post_share-link" href="https://telegram.me/share/url?url=https://codepoem.github.io/2019/10/14/%E7%AE%80%E6%9E%90BitmapFactory/index.html&text=简析BitmapFactory" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Telegram
+            </li>
+        </a>
+    
+</ul>
+
+    
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <p>基于9.0（29）简析BitmapFactory类。</p>
+<p>我们只关注BitmapFactor类暴露出来的（即访问权限为public）东西。</p>
+<ul>
+<li>静态内部类Options</li>
+<li>若干decode方法</li>
+</ul>
+<h2 id="静态内部类Options"><a href="#静态内部类Options" class="headerlink" title="静态内部类Options"></a>静态内部类Options</h2><p>Options，顾名思义，是BitmapFactory用于decode方法的选项参数。让我们看看有哪些：</p>
+<h3 id="Bitmap-inBitmap"><a href="#Bitmap-inBitmap" class="headerlink" title="Bitmap inBitmap"></a>Bitmap inBitmap</h3><p>如果使用此参数，decode方法会在加载内容时尝试重用此 bitmap ，如果编码操作不能使用此 bitmap （有限制条件），则会抛出 java.lang.IllegalArgumentException 异常。当前的重用实现方式要求 bitmap 必须是可变的，并且即使一个资源在decode后通常会得到不可变的 bitmap，在重用成功后所得到的重用 bitmap 也将保持可变性。任何可变的 bitmap 都可以被 BitmapFactory 重用，以解码任何其他 bitmap，只要解码后的 bitmap （待分配内存）的字节数（getByteCount方法，解码后待分配内存状态的大小）小于或等于分配的字节数（getAllocationByteCount方法，占用内存的实际大小）。这可能是因为待分配内存的 bitmap 固有尺寸较小，或者其缩放后的尺寸（对于密度/样本尺寸）较小。</p>
+<p>在android.os.Build.VERSION_CODES.KITKAT（Android4.4，19）之前，使用有更多限制：</p>
+<ul>
+<li>解码的图像（无论是作为资源还是作为流）必须为jpeg或png格式。</li>
+<li>仅支持大小相等的 bitmap，并且 inSampleSize 设置为1。</li>
+<li>另外，重用 bitmap 的 Bitmap.Config 配置 inPreferredConfig 将被覆盖（如果已设置）。</li>
+</ul>
+<p>BitmapRegionDecoder 会将其请求的内容绘制到提供的 bitmap 中，如果输出内容大小（缩放后）大于提供的 bitmap ，则进行裁剪。提供的 bitmap 的宽度，高度和 Bitmap.Config 不会更改。<br>android.os.Build.VERSION_CODES.JELLY_BEAN（Android 4.1，16）中引入了对inBitmap 的 BitmapRegionDecoder 支持。 BitmapRegionDecoder 支持的所有格式 通过 inBitmap 支持 bitmap 重用。</p>
+<h3 id="boolean-inMutable"><a href="#boolean-inMutable" class="headerlink" title="boolean inMutable"></a>boolean inMutable</h3><p>在native代码中使用。</p>
+<p>如果开启该设置，则 decode 方法将始终返回可变的 bitmap。这可以用于以编程方式将效果应用于通过BitmapFactory加载的Bitmap。不能与inPreferredConfig = Bitmap.Config.HARDWARE 同时设置，因为硬件 bitmap 始终是不可变的。</p>
+<h3 id="boolean-inJustDecodeBounds"><a href="#boolean-inJustDecodeBounds" class="headerlink" title="boolean inJustDecodeBounds"></a>boolean inJustDecodeBounds</h3><p>如果开启该设置， 解码器将会返回 null （不返回 bitmap ），但是 out… 字段（如 outWidth 、 outHeight 、 outMimeType ）会被赋值，从而允许调用者查询 bitmap ，而不必为其像素分配内存。</p>
+<h3 id="int-inSampleSize"><a href="#int-inSampleSize" class="headerlink" title="int inSampleSize"></a>int inSampleSize</h3><p>如果设置的值大于1，将会请求解码器对原始图像进行二次采样，返回较小的图像以节省内存。样本大小是任一维度中与已解码 bitmap 中单个像素对应的像素数。例如，设置 inSampleSize == 4 ，将会返回一张是宽高为原始宽度和高度的 1/4 的图像，像素为原来的 1/16。任何小于等于1的值都与1相同。注意：解码器使用基于2的幂的最终值，任何其他值将四舍五入为最接近的2的幂。</p>
+<h3 id="Bitmap-Config-inPreferredConfig"><a href="#Bitmap-Config-inPreferredConfig" class="headerlink" title="Bitmap.Config inPreferredConfig"></a>Bitmap.Config inPreferredConfig</h3><p>如果该配置不为 null ，解码器将会尝试解析 bitmap 成此内部配置（bitmap 的像素存储方式）。如果该配置为 null，或者无法满足要求，解码器将会基于系统屏幕深度和原始图像的特征（如是否有每像素透明度）来选择最合适的配置（要求该配置也满足要求）。</p>
+<p>图像默认以Bitmap.Config.ARGB_8888的配置加载。</p>
+<h3 id="ColorSpace-inPreferredColorSpace"><a href="#ColorSpace-inPreferredColorSpace" class="headerlink" title="ColorSpace inPreferredColorSpace"></a>ColorSpace inPreferredColorSpace</h3><p>如果改配置不为 null ，则解码器将尝试解码 bitmap 到此颜色空间中。如果该配置为 null ，或者无法满足要求，则解码器将选择嵌在图像的颜色空间或最适合请求的图像配置的颜色空间（例如，ColorSpace.Named.SRGB 对应 Bitmap.Config.ARGB_8888 ; ColorSpace.Named.EXTENDED_SRGB 对应 Bitmap.Config.RGBA_F16）。</p>
+<p>目前只支持 ColorSpace.Model.RGB 颜色空间，如果设置了非RGB颜色空间（例如 ColorSpace.Named.CIE_LAB）， decode 方法将会抛出异常（IllegalArgumentException）。</p>
+<p>指定的色彩空间的传递函数必须是 ColorSpace.Rgb.TransferParameters() ICC参数曲线。如果在指定的色彩空间调用方法 ColorSpace.Rgb.getTransferParameters() 返回 null ， decode 方法将会抛出异常（IllegalArgumentException）。</p>
+<p>解码之后，bitmap 的色彩空间存储在 BitmapFactory.Options.outColorSpace 字段。</p>
+<h3 id="boolean-inPremultiplied"><a href="#boolean-inPremultiplied" class="headerlink" title="boolean inPremultiplied"></a>boolean inPremultiplied</h3><p>如果开启此配置（默认开启），则生成的 bitmap 的颜色通道将被alpha通道预乘。</p>
+<p>由视图系统或通过 Canvas 直接绘制的图像，不应将其设置为false。视图系统和 Canvas 假定所有绘制的图像都已预乘以简化绘制时融合，并且在绘制未预乘时将抛出 RuntimeException 。</p>
+<p>仅当您要处理原始编码的图像数据（例如，使用RenderScript或自定义OpenGL）时才是合适的。</p>
+<p>不会影响没有Alpha通道的 bitmap 。</p>
+<p>将 inScaled 设置为true时将此标志设置为false可能会导致颜色错误。</p>
+<h3 id="boolean-inDither"><a href="#boolean-inDither" class="headerlink" title="boolean inDither"></a>boolean inDither</h3><p>@deprecated 自android.os.Build.VERSION_CODES.N （Android7.0，24）起，此配置被忽略。</p>
+<p>在 android.os.Build.VERSION_CODES.M (Android6.0，23)及以下版本中，如果设置为true，则解码器将尝试对解码的图像进行抖动。</p>
+<h3 id="int-inDensity"><a href="#int-inDensity" class="headerlink" title="int inDensity"></a>int inDensity</h3><p>用于 bitmap 像素密度。这将使得在返回的位图中始终有为其设置的密度（请参阅 Bitmap.setDensity(int)）。此外，如果开启了 inScaled（默认情况下开启），并且此密度与 inTargetDensity 不匹配，则 bitmap 在返回之前将被缩放为目标密度。</p>
+<p>如果设置为0， BitmapFactory.decodeResource(Resources, int) 、 BitmapFactory.decodeResource(Resources, int, android.graphics.BitmapFactory.Options) 、 BitmapFactory.decodeResourceStream 这些 decode 方法将填充与资源关联的密度。其他 decode 方法将保持原样，并且不会应用任何密度。</p>
+<h3 id="int-inTargetDensity"><a href="#int-inTargetDensity" class="headerlink" title="int inTargetDensity"></a>int inTargetDensity</h3><p>此 bitmap 将被绘制到的目标像素密度。 与 inDensity 和 inScaled 结合使用，以确定在返回 bitmap 之前是否以及如何缩放位图。</p>
+<p>如果设置为0， BitmapFactory.decodeResource(Resources, int) 、 BitmapFactory.decodeResource(Resources, int, android.graphics.BitmapFactory.Options) 、 BitmapFactory.decodeResourceStream 这些 decode 方法将填充与资源对象的 DisplayMetrics 相关的密度。其他 decode 方法将保持原样，并且不会对密度进行缩放。</p>
+<h3 id="int-inScreenDensity"><a href="#int-inScreenDensity" class="headerlink" title="int inScreenDensity"></a>int inScreenDensity</h3><p>正在使用的实际屏幕的像素密度。 仅用于以密度兼容代码运行的应用程序，其中 inTargetDensity 实际上是应用程序看到的密度而不是实际的屏幕密度。</p>
+<p>通过设置此选项，允许加载代码避免将当前的屏幕密度的 bitmap 缩放到/降低到兼容密度。相反的，如果 inDensity 与 inScreenDensity 相同，则 bitmap 将保持不变。任何使用生成的 bitmap 的对象，还必须使用 Bitmap.getScaledWidth 和 Bitmap.getScaledHeight 来说明 bitmap 的密度与目标密度之间的任何差异。</p>
+<p>BitmapFactory 自身永远不会为调用者自动设置。必须明确设置它，因为调用者必须以密度感知的方式处理结果位图。</p>
+<h3 id="boolean-inScaled"><a href="#boolean-inScaled" class="headerlink" title="boolean inScaled"></a>boolean inScaled</h3><p>如果设置了该配置，并且 inDensity 和 inTargetDensity 不为 0，bitmap 在加载时将缩放以匹配 inTargetDensity，而不是每次绘制到 Canvas 时都依赖于图形系统对其进行缩放。</p>
+<p>BitmapRegionDecoder 会忽略这个配置，并且不会根据密度缩放输出。（尽管支持 inSampleSize ）</p>
+<p>此配置默认开启，如果需要 bitmap 的非缩放版本，则应将其关闭。.9 bitmaps（Nine-patch bitmaps）会忽略此配置，并且始终会缩放。</p>
+<p>如果 inPremultiplied 设置为 false ，并且图像具有 Alpha透明度，将此配置设置为 true 可能会导致颜色错误。</p>
+<h3 id="boolean-inPurgeable"><a href="#boolean-inPurgeable" class="headerlink" title="boolean inPurgeable"></a>boolean inPurgeable</h3><p>@deprecated 自 android.os.Build.VERSION_CODES.LOLLIPOP（Android5.0，21） 起，此配置被忽略。</p>
+<p>在 android.os.Build.VERSION_CODES.KITKAT（Android4.4，19）及以下版本中，如果将此配置设置为 true ，那么生成的 bitmap 将分配其像素，以便在系统需要回收内存时可以将其清除。在那种情况下，当需要再次访问像素时（例如绘制 bitmap，调用getPixels（）），它们将被自动重新解码。</p>
+<p>为了进行重新解码，bitmap 必须通过共享对输入的引用或对其进行复制来访问编码的数据。此区别由 inInputShareable 控制。如果 inInputShareable 为 true，则 bitmap 可能会保留对输入的浅引用。如果这 inInputShareable 为 false，则 bitmap 将显式地复制输入数据，并将其保留。即使允许共享，实现仍可以决定对输入数据进行深拷贝。</p>
+<p>尽管 inPurgeable 可以帮助避免大的Dalvik堆分配（从API级别11开始），但是它牺牲了性能可预测性，因为视图系统尝试绘制的任何图像都可能会导致解码延迟，从而导致帧丢失。因此，大多数应用应避免使用 inPurgeable 来提供快速流畅的UI。为了最小化Dalvik堆分配，请使用 inBitmap 配置。</p>
+<p>该配置会被decodeResource(Resources, int, android.graphics.BitmapFactory.Options) 或者 decodeFile(String,<br>android.graphics.BitmapFactory.Options)</p>
+<h3 id="boolean-inInputShareable"><a href="#boolean-inInputShareable" class="headerlink" title="boolean inInputShareable"></a>boolean inInputShareable</h3><p>@deprecated 自 android.os.Build.VERSION_CODES.LOLLIPOP（Android5.0，21） 起，此配置被忽略。</p>
+<p>在 android.os.Build.VERSION_CODES.KITKAT（Android4.4，19）及以下版本中，此配置与 inPurgeable 结合使用。如果 inPurgeable 为 false ，则会忽略此字段。如果 inPurgeable 为 true ，则配置确定 bitmap 是否可以共享对输数据（inputstream，数组等）的引用，或者是否必须进行深拷贝。</p>
+<h3 id="boolean-inPreferQualityOverSpeed"><a href="#boolean-inPreferQualityOverSpeed" class="headerlink" title="boolean inPreferQualityOverSpeed"></a>boolean inPreferQualityOverSpeed</h3><p>@deprecated自 android.os.Build.VERSION_CODE.N （Android7.0，24）起，此配置被忽略。输出将始终是高质量的。</p>
+<p>在 android.os.Build.VERSION_CODES.M (Android6.0，23)及以下版本中，如果将 inPreferQualityOverSpeed 设置为 true ，则解码器将尝试以牺牲解码速度为代价，将重构图像解码为更高质量的图像。当前该字段仅影响 JPEG 解码，在这种情况下，将使用更准确但稍慢的 IDCT 方法代替。</p>
+<h3 id="int-outWidth"><a href="#int-outWidth" class="headerlink" title="int outWidth"></a>int outWidth</h3><p>bitmap 的解码结果宽度。如果 inJustDecodeBounds 设置为false，这将是应用所有缩放后输出 bitmap 的宽度。如果为true，它将是输入图像的宽度，不考虑缩放。</p>
+<p>如果尝试解码时发生错误，outWidth将设置为-1。</p>
+<h3 id="int-outHeight"><a href="#int-outHeight" class="headerlink" title="int outHeight"></a>int outHeight</h3><p>bitmap 的解码结果高度。如果 inJustDecodeBounds 设置为false，这将是应用所有缩放后输出 bitmap 的高度。如果为true，它将是输入图像的高度，不考虑缩放。</p>
+<p>如果尝试解码时发生错误，outHeight将设置为-1。</p>
+<h3 id="String-outMimeType"><a href="#String-outMimeType" class="headerlink" title="String outMimeType"></a>String outMimeType</h3><p>如果明确，则将该字符串设置为解码图像的媒体类型。 如果未知或有错误，则将其设置为 null 。</p>
+<h3 id="Bitmap-Config-outConfig"><a href="#Bitmap-Config-outConfig" class="headerlink" title="Bitmap.Config outConfig"></a>Bitmap.Config outConfig</h3><p>如果明确，为解码 bitmap 具有的像素存储方式配置。 如果未知或有错误，则将其设置为 null 。</p>
+<h3 id="ColorSpace-outColorSpace"><a href="#ColorSpace-outColorSpace" class="headerlink" title="ColorSpace outColorSpace"></a>ColorSpace outColorSpace</h3><p>如果明确，为解码后的 bitmap 具有的色彩空间。注意，输出颜色空间不保证是 bitmap 编码的颜色空间。如果未知（例如，配置为 Bitmap.Config.ALPHA_8）或存在错误，则将其设置为 null 。</p>
+<h3 id="byte-inTempStorage"><a href="#byte-inTempStorage" class="headerlink" title="byte[] inTempStorage"></a>byte[] inTempStorage</h3><p>用于解码的临时存储。建议16K左右。</p>
+<h3 id="boolean-mCancel"><a href="#boolean-mCancel" class="headerlink" title="boolean mCancel"></a>boolean mCancel</h3><p>@deprecated 自 android.os.Build.VERSION_CODES.N （Android7.0，24）起。</p>
+<p>指示已在此对象上调用cancel的标志。如果有一个中间人想要首先解码边界然后解码图像，则此配置很有用。在那种情况下，中间人可以在边界解码和图像解码之间检查是否取消了该操作。</p>
+<h3 id="public-void-requestCancelDecode"><a href="#public-void-requestCancelDecode" class="headerlink" title="public void requestCancelDecode()"></a>public void requestCancelDecode()</h3><p>@deprecated 自 android.os.Build.VERSION_CODES.N （Android7.0，24）起，不影响解码，尽管设置了mCancel的值为true。</p>
+<p>在 android.os.Build.VERSION_CODES.M (Android6.0，23)及以下版本。调用此命令将通知解码器应该取消其操作。这不能保证取消解码，但是如果成功取消解码，则解码器操作结果将返回 null ，或者如果 inJustDecodeBounds 为 true ，则将outWidth / outHeight 设置为-1。</p>
+<h2 id="decode-方法"><a href="#decode-方法" class="headerlink" title="decode 方法"></a>decode 方法</h2><h3 id="decode-方法简析"><a href="#decode-方法简析" class="headerlink" title="decode 方法简析"></a>decode 方法简析</h3><h4 id="Bitmap-decodeFile-String-pathName-Options-opts"><a href="#Bitmap-decodeFile-String-pathName-Options-opts" class="headerlink" title="Bitmap decodeFile(String pathName, Options opts)"></a>Bitmap decodeFile(String pathName, Options opts)</h4><p>将文件路径解码为 bitmap 。如果指定的文件名为 null ，或无法解码为 bitmap，则该函数返回 null 。</p>
+<ul>
+<li>String pathName：待解码文件的完整路径名</li>
+<li>Options opts：控制下采样以及是否应完全解码图像或仅返回尺寸的选项参数，可为 null。</li>
+</ul>
+<p>实际内部调用了另外一个 decode 方法：<br>Bitmap decodeStream(@Nullable InputStream is, @Nullable Rect outPadding, @Nullable Options opts)<br>（参数 String pathName -&gt; InputStream is, Rect null , Options opts）</p>
+<h4 id="Bitmap-decodeFile-String-pathName"><a href="#Bitmap-decodeFile-String-pathName" class="headerlink" title="Bitmap decodeFile(String pathName)"></a>Bitmap decodeFile(String pathName)</h4><p>重载 Bitmap decodeFile(String pathName, Options opts)</p>
+<p>decodeFile(pathName, null);</p>
+<h4 id="Bitmap-decodeResourceStream-Nullable-Resources-res-Nullable-TypedValue-value-Nullable-InputStream-is-Nullable-Rect-pad-Nullable-Options-opts"><a href="#Bitmap-decodeResourceStream-Nullable-Resources-res-Nullable-TypedValue-value-Nullable-InputStream-is-Nullable-Rect-pad-Nullable-Options-opts" class="headerlink" title="Bitmap decodeResourceStream(@Nullable Resources res, @Nullable TypedValue value, @Nullable InputStream is, @Nullable Rect pad, @Nullable Options opts)"></a>Bitmap decodeResourceStream(@Nullable Resources res, @Nullable TypedValue value, @Nullable InputStream is, @Nullable Rect pad, @Nullable Options opts)</h4><p>从InputStream解码新的 bitmap 。此InputStream是从资源获得的，我们通过传递这些资源可以相应地缩放位图。</p>
+<h4 id="Bitmap-decodeResource-Resources-res-int-id-Options-opts"><a href="#Bitmap-decodeResource-Resources-res-int-id-Options-opts" class="headerlink" title="Bitmap decodeResource(Resources res, int id, Options opts)"></a>Bitmap decodeResource(Resources res, int id, Options opts)</h4><p>打开给定的资源并且调用 decodeResourceStream 方法的代名词。</p>
+<ul>
+<li>Resources res：包含图像数据的资源对象。</li>
+<li>int id：图像数据的资源ID。</li>
+<li>Options opts：控制下采样以及是否应完全解码图像或仅返回尺寸的选项参数，可为 null。</li>
+</ul>
+<p>实际内部调用了另外一个 decode 方法：<br>decodeResourceStream(@Nullable Resources res, @Nullable TypedValue value, @Nullable InputStream is, @Nullable Rect pad, @Nullable Options opts)<br>（参数 Resources res, TypedValue value = new TypedValue(), InputStream res.openRawResource(id, value), Rect null, Options opts）</p>
+<h4 id="Bitmap-decodeResource-Resources-res-int-id"><a href="#Bitmap-decodeResource-Resources-res-int-id" class="headerlink" title="Bitmap decodeResource(Resources res, int id)"></a>Bitmap decodeResource(Resources res, int id)</h4><p>重载 Bitmap decodeResource(Resources res, int id, Options opts)</p>
+<p>decodeResource(res, id, null);</p>
+<h4 id="Bitmap-decodeByteArray-byte-data-int-offset-int-length-Options-opts"><a href="#Bitmap-decodeByteArray-byte-data-int-offset-int-length-Options-opts" class="headerlink" title="Bitmap decodeByteArray(byte[] data, int offset, int length, Options opts)"></a>Bitmap decodeByteArray(byte[] data, int offset, int length, Options opts)</h4><p>从指定的字节数组解码不可变的 bitmap。</p>
+<ul>
+<li>byte[] data：压缩图像数据的字节数组。</li>
+<li>int offset：解码器应开始解析的imageData的偏移量。</li>
+<li>int length：从偏移量开始解析的字节数。</li>
+<li>Options opts：控制下采样以及是否应完全解码图像或仅返回尺寸的选项参数，可为 null。</li>
+</ul>
+<p>调用 native 解码方法：<br>private static native Bitmap nativeDecodeByteArray(byte[] data, int offset, int length, Options opts, long inBitmapHandle, long colorSpaceHandle)</p>
+<h4 id="Bitmap-decodeByteArray-byte-data-int-offset-int-length"><a href="#Bitmap-decodeByteArray-byte-data-int-offset-int-length" class="headerlink" title="Bitmap decodeByteArray(byte[] data, int offset, int length)"></a>Bitmap decodeByteArray(byte[] data, int offset, int length)</h4><p>重载 Bitmap decodeByteArray(byte[] data, int offset, int length, Options opts)</p>
+<p>decodeByteArray(data, offset, length, null);</p>
+<h4 id="Bitmap-decodeStream-Nullable-InputStream-is-Nullable-Rect-outPadding-Nullable-Options-opts"><a href="#Bitmap-decodeStream-Nullable-InputStream-is-Nullable-Rect-outPadding-Nullable-Options-opts" class="headerlink" title="Bitmap decodeStream(@Nullable InputStream is, @Nullable Rect outPadding, @Nullable Options opts)"></a>Bitmap decodeStream(@Nullable InputStream is, @Nullable Rect outPadding, @Nullable Options opts)</h4><p>将输入流解码为 bitmap 。如果输入流为 null ，或者不能用于解码 bitmap ，则该函数返回 null 。 流的位置将是读取编码数据之后的位置。</p>
+<ul>
+<li>InputStream is：输入流，其中包含要解码为 bitmap 的原始数据。</li>
+<li>Rect outPadding：如果不为 null ，则返回 bitmap 的填充矩形（如果存在），否则将填充设置为[-1，-1，-1，-1]。如果没有 bitmap 返回（ null ），则填充是不变的。</li>
+<li>Options opts：控制下采样以及是否应完全解码图像或仅返回尺寸的选项参数，可为 null。</li>
+</ul>
+<p>如果输入流是 AssetManager.AssetInputStrea，调用 native 解码方法：<br>private static native Bitmap nativeDecodeAsset(long nativeAsset, Rect padding, Options opts,<br>            long inBitmapHandle, long colorSpaceHandle)<br>否则调用私有内部方法：<br>Bitmap decodeStreamInternal(@NonNull InputStream is, @Nullable Rect outPadding, @Nullable Options opts)</p>
+<h4 id="decodeStream-InputStream-is"><a href="#decodeStream-InputStream-is" class="headerlink" title="decodeStream(InputStream is)"></a>decodeStream(InputStream is)</h4><p>重载 Bitmap decodeStream(@Nullable InputStream is, @Nullable Rect outPadding, @Nullable Options opts)</p>
+<p>decodeStream(is, null, null);</p>
+<h4 id="Bitmap-decodeFileDescriptor-FileDescriptor-fd-Rect-outPadding-Options-opts"><a href="#Bitmap-decodeFileDescriptor-FileDescriptor-fd-Rect-outPadding-Options-opts" class="headerlink" title="Bitmap decodeFileDescriptor(FileDescriptor fd, Rect outPadding, Options opts)"></a>Bitmap decodeFileDescriptor(FileDescriptor fd, Rect outPadding, Options opts)</h4><p>从文件描述符解码 bitmap 。如果 bitmap 无法解码返回 null 。当返回时，描述符中的位置不会更改，因此可以按原样再次使用描述符。</p>
+<ul>
+<li>FileDescriptor fd：包含要解码的 bitmap 数据的文件描述符。</li>
+<li>Rect outPadding：如果不为 null ，则返回 bitmap 的填充矩形（如果存在），否则将填充设置为[-1，-1，-1，-1]。如果没有 bitmap 返回（ null ），则填充是不变的。</li>
+<li>Options opts：控制下采样以及是否应完全解码图像或仅返回尺寸的选项参数，可为 null。</li>
+</ul>
+<h4 id="Bitmap-decodeFileDescriptor-FileDescriptor-fd"><a href="#Bitmap-decodeFileDescriptor-FileDescriptor-fd" class="headerlink" title="Bitmap decodeFileDescriptor(FileDescriptor fd)"></a>Bitmap decodeFileDescriptor(FileDescriptor fd)</h4><p>重载Bitmap decodeFileDescriptor(FileDescriptor fd, Rect outPadding, Options opts)</p>
+<p>decodeFileDescriptor(fd, null, null);</p>
+<h3 id="decode-方法总结"><a href="#decode-方法总结" class="headerlink" title="decode 方法总结"></a>decode 方法总结</h3><p>所有的 decode 方法最后都会走下面三个 decode 方法：</p>
+<p>Bitmap decodeStream(@Nullable InputStream is, @Nullable Rect outPadding, @Nullable Options opts)</p>
+<p>Bitmap decodeByteArray(byte[] data, int offset, int length, Options opts)</p>
+<p>Bitmap decodeFileDescriptor(FileDescriptor fd, Rect outPadding, Options opts)</p>
+<p>其中 decodeStream 和 decodeFileDescriptor 方法 有可能走以下这个方法：</p>
+<p>Bitmap decodeStreamInternal(@NonNull InputStream is, @Nullable Rect outPadding, @Nullable Options opts)</p>
+<p>实质是调用了 native 解码方法：<br>Bitmap nativeDecodeStream(InputStream is, byte[] storage, Rect padding, Options opts, long inBitmapHandle, long colorSpaceHandle)</p>
+<p>因此 native 以下四个方法是 decode 的最终归宿：</p>
+<ul>
+<li>private static native Bitmap nativeDecodeStream(InputStream is, byte[] storage, Rect padding, Options opts, long inBitmapHandle, long colorSpaceHandle);</li>
+<li>private static native Bitmap nativeDecodeFileDescriptor(FileDescriptor fd, Rect padding, Options opts, long inBitmapHandle, long colorSpaceHandle);</li>
+<li>private static native Bitmap nativeDecodeAsset(long nativeAsset, Rect padding, Options opts, long inBitmapHandle, long colorSpaceHandle);</li>
+<li>private static native Bitmap nativeDecodeByteArray(byte[] data, int offset, int length, Options opts, long inBitmapHandle, long colorSpaceHandle);</li>
+</ul>
+
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+    <!-- 使用 DISQUS_CLICK -->
+<div id="disqus-comment">
+    <div id="disqus_thread"></div>
+
+<!-- add animation -->
+<style>
+	.disqus_click_btn {
+            line-height: 30px;
+            margin: 0;
+            min-width: 50px;
+            padding: 0 14px;
+            display: inline-block;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            overflow: hidden;
+            will-change: box-shadow;
+            transition: box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1), color .2s cubic-bezier(.4, 0, .2, 1);
+            outline: 0;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            vertical-align: middle;
+            border: 0;
+            background: rgba(158, 158, 158, .2);
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+            color: #fff;
+            background-color: #000000;
+            text-shadow: 0;
+            display: none
+        }
+</style>
+	
+<div class="btn_click_load"> 
+    <button class="disqus_click_btn">阅读评论（请确保 disqus 可以正常加载）</button>
+</div>
+
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'https://codepoem.github.io/2019/10/14/%E7%AE%80%E6%9E%90BitmapFactory/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'https://codepoem.github.io/2019/10/14/%E7%AE%80%E6%9E%90BitmapFactory/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+</script>
+
+<script type="text/ls-javascript" id="disqus-lazy-load-script">
+    $.ajax({
+        url: 'https://disqus.com/next/config.json',
+        timeout: 4000,
+        type: 'GET',
+        success: (function() {
+            var d = document;
+            var s = d.createElement('script');
+            s.src = '//codepoem.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', + new Date());
+            (d.head || d.body).appendChild(s);
+            $('.disqus_click_btn').css('display','none');
+        })(),
+        error: function() {
+          $('.disqus_click_btn').css('display','block');
+        }
+    });
+    $('.btn_click_load').click(function() {  //click to load comments
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document;
+            var s = d.createElement('script');
+            s.src = '//codepoem.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', + new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+        $('.disqus_click_btn').css('display','none');
+    });
+</script>
+  	
+
+</div>
+<style>
+    #disqus-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+        <a href="/2019/10/16/%E7%AE%80%E6%9E%90Bitmap/" id="post_nav-newer" class="prev-content">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_back</i>
+            </button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            新篇
+        </a>
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2019/10/14/Android%E5%9B%BE%E7%89%87%E5%8E%8B%E7%BC%A9/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/v_side.jpg);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/v_half.webp" alt="CodePoem's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        codepoetdream@gmail.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="mailto:codepoetdream@gmail.com" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    归档
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2021/06/">六月 2021<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/12/">十二月 2020<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/11/">十一月 2020<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/04/">四月 2020<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/03/">三月 2020<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/01/">一月 2020<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/11/">十一月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/10/">十月 2019<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/09/">九月 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/08/">八月 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/05/">五月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/04/">四月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/02/">二月 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/02/">二月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/12/">十二月 2016<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/11/">十一月 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/10/">十月 2016<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/03/">三月 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/01/">一月 2016<span class="sidebar_archives-count">1</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
+                
+                分类
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                <a class="sidebar_archives-link" href="/categories/Android/">Android<span class="sidebar_archives-count">19</span></a></li><li><a class="sidebar_archives-link" href="/categories/Java/">Java<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/%E4%B8%87%E4%B8%88%E9%AB%98%E6%A5%BC%E5%B9%B3%E5%9C%B0%E8%B5%B7/">万丈高楼平地起<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/%E4%BA%8C%E7%BB%B4%E7%A0%81/">二维码<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/%E6%A8%A1%E6%9D%BF/">模板<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">设计模式<span class="sidebar_archives-count">8</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Pages  -->
+    
+        <li>
+            <a href="/tags" title="Tags">
+                
+                    <i class="material-icons sidebar-material-icons">label</i>
+                
+                Tags
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/timeline" title="Timeline">
+                
+                    <i class="material-icons sidebar-material-icons">timeline</i>
+                
+                Timeline
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/gallery" title="Gallery">
+                
+                    <i class="material-icons sidebar-material-icons">album</i>
+                
+                Gallery
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/links" title="Links">
+                
+                    <i class="material-icons sidebar-material-icons">link</i>
+                
+                Links
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/about" title="About">
+                
+                    <i class="material-icons sidebar-material-icons">person</i>
+                
+                About
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/resume" title="Resume">
+                
+                    <i class="material-icons sidebar-material-icons">notes</i>
+                
+                Resume
+            </a>
+        </li>
+        
+    
+
+    <!-- Article Number  -->
+    
+        <li>
+            <a href="/archives">
+                文章总数
+                <span class="sidebar-badge">38</span>
+            </a>
+        </li>
+        
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+
+<!-- Theme Material -->
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div id="back-to-top" class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+
+    <!-- Facebook -->
+    
+
+    <!-- Google + -->
+    
+
+    <!-- Weibo -->
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+        <a href="https://github.com/CodePoem" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-github">
+                <span class="visuallyhidden">Github</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+
+    <!-- V2EX -->
+    
+
+    <!-- Segmentfault -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©&nbsp;<span year></span>&nbsp;梦半觉
+            
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import JS File -->
+
+    <script>lsloader.load("lazyload_js","https://cdn.jsdelivr.net/gh/viosey/hexo-theme-material@latest/source/js/lazyload.min.js", true)</script>
+
+
+
+    <script>lsloader.load("js_js","https://cdn.jsdelivr.net/gh/viosey/hexo-theme-material@latest/source/js/js.min.js", true)</script>
+
+
+
+    <script>lsloader.load("np_js","https://cdn.jsdelivr.net/gh/viosey/hexo-theme-material@latest/source/js/nprogress.js", true)</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#FF3C3C'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #FF3C3C, 0 0 15px #FF3C3C'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#FF3C3C',
+        'border-left-color': '#FF3C3C'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+
+
+    <!-- Busuanzi -->
+    <script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+   <!-- 使用 DISQUS js 代码 -->
+
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('
+<link rel="stylesheet" href="/css/uc.css">
+');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Import prettify js  -->
+
+    
+        
+            <script>lsloader.load("prettify_js","https://cdn.jsdelivr.net/gh/viosey/hexo-theme-material@latest/source/js/prettify.min.js", true)</script>
+        
+    
+
+
+    
+        <script>lsloader.load("hanabi","https://cdn.jsdelivr.net/gh/viosey/hexo-theme-material@latest/source/js/hanabi-browser-bundle.js", true)</script>
+    
+
+
+<!-- Window Load -->
+<!-- add class for prettify -->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+
+    
+        
+            $(function() {
+                $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+                prettyPrint();
+                })
+        
+    
+    
+        
+        
+        HanabiBrowser.start('pre code',true);
+    
+</script>
+
+<!-- MathJax Load-->
+
+
+<!-- Bing Background -->
+
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Custom Footer -->
+
+
+
+<script>
+    var copyrightNow = new Date().getFullYear();
+    var textContent = document.querySelector('span[year]')
+
+    copyrightSince = 0000;
+    if (copyrightSince === copyrightNow||copyrightSince === 0000) {
+        textContent.textContent = copyrightNow
+    } else {
+        textContent.textContent = copyrightSince + ' - ' + copyrightNow
+    }
+
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.5.6 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+                </main>
+            </div>
+        </body>
+    
+</html>

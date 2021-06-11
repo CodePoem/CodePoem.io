@@ -1,0 +1,2294 @@
+<!DOCTYPE html>
+<html style="display: none;" lang="zh">
+    <head>
+    <meta charset="utf-8">
+    <!--
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.5.6 -->
+    <script>
+        window.materialVersion = "1.5.6"
+        // Delete localstorage with these tags
+        window.oldVersion = [
+            'codestartv1',
+            '1.3.4',
+            '1.4.0',
+            '1.4.0b1',
+            '1.5.0',
+            '1.5.2',
+            '1.5.5'
+        ]
+    </script>
+
+    <!-- dns prefetch -->
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net/gh/viosey/hexo-theme-material@latest/source"/>
+
+
+
+    <link rel="dns-prefetch" href="https://busuanzi.ibruce.info"/>
+
+
+
+    <link rel="dns-prefetch" href="https://codepoem.disqus.com"/>
+
+
+
+
+
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com"/>
+
+
+
+
+
+    <!-- Meta & Info -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!-- Title -->
+    
+    <title>
+        
+            timeline | 
+        
+        梦半觉
+    </title>
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/v_half.webp">
+    <link rel="icon" href="/img/v_half.webp">
+
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="description" itemprop="description" content="Code a poem and poem a code~">
+    <meta name="keywords" content="CodePoem">
+    <meta name="theme-color" content="#FF3C3C">
+
+    <!-- Disable Fucking Bloody Baidu Tranformation -->
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import lsloader -->
+    <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(a){try{localStorage.removeItem(a)}catch(b){}};lsloader.setLS=function(a,c){try{localStorage.setItem(a,c)}catch(b){}};lsloader.getLS=function(a){var c="";try{c=localStorage.getItem(a)}catch(b){c=""}return c};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var b=[];for(var a=0;a<localStorage.length;a++){b.push(localStorage.key(a))}b.forEach(function(e){var f=lsloader.getLS(e);if(window.oldVersion){var d=window.oldVersion.reduce(function(g,h){return g||f.indexOf("/*"+h+"*/")!==-1},false);if(d){lsloader.removeLS(e)}}})}catch(c){}};lsloader.clean();lsloader.load=function(f,a,b,d){if(typeof b==="boolean"){d=b;b=undefined}d=d||false;b=b||function(){};var e;e=this.getLS(f);if(e&&e.indexOf(versionString)===-1){this.removeLS(f);this.requestResource(f,a,b,d);return}if(e){var c=e.split(versionString)[0];if(c!=a){console.log("reload:"+a);this.removeLS(f);this.requestResource(f,a,b,d);return}e=e.split(versionString)[1];if(d){this.jsRunSequence.push({name:f,code:e});this.runjs(a,f,e)}else{document.getElementById(f).appendChild(document.createTextNode(e));b()}}else{this.requestResource(f,a,b,d)}};lsloader.requestResource=function(b,e,a,c){var d=this;if(c){this.iojs(e,b,function(h,f,g){d.setLS(f,h+versionString+g);d.runjs(h,f,g)})}else{this.iocss(e,b,function(f){document.getElementById(b).appendChild(document.createTextNode(f));d.setLS(b,e+versionString+f)},a)}};lsloader.iojs=function(d,b,g){var a=this;a.jsRunSequence.push({name:b,code:""});try{var f=new XMLHttpRequest();f.open("get",d,true);f.onreadystatechange=function(){if(f.readyState==4){if((f.status>=200&&f.status<300)||f.status==304){if(f.response!=""){g(d,b,f.response);return}}a.jsfallback(d,b)}};f.send(null)}catch(c){a.jsfallback(d,b)}};lsloader.iocss=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.iofonts=function(f,c,h,a){var b=this;try{var g=new XMLHttpRequest();g.open("get",f,true);g.onreadystatechange=function(){if(g.readyState==4){if((g.status>=200&&g.status<300)||g.status==304){if(g.response!=""){h(g.response);a();return}}b.cssfallback(f,c,a)}};g.send(null)}catch(d){b.cssfallback(f,c,a)}};lsloader.runjs=function(f,c,e){if(!!c&&!!e){for(var b in this.jsRunSequence){if(this.jsRunSequence[b].name==c){this.jsRunSequence[b].code=e}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var a=document.createElement("script");a.appendChild(document.createTextNode(this.jsRunSequence[0].code));a.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(a);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else{if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var d=this;var a=document.createElement("script");a.src=this.jsRunSequence[0].path;a.type="text/javascript";this.jsRunSequence[0].status="loading";a.onload=function(){d.jsRunSequence.shift();if(d.jsRunSequence.length>0){d.runjs()}};document.body.appendChild(a)}}};lsloader.tagLoad=function(b,a){this.jsRunSequence.push({name:a,code:"",path:b,status:"failed"});this.runjs()};lsloader.jsfallback=function(c,b){if(!!this.jsnamemap[b]){return}else{this.jsnamemap[b]=b}for(var a in this.jsRunSequence){if(this.jsRunSequence[a].name==b){this.jsRunSequence[a].code="";this.jsRunSequence[a].status="failed";this.jsRunSequence[a].path=c}}this.runjs()};lsloader.cssfallback=function(e,c,b){if(!!this.cssnamemap[c]){return}else{this.cssnamemap[c]=1}var d=document.createElement("link");d.type="text/css";d.href=e;d.rel="stylesheet";d.onload=d.onerror=b;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(d,a)};lsloader.runInlineScript=function(c,b){var a=document.getElementById(b).innerText;this.jsRunSequence.push({name:c,code:a});this.runjs()}})();</script>
+
+    <!-- Import queue -->
+    <script>function Queue(){this.dataStore=[];this.offer=b;this.poll=d;this.execNext=a;this.debug=false;this.startDebug=c;function b(e){if(this.debug){console.log("Offered a Queued Function.")}if(typeof e==="function"){this.dataStore.push(e)}else{console.log("You must offer a function.")}}function d(){if(this.debug){console.log("Polled a Queued Function.")}return this.dataStore.shift()}function a(){var e=this.poll();if(e!==undefined){if(this.debug){console.log("Run a Queued Function.")}e()}}function c(){this.debug=true}}var queue=new Queue();</script>
+
+    <!-- Import CSS -->
+    
+        <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","https://cdn.jsdelivr.net/gh/viosey/hexo-theme-material@latest/source/css/material.min.css",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+        <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","https://cdn.jsdelivr.net/gh/viosey/hexo-theme-material@latest/source/css/style.min.css",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+        
+            
+        
+
+    
+
+    
+
+    <!-- Config CSS -->
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    overflow-x: hidden !important;
+  }
+  
+  code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  a {
+    color: #000000;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #000000 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #000000 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #000000 !important;
+  }
+
+  .toTop {
+    background: #000000 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #000000;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #000000;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #000000;
+  }
+
+  .post-toc a:hover {
+    color: #000000;
+    text-decoration: underline;
+  }
+
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-image: url(/img/v_bg.webp);
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+<!-- Import Font -->
+<!-- Import Roboto -->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+
+
+<!-- Import Material Icons -->
+
+
+    <style id="material_icons"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_icons","https://cdn.jsdelivr.net/gh/viosey/hexo-theme-material@latest/source/css/material-icons.css",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+
+
+
+    <!-- Import jQuery -->
+    
+        <script>lsloader.load("jq_js","https://cdn.jsdelivr.net/gh/viosey/hexo-theme-material@latest/source/js/jquery.min.js", true)</script>
+    
+
+    <!-- WebAPP Icons -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="梦半觉">
+    <meta name="msapplication-starturl" content="https://codepoem.github.io/timeline/">
+    <meta name="msapplication-navbutton-color" content="#FF3C3C">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="梦半觉">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" href="/img/v_half.webp">
+
+    <!-- Site Verification -->
+    
+    
+
+    <!-- RSS -->
+    
+        
+            <link rel=alternate type="application/atom+xml" href="/atom.xml">
+        
+    
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="https://codepoem.github.io/timeline/">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="timeline | 梦半觉">
+    <meta property="og:image" content="/img/v_half.webp">
+    <meta property="og:description" content="Code a poem and poem a code~">
+    
+
+    
+
+    <!-- The Twitter Card protocol -->
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Add canonical link for SEO -->
+    
+        <link rel="canonical" href="https://codepoem.github.io/timeline/index.html" />
+    
+
+    <!-- Structured-data for SEO -->
+    
+        
+
+
+
+    
+
+    <!-- Analytics -->
+    
+    
+    
+
+    <!-- Custom Head -->
+    
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span id="MD-burger-id" class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+
+<!-- Layouts -->
+
+    <!-- Single Timeline Page -->
+    <style>
+	.md-container {
+		width: 90%;
+		max-width: 1170px;
+		margin: 0 auto;
+	}
+	.md-container::after {
+		content: '';
+		display: table;
+		clear: both;
+	}
+	#md-timeline {
+		position: relative;
+		padding: 2em 0;
+		margin-top: 2em;
+		margin-bottom: 2em;
+	}
+	@media screen and (max-device-width:480px){
+		#md-timeline {
+			margin-top: 6em;
+		}
+	}
+	#md-timeline::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 18px;
+		height: 100%;
+		width: 2px;
+		background: #d7e4ed;
+	}
+	.md-timeline-title {
+		font-size: 20px;
+		line-height: 24px;
+	}
+	.md-timeline-content a {
+		text-decoration: none;
+	}
+	.md-timeline-info {
+		height: 20px;
+		width: 100%;
+		margin: 10px 0px;
+	}
+	.md-timeline-info-span {
+		float: right;
+		margin-right: 10px;
+		text-align: right;
+	}
+	.md-timeline-excerpt {
+	    	clear: right; 
+	}
+	@media only screen and (min-width: 1170px) {
+		#md-timeline {
+			margin-top: 3em;
+			margin-bottom: 3em;
+		}
+		#md-timeline::before {
+			left: 50%;
+			margin-left: -2px;
+		}
+	}
+	.md-timeline-block {
+		position: relative;
+		margin: 2em 0;
+	}
+	.md-timeline-block:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+	.md-timeline-block:first-child {
+		margin-top: 0;
+	}
+	.md-timeline-block:last-child {
+		margin-bottom: 0;
+	}
+	@media only screen and (min-width: 1170px) {
+		.md-timeline-block {
+			margin: 4em 0;
+		}
+		.md-timeline-block:first-child {
+			margin-top: 0;
+		}
+		.md-timeline-block:last-child {
+			margin-bottom: 0;
+		}
+	}
+	.md-timeline-date {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 60px;
+		height: 40px;
+		border-radius: box-shadow: 0 0 0 4px white, inset 0 2px 0 rgba(0, 0, 0, 0.08), 0 3px 0 4px rgba(0, 0, 0, 0.05);
+	}
+	.md-timeline-date.blue {
+		background: #0D395F;
+		-webkit-box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.75);
+		-moz-box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.75);
+		box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.75);
+	}
+	@media only screen and (min-width: 1170px) {
+		.md-timeline-date {
+			width: 60px;
+			height: 60px;
+			left: 50%;
+			margin-left: -30px;
+			/* Force Hardware Acceleration in WebKit */
+			-webkit-transform: translateZ(0);
+			-webkit-backface-visibility: hidden;
+		}
+		.cssanimations .md-timeline-date.is-hidden {
+			visibility: hidden;
+		}
+		.cssanimations .md-timeline-date.bounce-in {
+			visibility: visible;
+			-webkit-animation: md-bounce-1 0.6s;
+			-moz-animation: md-bounce-1 0.6s;
+			animation: md-bounce-1 0.6s;
+		}
+	}
+	@-webkit-keyframes md-bounce-1 {
+		0% {
+			opacity: 0;
+			-webkit-transform: scale(0.5);
+		}
+		60% {
+			opacity: 1;
+			-webkit-transform: scale(1.2);
+		}
+		100% {
+			-webkit-transform: scale(1);
+		}
+	}
+	@-moz-keyframes md-bounce-1 {
+		0% {
+			opacity: 0;
+			-moz-transform: scale(0.5);
+		}
+		60% {
+			opacity: 1;
+			-moz-transform: scale(1.2);
+		}
+		100% {
+			-moz-transform: scale(1);
+		}
+	}
+	@keyframes md-bounce-1 {
+		0% {
+			opacity: 0;
+			-webkit-transform: scale(0.5);
+			-moz-transform: scale(0.5);
+			-ms-transform: scale(0.5);
+			-o-transform: scale(0.5);
+			transform: scale(0.5);
+		}
+		60% {
+			opacity: 1;
+			-webkit-transform: scale(1.2);
+			-moz-transform: scale(1.2);
+			-ms-transform: scale(1.2);
+			-o-transform: scale(1.2);
+			transform: scale(1.2);
+		}
+		100% {
+			-webkit-transform: scale(1);
+			-moz-transform: scale(1);
+			-ms-transform: scale(1);
+			-o-transform: scale(1);
+			transform: scale(1);
+		}
+	}
+	.md-timeline-content {
+		position: relative;
+		margin-left: 60px;
+		background: white;
+		padding: 1em;
+		-webkit-box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.75);
+		-moz-box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.75);
+		box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.75);
+	}
+	.md-timeline-content:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+	.md-timeline-content h2 {
+		color: #303e49;
+	}
+	.md-timeline-content p, .md-timeline-content .md-read-more, .md-timeline-content .md-date {
+		font-size: 13px;
+		font-size: 0.8125rem;
+	}
+	.md-timeline-content .md-read-more, .md-timeline-content .md-date {
+		display: inline-block;
+	}
+	.md-timeline-content p {
+		margin: 1em 0;
+		line-height: 1.6;
+	}
+	.md-timeline-content .md-read-more {
+		float: right;
+		padding: .8em 1em;
+		background: #acb7c0;
+		color: white;
+		border-radius: 0.25em;
+	}
+	.md-date {
+		color: white;
+		text-align: center;
+	}
+	.no-touch .md-timeline-content .md-read-more:hover {
+		background-color: #bac4cb;
+	}
+	.md-timeline-content::before {
+		content: '';
+		position: absolute;
+		top: 16px;
+		right: 100%;
+		height: 0;
+		width: 0;
+		border: 7px solid transparent;
+		border-right: 7px solid white;
+	}
+	@media only screen and (min-width: 768px) {
+		.md-timeline-content h2 {
+			font-size: 20px;
+			font-size: 1.25rem;
+		}
+		.md-timeline-content p {
+			font-size: 16px;
+			font-size: 1rem;
+		}
+		.md-timeline-content .md-read-more {
+			font-size: 14px;
+			font-size: 0.875rem;
+		}
+	}
+	@media only screen and (min-width: 1170px) {
+		.md-date {
+			text-align: center;
+			margin-top: 10px;
+			line-height: 20px;
+		}
+		.md-timeline-content {
+			margin-left: 0;
+			padding: 1.6em;
+			width: 45%;
+		}
+		.md-timeline-content::before {
+			top: 24px;
+			left: 100%;
+			border-color: transparent;
+			border-left-color: white;
+		}
+		.md-timeline-content .md-read-more {
+			float: left;
+		}
+		.md-timeline-block:nth-child(even) .md-timeline-content {
+			float: right;
+		}
+		.md-timeline-block:nth-child(even) .md-timeline-content::before {
+			top: 24px;
+			left: auto;
+			right: 100%;
+			border-color: transparent;
+			border-right-color: white;
+		}
+		.md-timeline-block:nth-child(even) .md-timeline-content .md-read-more {
+			float: right;
+		}
+		.cssanimations .md-timeline-content.is-hidden {
+			visibility: hidden;
+		}
+		.cssanimations .md-timeline-content.bounce-in {
+			visibility: visible;
+			-webkit-animation: md-bounce-2 0.6s;
+			-moz-animation: md-bounce-2 0.6s;
+			animation: md-bounce-2 0.6s;
+		}
+	}
+	@media only screen and (min-width: 1170px) {
+		/* inverse bounce effect on even content blocks */
+		.cssanimations .md-timeline-block:nth-child(even) .md-timeline-content.bounce-in {
+			-webkit-animation: md-bounce-2-inverse 0.6s;
+			-moz-animation: md-bounce-2-inverse 0.6s;
+			animation: md-bounce-2-inverse 0.6s;
+		}
+	}
+	@-webkit-keyframes md-bounce-2 {
+		0% {
+			opacity: 0;
+			-webkit-transform: translateX(-100px);
+		}
+		60% {
+			opacity: 1;
+			-webkit-transform: translateX(20px);
+		}
+		100% {
+			-webkit-transform: translateX(0);
+		}
+	}
+	@-moz-keyframes md-bounce-2 {
+		0% {
+			opacity: 0;
+			-moz-transform: translateX(-100px);
+		}
+		60% {
+			opacity: 1;
+			-moz-transform: translateX(20px);
+		}
+		100% {
+			-moz-transform: translateX(0);
+		}
+	}
+	@keyframes md-bounce-2 {
+		0% {
+			opacity: 0;
+			-webkit-transform: translateX(-100px);
+			-moz-transform: translateX(-100px);
+			-ms-transform: translateX(-100px);
+			-o-transform: translateX(-100px);
+			transform: translateX(-100px);
+		}
+		60% {
+			opacity: 1;
+			-webkit-transform: translateX(20px);
+			-moz-transform: translateX(20px);
+			-ms-transform: translateX(20px);
+			-o-transform: translateX(20px);
+			transform: translateX(20px);
+		}
+		100% {
+			-webkit-transform: translateX(0);
+			-moz-transform: translateX(0);
+			-ms-transform: translateX(0);
+			-o-transform: translateX(0);
+			transform: translateX(0);
+		}
+	}
+	@-webkit-keyframes md-bounce-2-inverse {
+		0% {
+			opacity: 0;
+			-webkit-transform: translateX(100px);
+		}
+		60% {
+			opacity: 1;
+			-webkit-transform: translateX(-20px);
+		}
+		100% {
+			-webkit-transform: translateX(0);
+		}
+	}
+	@-moz-keyframes md-bounce-2-inverse {
+		0% {
+			opacity: 0;
+			-moz-transform: translateX(100px);
+		}
+		60% {
+			opacity: 1;
+			-moz-transform: translateX(-20px);
+		}
+		100% {
+			-moz-transform: translateX(0);
+		}
+	}
+	@keyframes md-bounce-2-inverse {
+		0% {
+			opacity: 0;
+			-webkit-transform: translateX(100px);
+			-moz-transform: translateX(100px);
+			-ms-transform: translateX(100px);
+			-o-transform: translateX(100px);
+			transform: translateX(100px);
+		}
+		60% {
+			opacity: 1;
+			-webkit-transform: translateX(-20px);
+			-moz-transform: translateX(-20px);
+			-ms-transform: translateX(-20px);
+			-o-transform: translateX(-20px);
+			transform: translateX(-20px);
+		}
+		100% {
+			-webkit-transform: translateX(0);
+			-moz-transform: translateX(0);
+			-ms-transform: translateX(0);
+			-o-transform: translateX(0);
+			transform: translateX(0);
+		}
+	}
+</style>
+
+<section id="md-timeline" class="md-container">
+   	   		
+			<div class="md-timeline-block">
+                		<div class="md-timeline-date blue">
+                   			<div class="md-date">6月 11 2021</div>
+                		</div>
+
+                		<div class="md-timeline-content">
+                    			<div class="md-timeline-title"><a href="/2021/06/11/%E7%AE%80%E6%9E%90LRU/">简析LRU</a></div>
+					<div class="md-timeline-info">
+						<span class="md-timeline-info-span">Categories:
+							
+						</span>
+						<span class="md-timeline-info-span">Tags:
+							
+						</span>
+						
+					</div>
+					<p class="md-timeline-excerpt">
+						
+							LRU最近最少使用算法。
+基本原理
+-要求查找快，插入快，删除快，有顺序之分。哈希表查找快，但是数据无固定顺序；链表有顺序之分，插入删除快，但是查找慢。所以结合一下，形成一种新的数据结构：哈希链表。
+
+按顺序插入 ，所以需要双向链表。
+
+LinkedHashMap，使用 accessOrder=true 基于顺序访问，元素访问后被移动到末尾。
+
+
+自己动手实现LRU12...
+						...
+					</p>
+                    		</div>
+			</div>	
+   		
+			<div class="md-timeline-block">
+                		<div class="md-timeline-date blue">
+                   			<div class="md-date">6月 11 2021</div>
+                		</div>
+
+                		<div class="md-timeline-content">
+                    			<div class="md-timeline-title"><a href="/2021/06/11/%E7%AE%80%E6%9E%90LeakCanary/">简析LeakCanary</a></div>
+					<div class="md-timeline-info">
+						<span class="md-timeline-info-span">Categories:
+							
+						</span>
+						<span class="md-timeline-info-span">Tags:
+							
+						</span>
+						
+					</div>
+					<p class="md-timeline-excerpt">
+						
+							LeakCanary使用添加依赖（release有no-op版）然后在 Application 初始化。
+123456dependencies &#123;
+						...
+					</p>
+                    		</div>
+			</div>	
+   		
+			<div class="md-timeline-block">
+                		<div class="md-timeline-date blue">
+                   			<div class="md-date">6月 11 2021</div>
+                		</div>
+
+                		<div class="md-timeline-content">
+                    			<div class="md-timeline-title"><a href="/2021/06/11/%E7%AE%80%E6%9E%90OkHttp/">简析OkHttp</a></div>
+					<div class="md-timeline-info">
+						<span class="md-timeline-info-span">Categories:
+							
+						</span>
+						<span class="md-timeline-info-span">Tags:
+							
+						</span>
+						
+					</div>
+					<p class="md-timeline-excerpt">
+						
+							OkHttp是对 Socket 的封装。URLConnection 在4.4以后底层也使用了 OkHttp。
+Android源码中 /external/okhttp/jarjar-rules.txt 中表示com.squareup开关的包会在编译时打包成com.android开头的包。
+12rule com.squareup.** com.android.@1rule okio.** com.android.okio.@1
+
+
+						...
+					</p>
+                    		</div>
+			</div>	
+   		
+			<div class="md-timeline-block">
+                		<div class="md-timeline-date blue">
+                   			<div class="md-date">6月 11 2021</div>
+                		</div>
+
+                		<div class="md-timeline-content">
+                    			<div class="md-timeline-title"><a href="/2021/06/11/%E7%AE%80%E6%9E%90Glide/">简析Glide</a></div>
+					<div class="md-timeline-info">
+						<span class="md-timeline-info-span">Categories:
+							
+						</span>
+						<span class="md-timeline-info-span">Tags:
+							
+						</span>
+						
+					</div>
+					<p class="md-timeline-excerpt">
+						
+							Glide123Glide.with(context)    .load(myUrl)    .into(imageView);
+
+生命周期
+						...
+					</p>
+                    		</div>
+			</div>	
+   		
+			<div class="md-timeline-block">
+                		<div class="md-timeline-date blue">
+                   			<div class="md-date">6月 10 2021</div>
+                		</div>
+
+                		<div class="md-timeline-content">
+                    			<div class="md-timeline-title"><a href="/2021/06/10/%E5%B0%8F%E8%AE%B0-%E7%AC%AC%E4%B8%80%E6%AC%A1%E6%8A%A5%E5%91%8A%20Android%20%E5%AE%98%E6%96%B9%E9%94%99%E8%AF%AF/">小计-第一次报告 Android 官方错误</a></div>
+					<div class="md-timeline-info">
+						<span class="md-timeline-info-span">Categories:
+							<a class="category-link" href="/categories/Android/">Android</a>
+						</span>
+						<span class="md-timeline-info-span">Tags:
+							<a class="tag-link" href="/tags/Android/" rel="tag">Android</a>, <a class="tag-link" href="/tags/%E5%B0%8F%E8%AE%A1/" rel="tag">小计</a>
+						</span>
+						
+					</div>
+					<p class="md-timeline-excerpt">
+						
+							背景最近在阅读 Android 官方文档《应用架构指南》一篇，在实操过程中发现示例代码的一处错误。
+问题UserProfileViewModel 的示例代码中
+代码行：
+1
+						...
+					</p>
+                    		</div>
+			</div>	
+   		
+			<div class="md-timeline-block">
+                		<div class="md-timeline-date blue">
+                   			<div class="md-date">12月 13 2020</div>
+                		</div>
+
+                		<div class="md-timeline-content">
+                    			<div class="md-timeline-title"><a href="/2020/12/13/%E4%BC%98%E9%9B%85Intent%20ActivityResult/">优雅Intent ActivityResult</a></div>
+					<div class="md-timeline-info">
+						<span class="md-timeline-info-span">Categories:
+							<a class="category-link" href="/categories/Android/">Android</a>
+						</span>
+						<span class="md-timeline-info-span">Tags:
+							<a class="tag-link" href="/tags/ActivityResult/" rel="tag">ActivityResult</a>, <a class="tag-link" href="/tags/Android/" rel="tag">Android</a>, <a class="tag-link" href="/tags/Intent/" rel="tag">Intent</a>
+						</span>
+						
+					</div>
+					<p class="md-timeline-excerpt">
+						
+							ActivityResult 新时代跳转 Activity 获取返回值，我们怎么做?
+AndroidX Activity 1.2.0-alpha02 和 Fragment 1.3.0-alpha02 是新旧时代的划分线。
+调用方假设为 IntentsActivity，被调用方假设为 IntentResultActivity。
+
+旧石器时代：
+调用方：
+
+调用 startActivityForResult 传入请求码，传输数据（可选）。
+覆写 onActivityResult 方法，根据请求码和结果码获取返回结果信息。
+
+123
+						...
+					</p>
+                    		</div>
+			</div>	
+   		
+			<div class="md-timeline-block">
+                		<div class="md-timeline-date blue">
+                   			<div class="md-date">11月 24 2020</div>
+                		</div>
+
+                		<div class="md-timeline-content">
+                    			<div class="md-timeline-title"><a href="/2020/11/24/%E8%AF%91-viewlifecycleowner%E4%B8%8Ethis%E5%AF%B9%E6%AF%94/">译-viewlifecycleowner与this对比</a></div>
+					<div class="md-timeline-info">
+						<span class="md-timeline-info-span">Categories:
+							<a class="category-link" href="/categories/Android/">Android</a>
+						</span>
+						<span class="md-timeline-info-span">Tags:
+							<a class="tag-link" href="/tags/Android/" rel="tag">Android</a>, <a class="tag-link" href="/tags/lifecycle/" rel="tag">lifecycle</a>, <a class="tag-link" href="/tags/%E8%AF%91%E6%96%87/" rel="tag">译文</a>
+						</span>
+						
+					</div>
+					<p class="md-timeline-excerpt">
+						
+							哈喽，Android 小伙伴们~
+这篇文章将提到 Fragment 中的两种 lifecycleowners。因为作为一个 Android 开发者，我们能够简单地使用 Fragment 作为 lifecycle owner，但某些情境下这可能会使你烦恼。
+让我们先来看一下 Fragment 的生命周期：
+
+
+
+
+
+从图中我们可以看到 onCreate 和 onDestroy 只调用了一次。这些是 Fragment 的主要的生命周期方法。 onCreateView 和 onDestroyView 根据 Fragment 的状态来被调用，因为它们是 Fragment 中 View 的主要生命周期方法。
+因此，如果我们在 onCreate 中绑定 LiveData ，仅仅注册一次似乎是很合适很健康的。
+1...
+						...
+					</p>
+                    		</div>
+			</div>	
+   		
+			<div class="md-timeline-block">
+                		<div class="md-timeline-date blue">
+                   			<div class="md-date">4月 18 2020</div>
+                		</div>
+
+                		<div class="md-timeline-content">
+                    			<div class="md-timeline-title"><a href="/2020/04/18/%E4%BC%98%E9%9B%85FindViewById/">优雅FindViewById</a></div>
+					<div class="md-timeline-info">
+						<span class="md-timeline-info-span">Categories:
+							<a class="category-link" href="/categories/Android/">Android</a>
+						</span>
+						<span class="md-timeline-info-span">Tags:
+							<a class="tag-link" href="/tags/Android/" rel="tag">Android</a>, <a class="tag-link" href="/tags/FindViewById/" rel="tag">FindViewById</a>
+						</span>
+						
+					</div>
+					<p class="md-timeline-excerpt">
+						
+							findBiewByIdfindBiewById 是 Android 开发中在布局中查找 View 元素的 Api。
+findBiewById 基本使用12345678
+						...
+					</p>
+                    		</div>
+			</div>	
+   		
+			<div class="md-timeline-block">
+                		<div class="md-timeline-date blue">
+                   			<div class="md-date">3月 20 2020</div>
+                		</div>
+
+                		<div class="md-timeline-content">
+                    			<div class="md-timeline-title"><a href="/2020/03/19/Base/">万丈高楼平地起</a></div>
+					<div class="md-timeline-info">
+						<span class="md-timeline-info-span">Categories:
+							<a class="category-link" href="/categories/%E4%B8%87%E4%B8%88%E9%AB%98%E6%A5%BC%E5%B9%B3%E5%9C%B0%E8%B5%B7/">万丈高楼平地起</a>
+						</span>
+						<span class="md-timeline-info-span">Tags:
+							<a class="tag-link" href="/tags/Base/" rel="tag">Base</a>, <a class="tag-link" href="/tags/%E4%B8%87%E4%B8%88%E9%AB%98%E6%A5%BC%E5%B9%B3%E5%9C%B0%E8%B5%B7/" rel="tag">万丈高楼平地起</a>
+						</span>
+						
+					</div>
+					<p class="md-timeline-excerpt">
+						
+							重拾基础，备忘备战~
+
+算法总结-VAlgorithm -&gt; LookUp
+设计模式-VDesignPatterns -&gt; LookUp
+Android知识-VAndroidReview -&gt; 
+						...
+					</p>
+                    		</div>
+			</div>	
+   		
+			<div class="md-timeline-block">
+                		<div class="md-timeline-date blue">
+                   			<div class="md-date">3月 05 2020</div>
+                		</div>
+
+                		<div class="md-timeline-content">
+                    			<div class="md-timeline-title"><a href="/2020/03/05/Fragmnet%E5%8F%AF%E8%A7%81%E6%80%A7/">Fragment可见性</a></div>
+					<div class="md-timeline-info">
+						<span class="md-timeline-info-span">Categories:
+							<a class="category-link" href="/categories/Android/">Android</a>
+						</span>
+						<span class="md-timeline-info-span">Tags:
+							<a class="tag-link" href="/tags/Fragment/" rel="tag">Fragment</a>, <a class="tag-link" href="/tags/%E5%8F%AF%E8%A7%81%E6%80%A7/" rel="tag">可见性</a>
+						</span>
+						
+					</div>
+					<p class="md-timeline-excerpt">
+						
+							1234567891011121314151617...
+						...
+					</p>
+                    		</div>
+			</div>	
+   		
+			<div class="md-timeline-block">
+                		<div class="md-timeline-date blue">
+                   			<div class="md-date">1月 11 2020</div>
+                		</div>
+
+                		<div class="md-timeline-content">
+                    			<div class="md-timeline-title"><a href="/2020/01/11/ViewPager%E4%B8%8BFragment%E9%A2%84%E5%8A%A0%E8%BD%BD%E4%B8%8E%E6%87%92%E5%8A%A0%E8%BD%BD/">ViewPager下Fragment预加载与懒加载</a></div>
+					<div class="md-timeline-info">
+						<span class="md-timeline-info-span">Categories:
+							<a class="category-link" href="/categories/Android/">Android</a>
+						</span>
+						<span class="md-timeline-info-span">Tags:
+							<a class="tag-link" href="/tags/Fragment/" rel="tag">Fragment</a>, <a class="tag-link" href="/tags/ViewPager/" rel="tag">ViewPager</a>, <a class="tag-link" href="/tags/%E6%87%92%E5%8A%A0%E8%BD%BD/" rel="tag">懒加载</a>, <a class="tag-link" href="/tags/%E9%A2%84%E5%8A%A0%E8%BD%BD/" rel="tag">预加载</a>
+						</span>
+						
+					</div>
+					<p class="md-timeline-excerpt">
+						
+							预加载ViewPager 控件有一个预加载机制，即默认情况下当前页面左右两侧的 1 个页面会被预加载，以方便用户滑动切换到相邻的界面时，更流畅地加载界面（节省了初始化时间）。
+从源码里可以看到，ViewPager 的预加载机制是不可取消的，预加载数量 limit 至少为 1，如果外部设置小于 1，内部会自动置为 1。
+123456789
+						...
+					</p>
+                    		</div>
+			</div>	
+   		
+			<div class="md-timeline-block">
+                		<div class="md-timeline-date blue">
+                   			<div class="md-date">1月 06 2020</div>
+                		</div>
+
+                		<div class="md-timeline-content">
+                    			<div class="md-timeline-title"><a href="/2020/01/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E6%80%BB%E7%BB%93/">设计模式总结</a></div>
+					<div class="md-timeline-info">
+						<span class="md-timeline-info-span">Categories:
+							<a class="category-link" href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">设计模式</a>
+						</span>
+						<span class="md-timeline-info-span">Tags:
+							<a class="tag-link" href="/tags/%E6%80%BB%E7%BB%93/" rel="tag">总结</a>, <a class="tag-link" href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" rel="tag">设计模式</a>
+						</span>
+						
+					</div>
+					<p class="md-timeline-excerpt">
+						
+							阅读《大话设计模式》和《Android源码解析与实战》第2版时，进行的简单整理和总结，现已上传至Github上。
+Github
+Github 项目地址
+直接浏览地址
+
+
+						...
+					</p>
+                    		</div>
+			</div>	
+   		
+			<div class="md-timeline-block">
+                		<div class="md-timeline-date blue">
+                   			<div class="md-date">11月 16 2019</div>
+                		</div>
+
+                		<div class="md-timeline-content">
+                    			<div class="md-timeline-title"><a href="/2019/11/16/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1Android7.0%E9%80%82%E9%85%8DFileProvider%E8%B8%A9%E5%9D%91/">记录一次Android7.0适配FileProvider踩坑</a></div>
+					<div class="md-timeline-info">
+						<span class="md-timeline-info-span">Categories:
+							<a class="category-link" href="/categories/Android/">Android</a>
+						</span>
+						<span class="md-timeline-info-span">Tags:
+							<a class="tag-link" href="/tags/Android/" rel="tag">Android</a>, <a class="tag-link" href="/tags/FileProvider/" rel="tag">FileProvider</a>
+						</span>
+						
+					</div>
+					<p class="md-timeline-excerpt">
+						
+							
+FileProvider重复
+
+自定义FileProvider继承FileProvider。
+12public class AppleFileProvider extends FileProvider &#123;&#125;
+
+AndroidManifest.xml中application节点下添加provider节点。
+Provider1
+						...
+					</p>
+                    		</div>
+			</div>	
+   		
+			<div class="md-timeline-block">
+                		<div class="md-timeline-date blue">
+                   			<div class="md-date">10月 16 2019</div>
+                		</div>
+
+                		<div class="md-timeline-content">
+                    			<div class="md-timeline-title"><a href="/2019/10/16/%E7%AE%80%E6%9E%90Bitmap/">简析Bitmap</a></div>
+					<div class="md-timeline-info">
+						<span class="md-timeline-info-span">Categories:
+							<a class="category-link" href="/categories/Android/">Android</a>
+						</span>
+						<span class="md-timeline-info-span">Tags:
+							<a class="tag-link" href="/tags/Android/" rel="tag">Android</a>, <a class="tag-link" href="/tags/Bitmap/" rel="tag">Bitmap</a>, <a class="tag-link" href="/tags/%E5%9B%BE%E7%89%87/" rel="tag">图片</a>
+						</span>
+						
+					</div>
+					<p class="md-timeline-excerpt">
+						
+							基于9.0（29）简析Bitmap类。
+我们只关注Bitmap类暴露出来的（即访问权限为public）东西。
+
+枚举类Config
+枚举类CompressFormat
+若干 createBitmap 静态方法
+其他方法
+
+枚举类Config可能的 bitmap 配置。bitmap 配置描述像素的存储方式。这会影响质量（颜色深度）以及显示透明/半透明颜色的能力。
+
+
+
+Config
+每个像素占用字节数
+表示颜色种数
+说明
+
+
+
+ALPHA_8
+1个字节，A分量占8位，不存储颜色信息
+0
+单透明通道
+
+
+RGB_565
+两个字节，R分量占5位，G分量占6位，B分量占5位
+2^16(65536)
+						...
+					</p>
+                    		</div>
+			</div>	
+   		
+			<div class="md-timeline-block">
+                		<div class="md-timeline-date blue">
+                   			<div class="md-date">10月 14 2019</div>
+                		</div>
+
+                		<div class="md-timeline-content">
+                    			<div class="md-timeline-title"><a href="/2019/10/14/%E7%AE%80%E6%9E%90BitmapFactory/">简析BitmapFactory</a></div>
+					<div class="md-timeline-info">
+						<span class="md-timeline-info-span">Categories:
+							<a class="category-link" href="/categories/Android/">Android</a>
+						</span>
+						<span class="md-timeline-info-span">Tags:
+							<a class="tag-link" href="/tags/Android/" rel="tag">Android</a>, <a class="tag-link" href="/tags/Bitmap/" rel="tag">Bitmap</a>, <a class="tag-link" href="/tags/%E5%9B%BE%E7%89%87/" rel="tag">图片</a>
+						</span>
+						
+					</div>
+					<p class="md-timeline-excerpt">
+						
+							基于9.0（29）简析BitmapFactory类。
+我们只关注BitmapFactor类暴露出来的（即访问权限为public）东西。
+
+静态内部类Options
+若干decode方法
+
+静态内部类OptionsOptions，顾名思义，是BitmapFactory用于decode方法的选项参数。让我们看看有哪些：
+Bitmap inBitmap如果使用此参数，decode方法会在加载内容时尝试重用此 bitmap ，如果编码操作不能使用此 bitmap （有限制条件），则会抛出 java.lang.IllegalArgumentException 异常。当前的重用实现方式要求 bitmap 必须是可变的，并且即使一个资源在decode后通常会得到不可变的 bitmap，在重用成功后所...
+						...
+					</p>
+                    		</div>
+			</div>	
+   		
+			<div class="md-timeline-block">
+                		<div class="md-timeline-date blue">
+                   			<div class="md-date">10月 14 2019</div>
+                		</div>
+
+                		<div class="md-timeline-content">
+                    			<div class="md-timeline-title"><a href="/2019/10/14/Android%E5%9B%BE%E7%89%87%E5%8E%8B%E7%BC%A9/">Android图片压缩</a></div>
+					<div class="md-timeline-info">
+						<span class="md-timeline-info-span">Categories:
+							<a class="category-link" href="/categories/Android/">Android</a>
+						</span>
+						<span class="md-timeline-info-span">Tags:
+							<a class="tag-link" href="/tags/Android/" rel="tag">Android</a>, <a class="tag-link" href="/tags/%E5%8E%8B%E7%BC%A9/" rel="tag">压缩</a>, <a class="tag-link" href="/tags/%E5%9B%BE%E7%89%87/" rel="tag">图片</a>
+						</span>
+						
+					</div>
+					<p class="md-timeline-excerpt">
+						
+							为什么要压缩减少内存占用内存占用大小 = Bitmap大小 = 总像素点数 x 一个像素点占用的字节数
+BitmapAndroid中图片在内存中的表达形式是Bitmap，即位图。
+总像素点数总像素点数由什么决定呢？
+总像素点数 = 图片源长度 x 缩放比例 x 图片源宽度 x 缩放比例
+缩放比例可以大致表示为：（为什么说大致呢？因为不是绝对的，实际还有其他因素可以影响实际缩放比例，如inScreenDensity）缩放比例 = 1/inSam...
+						...
+					</p>
+                    		</div>
+			</div>	
+   		
+			<div class="md-timeline-block">
+                		<div class="md-timeline-date blue">
+                   			<div class="md-date">10月 09 2019</div>
+                		</div>
+
+                		<div class="md-timeline-content">
+                    			<div class="md-timeline-title"><a href="/2019/10/09/%E6%A8%A1%E6%9D%BF%E6%95%B4%E7%90%86%E4%B9%8B%E4%B8%8A%E4%BC%A0%E4%BB%93%E5%BA%93/">模板整理之上传仓库</a></div>
+					<div class="md-timeline-info">
+						<span class="md-timeline-info-span">Categories:
+							<a class="category-link" href="/categories/%E6%A8%A1%E6%9D%BF/">模板</a>
+						</span>
+						<span class="md-timeline-info-span">Tags:
+							<a class="tag-link" href="/tags/Android/" rel="tag">Android</a>, <a class="tag-link" href="/tags/%E4%B8%8A%E4%BC%A0%E4%BB%93%E5%BA%93/" rel="tag">上传仓库</a>, <a class="tag-link" href="/tags/%E6%A8%A1%E6%9D%BF/" rel="tag">模板</a>
+						</span>
+						
+					</div>
+					<p class="md-timeline-excerpt">
+						
+							我们在日常打aar包和jar包，并上传到远端中央仓库时，需要引入大段gradle代码，较为繁琐。我这里整理了常用的上传到中央仓库的gradle代码，提供了较为方便的使用方式。上传代码模板GitHub目前只有上传到bintray也就是jcenter的整理，后期有需要其他远端中央仓库的会继续跟进。
+
+
+模板整理GitHub
+
+
+						...
+					</p>
+                    		</div>
+			</div>	
+   		
+			<div class="md-timeline-block">
+                		<div class="md-timeline-date blue">
+                   			<div class="md-date">10月 09 2019</div>
+                		</div>
+
+                		<div class="md-timeline-content">
+                    			<div class="md-timeline-title"><a href="/2019/10/09/%E6%A8%A1%E6%9D%BF%E6%95%B4%E7%90%86%E4%B9%8BTravis%20CI/">模板整理之Travis CI</a></div>
+					<div class="md-timeline-info">
+						<span class="md-timeline-info-span">Categories:
+							<a class="category-link" href="/categories/%E6%A8%A1%E6%9D%BF/">模板</a>
+						</span>
+						<span class="md-timeline-info-span">Tags:
+							<a class="tag-link" href="/tags/Android/" rel="tag">Android</a>, <a class="tag-link" href="/tags/Travis-CI/" rel="tag">Travis CI</a>, <a class="tag-link" href="/tags/%E6%A8%A1%E6%9D%BF/" rel="tag">模板</a>
+						</span>
+						
+					</div>
+					<p class="md-timeline-excerpt">
+						
+							官方文档
+免费Travis-CI（针对开源项目）：https://travis-ci.org
+收费Travis-CI（针对私有和商业项目）：https://travis-ci.com
+使用步骤
+登录 Travis CI 并对指定的项目启用。
+配置 .travis.yml ，参考官方文档。
+push（或其他方式）触发Travis-CI。
+
+实现工作流
+构建。开...
+						...
+					</p>
+                    		</div>
+			</div>	
+   		
+			<div class="md-timeline-block">
+                		<div class="md-timeline-date blue">
+                   			<div class="md-date">9月 25 2019</div>
+                		</div>
+
+                		<div class="md-timeline-content">
+                    			<div class="md-timeline-title"><a href="/2019/09/25/Crash%E6%B2%BB%E7%90%86%E4%B9%8BTimeoutException/">Crash治理之TimeoutException</a></div>
+					<div class="md-timeline-info">
+						<span class="md-timeline-info-span">Categories:
+							<a class="category-link" href="/categories/Android/">Android</a>
+						</span>
+						<span class="md-timeline-info-span">Tags:
+							<a class="tag-link" href="/tags/Crash/" rel="tag">Crash</a>, <a class="tag-link" href="/tags/TimeoutException/" rel="tag">TimeoutException</a>
+						</span>
+						
+					</div>
+					<p class="md-timeline-excerpt">
+						
+							产生原因与 GC 过程相关的守护线程中的2个守护线程 FinalizerDaemon 和 FinalizerWatchdogDaemon 有关。
+
+FinalizerDaemon ：析构守护线程。对于重写了成员函数 finalize 的对象，它们被 GC 决定回收时，并没有马上被回收，而是被放入到一个队列中，等待 FinalizerDaemon 守护线程去调用它们的成员函数 finalize ，然后再被回收。
+FinalizerWatchdogDaemon ：析构监护守护线程。用来监控 FinalizerDaemon 线程的执行。一旦检测那些重定了成员函数 finalize 的对象在执行成员函数 finalize 时超出一定的时间，那么就会退出 VM 。
+
+原因小总结：
+GC 过程中 FinalizerDaemon 守护线程执行 doFinalize 方法超时。FinalizerWatchdogDaemon检测到后产生 TimeoutException 并退出虚拟机。（每个手机触发 Timeout 的时长不同，比如 vivo 的某些rom 是...
+						...
+					</p>
+                    		</div>
+			</div>	
+   		
+			<div class="md-timeline-block">
+                		<div class="md-timeline-date blue">
+                   			<div class="md-date">9月 16 2019</div>
+                		</div>
+
+                		<div class="md-timeline-content">
+                    			<div class="md-timeline-title"><a href="/2019/09/16/Android%E5%8A%A8%E7%94%BB/">Android动画</a></div>
+					<div class="md-timeline-info">
+						<span class="md-timeline-info-span">Categories:
+							<a class="category-link" href="/categories/Android/">Android</a>
+						</span>
+						<span class="md-timeline-info-span">Tags:
+							<a class="tag-link" href="/tags/Android/" rel="tag">Android</a>, <a class="tag-link" href="/tags/%E5%8A%A8%E7%94%BB/" rel="tag">动画</a>
+						</span>
+						
+					</div>
+					<p class="md-timeline-excerpt">
+						
+							Android中动画划分为两大类 视图动画（View Animation）和 属性动画（Property Animation）。其中 属性动画（Property Animation）需要在Android3.0之后（API &gt;= 11）使用。视图动画（View Animation）又包括了 帧动画（Frame Animation） 和 补间动画（Tweened Animation）。
+视图动画（View Animation）帧动画（Frame Animation）帧动画（Frame Animation） 有时也叫 Drawable动画，这种动画的实质其实是Drawable。像播放幻灯片一样，利用视觉残留产生动画效果。
+核心类：AnimationDrawable
+						...
+					</p>
+                    		</div>
+			</div>	
+   		
+			<div class="md-timeline-block">
+                		<div class="md-timeline-date blue">
+                   			<div class="md-date">9月 16 2019</div>
+                		</div>
+
+                		<div class="md-timeline-content">
+                    			<div class="md-timeline-title"><a href="/2019/09/16/Android%E8%87%AA%E5%AE%9A%E4%B9%89View/">Android自定义View</a></div>
+					<div class="md-timeline-info">
+						<span class="md-timeline-info-span">Categories:
+							<a class="category-link" href="/categories/Android/">Android</a>
+						</span>
+						<span class="md-timeline-info-span">Tags:
+							<a class="tag-link" href="/tags/Android/" rel="tag">Android</a>, <a class="tag-link" href="/tags/%E8%87%AA%E5%AE%9A%E4%B9%89View/" rel="tag">自定义View</a>
+						</span>
+						
+					</div>
+					<p class="md-timeline-excerpt">
+						
+							什么是自定义View自定义 View 就是通过继承 View 或者 View 的子类，并在继承的类里面实现自定义的处理逻辑（重写相应的方法），以达到自己想要的效果。
+为什么要自定义View
+让界面有特定的显示效果、交互
+优化布局（减少布局层次）
+封装
+
+如何自定义View自定义View主要流程
+测量阶段 measure
+布局阶段 layout
+...
+						...
+					</p>
+                    		</div>
+			</div>	
+   		
+			<div class="md-timeline-block">
+                		<div class="md-timeline-date blue">
+                   			<div class="md-date">9月 10 2019</div>
+                		</div>
+
+                		<div class="md-timeline-content">
+                    			<div class="md-timeline-title"><a href="/2019/09/09/Java%E6%B3%9B%E5%9E%8B/">Java泛型</a></div>
+					<div class="md-timeline-info">
+						<span class="md-timeline-info-span">Categories:
+							<a class="category-link" href="/categories/Java/">Java</a>
+						</span>
+						<span class="md-timeline-info-span">Tags:
+							<a class="tag-link" href="/tags/Java/" rel="tag">Java</a>, <a class="tag-link" href="/tags/%E6%B3%9B%E5%9E%8B/" rel="tag">泛型</a>
+						</span>
+						
+					</div>
+					<p class="md-timeline-excerpt">
+						
+							概述泛型：参数化类型（将类型由原来的具体的类型参数化）。
+特点：
+
+适用于多种数据类型执行相同的代码。
+使用泛型时，在实际使用之前类型就已经确定了，不需要强制类型转换。
+泛型只在编译阶段有效。
+
+泛型命名标识字母（常见字母）：
+
+T Type
+K V Key Value
+E Element
+
+简单使用泛型类12
+						...
+					</p>
+                    		</div>
+			</div>	
+   		
+			<div class="md-timeline-block">
+                		<div class="md-timeline-date blue">
+                   			<div class="md-date">8月 28 2019</div>
+                		</div>
+
+                		<div class="md-timeline-content">
+                    			<div class="md-timeline-title"><a href="/2019/08/28/Android%E8%AE%BE%E5%A4%87%E5%94%AF%E4%B8%80%E6%80%A7/">Android设备唯一性</a></div>
+					<div class="md-timeline-info">
+						<span class="md-timeline-info-span">Categories:
+							<a class="category-link" href="/categories/Android/">Android</a>
+						</span>
+						<span class="md-timeline-info-span">Tags:
+							<a class="tag-link" href="/tags/Android/" rel="tag">Android</a>, <a class="tag-link" href="/tags/App/" rel="tag">App</a>
+						</span>
+						
+					</div>
+					<p class="md-timeline-excerpt">
+						
+							如何标识唯一的Android设备呢？
+硬件标识符IMEI 国际移动设备身份码(International Mobile Equipment Identity)，是由15位数字组成的”电子串号”，它与每台手机一一对应，而且该码是全世界唯一的。
+IMEI所需权限：
+ 1&lt;uses-permission android:name&#x3D;&quot;android.permission.READ_PHONE_STATE&quot;&#x2F;&gt;
+
+
+						...
+					</p>
+                    		</div>
+			</div>	
+   		
+			<div class="md-timeline-block">
+                		<div class="md-timeline-date blue">
+                   			<div class="md-date">8月 27 2019</div>
+                		</div>
+
+                		<div class="md-timeline-content">
+                    			<div class="md-timeline-title"><a href="/2019/08/27/Android%E5%BA%94%E7%94%A8%E5%94%AF%E4%B8%80%E6%80%A7/">Android应用唯一性</a></div>
+					<div class="md-timeline-info">
+						<span class="md-timeline-info-span">Categories:
+							<a class="category-link" href="/categories/Android/">Android</a>
+						</span>
+						<span class="md-timeline-info-span">Tags:
+							<a class="tag-link" href="/tags/Android/" rel="tag">Android</a>, <a class="tag-link" href="/tags/App/" rel="tag">App</a>
+						</span>
+						
+					</div>
+					<p class="md-timeline-excerpt">
+						
+							说到应用唯一性，下面三个关键词，有何区别和联系呢？
+
+包名
+applicationId
+签名
+
+包名定义简介包名指的是软件包名称（代码命名空间）。就是我们平常写代码import的package。
+配置示例123&lt;manifest xmlns:android...
+						...
+					</p>
+                    		</div>
+			</div>	
+   		
+			<div class="md-timeline-block">
+                		<div class="md-timeline-date blue">
+                   			<div class="md-date">5月 06 2019</div>
+                		</div>
+
+                		<div class="md-timeline-content">
+                    			<div class="md-timeline-title"><a href="/2019/05/05/Android%E5%AD%98%E5%82%A8%E7%9B%AE%E5%BD%95/">Android存储目录</a></div>
+					<div class="md-timeline-info">
+						<span class="md-timeline-info-span">Categories:
+							<a class="category-link" href="/categories/Android/">Android</a>
+						</span>
+						<span class="md-timeline-info-span">Tags:
+							<a class="tag-link" href="/tags/Android/" rel="tag">Android</a>, <a class="tag-link" href="/tags/%E5%AD%98%E5%82%A8%E7%9B%AE%E5%BD%95/" rel="tag">存储目录</a>, <a class="tag-link" href="/tags/%E6%8C%81%E4%B9%85%E5%8C%96/" rel="tag">持久化</a>
+						</span>
+						
+					</div>
+					<p class="md-timeline-excerpt">
+						
+							
+问：三个概念，你弄清楚了吗？内存：Memory内部存储：InternalStorage外部存储：ExternalStorage
+答：说到这三个概念，就不得不说一下平时我们选购手机的参数6G+128G、8G+256G等，这里的6G和8G指的是手机内存（手机运行时存储），而128G和256G指的是手机存储空间（由内部存储的空间和外部存储的空间构成）。PS：所以如果追求手机的运行速度，内存买大一点。可以理解为手机内存是操场，而手机存储空间是教室，要想学生们跑得快自然操场得大一些，教室的大小只决定了可以容纳多少学生。
+
+
+你了解Android手机的存储目录吗？
+你知道Android手机App应用数据都存放在哪了吗？
+你知道Android手机存储存在的隐私安全问题吗？
+
+那么开始今天的故事。
+虚拟世界Android存储目录的化身——A州M社区。
+众所周知，A州是一座正在蓬勃发展的城市。M社区是A州引以为傲的设施完备的高档社区（各家...
+						...
+					</p>
+                    		</div>
+			</div>	
+   		
+			<div class="md-timeline-block">
+                		<div class="md-timeline-date blue">
+                   			<div class="md-date">4月 21 2019</div>
+                		</div>
+
+                		<div class="md-timeline-content">
+                    			<div class="md-timeline-title"><a href="/2019/04/21/Android%E7%89%B9%E6%9C%89%E9%9B%86%E5%90%88%E7%B1%BB%E6%B5%85%E6%9E%90/">Android特有集合类浅析</a></div>
+					<div class="md-timeline-info">
+						<span class="md-timeline-info-span">Categories:
+							<a class="category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>
+						</span>
+						<span class="md-timeline-info-span">Tags:
+							<a class="tag-link" href="/tags/Android/" rel="tag">Android</a>, <a class="tag-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">数据结构</a>, <a class="tag-link" href="/tags/%E9%9B%86%E5%90%88/" rel="tag">集合</a>
+						</span>
+						
+					</div>
+					<p class="md-timeline-excerpt">
+						
+							
+ArrayMap
+ArraySet
+SparseArray
+SparseIntArray
+SparseBooleanArray
+SparseLongArray
+
+设计这些Android特有的集合类的意义为什么要设计这些Android特有的集合类呢?
+主要目的： 优化内存占用。在移动设备端内存资源很珍贵，Java原本的集合类为实现快速查询带来了很大内存的浪费。
+ArrayMap设计目的代替HashMap&lt;Object,Object&gt;，且key唯一。
+
+						...
+					</p>
+                    		</div>
+			</div>	
+   		
+			<div class="md-timeline-block">
+                		<div class="md-timeline-date blue">
+                   			<div class="md-date">2月 22 2019</div>
+                		</div>
+
+                		<div class="md-timeline-content">
+                    			<div class="md-timeline-title"><a href="/2019/02/22/%E6%B5%85%E8%B0%88%E4%BA%8C%E7%BB%B4%E7%A0%81%E2%91%A1%E4%B8%8E%E4%B8%96%E6%B5%AE%E6%B2%89/">浅谈二维码②与世浮沉</a></div>
+					<div class="md-timeline-info">
+						<span class="md-timeline-info-span">Categories:
+							<a class="category-link" href="/categories/%E4%BA%8C%E7%BB%B4%E7%A0%81/">二维码</a>
+						</span>
+						<span class="md-timeline-info-span">Tags:
+							<a class="tag-link" href="/tags/%E4%BA%8C%E7%BB%B4%E7%A0%81/" rel="tag">二维码</a>
+						</span>
+						
+					</div>
+					<p class="md-timeline-excerpt">
+						
+							一、引言上次我们讲到二维码比条形码更优秀，可以承载更多信息等；也讲到了我们平常所说的二维码是QR Code，是狭义的二维码。后文所说的二维码除特殊说明外，也都指的是QR码。忘了的同学或者没看过上一篇的同学可以点这里。
+
+
+
+
+
+这个界面想必大家都很熟悉，那么扫二维码的这一过程到底发生了什么呢，作为社交和移动支付“宠儿”的二维码是如何与世浮沉的呢，今天我们来了解一下。
+二、二维码识别基本过程
+						...
+					</p>
+                    		</div>
+			</div>	
+   		
+			<div class="md-timeline-block">
+                		<div class="md-timeline-date blue">
+                   			<div class="md-date">2月 22 2019</div>
+                		</div>
+
+                		<div class="md-timeline-content">
+                    			<div class="md-timeline-title"><a href="/2019/02/22/%E6%B5%85%E8%B0%88%E4%BA%8C%E7%BB%B4%E7%A0%81%E2%91%A0%E8%BA%AB%E4%B8%96%E8%B0%9C%E9%A2%98/">浅谈二维码①身世谜题</a></div>
+					<div class="md-timeline-info">
+						<span class="md-timeline-info-span">Categories:
+							<a class="category-link" href="/categories/%E4%BA%8C%E7%BB%B4%E7%A0%81/">二维码</a>
+						</span>
+						<span class="md-timeline-info-span">Tags:
+							<a class="tag-link" href="/tags/%E4%BA%8C%E7%BB%B4%E7%A0%81/" rel="tag">二维码</a>
+						</span>
+						
+					</div>
+					<p class="md-timeline-excerpt">
+						
+							一、引言二维码在如今的生活中随处可见，移动支付、社交App等都可以见到二维码的身影。今天我们就来了解一下二维码。
+
+
+
+二维码足迹
+二维码足迹
+
+
+
+
+
+
+
+
+						...
+					</p>
+                    		</div>
+			</div>	
+   		
+			<div class="md-timeline-block">
+                		<div class="md-timeline-date blue">
+                   			<div class="md-date">2月 11 2017</div>
+                		</div>
+
+                		<div class="md-timeline-content">
+                    			<div class="md-timeline-title"><a href="/2017/02/11/%E8%AF%BB%E3%80%8A%E5%A4%A7%E8%AF%9D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E3%80%8B%E4%B9%8B%E5%B7%A5%E5%8E%82%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F/">读《大话设计模式》之工厂方法模式</a></div>
+					<div class="md-timeline-info">
+						<span class="md-timeline-info-span">Categories:
+							<a class="category-link" href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">设计模式</a>
+						</span>
+						<span class="md-timeline-info-span">Tags:
+							<a class="tag-link" href="/tags/%E3%80%8A%E5%A4%A7%E8%AF%9D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E3%80%8B/" rel="tag">《大话设计模式》</a>, <a class="tag-link" href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" rel="tag">设计模式</a>
+						</span>
+						
+					</div>
+					<p class="md-timeline-excerpt">
+						
+							一、模式概述：定义一个用于创建对象的接口，让子类决定实例化哪一个类。工厂方法是一个类的实例化延迟到其子类。
+UML图：
+
+
+抽象工厂角色： 这是工厂方法模式的核心，它与应用程序无关。是具体工厂角色必须实现的接口或者必须继承的父类。在java中它由抽象类或者接口来实现。
+
+具体工厂角色：它含有和具体业务逻辑有关的代码。由应用程序调用以创建对应的具体产品的对象。在java中它由具体的...
+						...
+					</p>
+                    		</div>
+			</div>	
+   		
+			<div class="md-timeline-block">
+                		<div class="md-timeline-date blue">
+                   			<div class="md-date">12月 11 2016</div>
+                		</div>
+
+                		<div class="md-timeline-content">
+                    			<div class="md-timeline-title"><a href="/2016/12/11/(%E4%B8%89)%E8%87%AA%E5%AE%9A%E4%B9%89View%E5%AE%9E%E8%B7%B5%E4%B9%8B%E8%87%AA%E5%AE%9A%E4%B9%89%E5%B1%9E%E6%80%A7/">(三)自定义View实践之自定义属性</a></div>
+					<div class="md-timeline-info">
+						<span class="md-timeline-info-span">Categories:
+							<a class="category-link" href="/categories/Android/">Android</a>
+						</span>
+						<span class="md-timeline-info-span">Tags:
+							<a class="tag-link" href="/tags/Android/" rel="tag">Android</a>, <a class="tag-link" href="/tags/%E8%87%AA%E5%AE%9A%E4%B9%89View/" rel="tag">自定义View</a>
+						</span>
+						
+					</div>
+					<p class="md-timeline-excerpt">
+						
+							一、定义与声明在资源文件夹values下新建attr.xml文件
+12345678910111213
+						...
+					</p>
+                    		</div>
+			</div>	
+   		
+			<div class="md-timeline-block">
+                		<div class="md-timeline-date blue">
+                   			<div class="md-date">12月 10 2016</div>
+                		</div>
+
+                		<div class="md-timeline-content">
+                    			<div class="md-timeline-title"><a href="/2016/12/10/(%E4%BA%8C)%E8%87%AA%E5%AE%9A%E4%B9%89VIew%E7%90%86%E8%AE%BA%E4%B9%8BView%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B/">(二)自定义VIew理论之View工作流程</a></div>
+					<div class="md-timeline-info">
+						<span class="md-timeline-info-span">Categories:
+							<a class="category-link" href="/categories/Android/">Android</a>
+						</span>
+						<span class="md-timeline-info-span">Tags:
+							<a class="tag-link" href="/tags/Android/" rel="tag">Android</a>, <a class="tag-link" href="/tags/%E8%87%AA%E5%AE%9A%E4%B9%89View/" rel="tag">自定义View</a>
+						</span>
+						
+					</div>
+					<p class="md-timeline-excerpt">
+						
+							一、简述  View的工作流程主要是指measure、layout、draw这三大流程，即测量、布局、绘制。measure确定View的测量宽高；layout确定View的最终宽高和四个顶点的位置；draw则将View绘制到屏幕上。
+二、measure过程1. View的measure过程  由measure()方法来完成，measure()方法是final类型的方法，因此不能被重写。而measure方法会去调用onMeasure()方法，因此只需要看onMeasure()的实现即可。具体可以参看上一节相关内容。
+
+						...
+					</p>
+                    		</div>
+			</div>	
+   		
+			<div class="md-timeline-block">
+                		<div class="md-timeline-date blue">
+                   			<div class="md-date">12月 09 2016</div>
+                		</div>
+
+                		<div class="md-timeline-content">
+                    			<div class="md-timeline-title"><a href="/2016/12/09/(%E4%B8%80)%E8%87%AA%E5%AE%9A%E4%B9%89View%E7%90%86%E8%AE%BA%E4%B9%8BView%E7%BB%98%E5%88%B6%E5%8E%9F%E7%90%86/">(一)自定义View理论之View绘制原理</a></div>
+					<div class="md-timeline-info">
+						<span class="md-timeline-info-span">Categories:
+							<a class="category-link" href="/categories/Android/">Android</a>
+						</span>
+						<span class="md-timeline-info-span">Tags:
+							<a class="tag-link" href="/tags/Android/" rel="tag">Android</a>, <a class="tag-link" href="/tags/%E8%87%AA%E5%AE%9A%E4%B9%89View/" rel="tag">自定义View</a>
+						</span>
+						
+					</div>
+					<p class="md-timeline-excerpt">
+						
+							一、简述  自定义View是Android进阶之路不可避免的难关。此刻下定决心攻克这个难关，以此为证。在学习绘制自定义View之前先来思考一下系统是如何绘制出这些View的。  推荐《Android群英传》、《Android开发艺术探索》这两本书，本系列文中很多都来源于这两本的阐述。
+二、View的测量  设想这么一个游戏：一个人蒙着眼睛，另一个人通过说话来指示蒙着眼睛的人去画他想画图案。比如你会指导他在画板左上角水平竖直都为10厘米处开始画一个边长为10厘米的正方形，那么他大致就能画准确。而如果你只告诉他画一个矩形，那么他就画不准确了。事实上，Android就是那个蒙着眼睛的人，我们需要细致地高速他怎么绘制。  生活中，画一个图形必须知道他的大小和位置。同样，Android系统在绘制View前也必须对View进行测量，即告诉系统该画一个多大的View，这个过程在onMeasure()方法中进行。  Android系统为我们...
+						...
+					</p>
+                    		</div>
+			</div>	
+   		
+			<div class="md-timeline-block">
+                		<div class="md-timeline-date blue">
+                   			<div class="md-date">11月 22 2016</div>
+                		</div>
+
+                		<div class="md-timeline-content">
+                    			<div class="md-timeline-title"><a href="/2016/11/22/%E8%AF%BB%E3%80%8A%E5%A4%A7%E8%AF%9D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E3%80%8B%E4%B9%8B%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/">读《大话设计模式》之观察者模式</a></div>
+					<div class="md-timeline-info">
+						<span class="md-timeline-info-span">Categories:
+							<a class="category-link" href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">设计模式</a>
+						</span>
+						<span class="md-timeline-info-span">Tags:
+							<a class="tag-link" href="/tags/%E3%80%8A%E5%A4%A7%E8%AF%9D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E3%80%8B/" rel="tag">《大话设计模式》</a>, <a class="tag-link" href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" rel="tag">设计模式</a>
+						</span>
+						
+					</div>
+					<p class="md-timeline-excerpt">
+						
+							一、模式概述：定义了一种一对多的依赖关系，让多个观察者对象同时监听某一个主题对象。这个主题对象在状态发生变化时，会通知所有的观察者对象爱，使他们能够自动更新自己。
+UML图：
+
+二、模式优缺点：
+						...
+					</p>
+                    		</div>
+			</div>	
+   		
+			<div class="md-timeline-block">
+                		<div class="md-timeline-date blue">
+                   			<div class="md-date">10月 12 2016</div>
+                		</div>
+
+                		<div class="md-timeline-content">
+                    			<div class="md-timeline-title"><a href="/2016/10/12/%E8%AF%BB%E3%80%8A%E5%A4%A7%E8%AF%9D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E3%80%8B%E4%B9%8B%E5%A4%87%E5%BF%98%E5%BD%95%E6%A8%A1%E5%BC%8F/">读《大话设计模式》之备忘录模式</a></div>
+					<div class="md-timeline-info">
+						<span class="md-timeline-info-span">Categories:
+							<a class="category-link" href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">设计模式</a>
+						</span>
+						<span class="md-timeline-info-span">Tags:
+							<a class="tag-link" href="/tags/%E3%80%8A%E5%A4%A7%E8%AF%9D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E3%80%8B/" rel="tag">《大话设计模式》</a>, <a class="tag-link" href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" rel="tag">设计模式</a>
+						</span>
+						
+					</div>
+					<p class="md-timeline-excerpt">
+						
+							一、模式概述：在不破坏封装性的前提下，捕获一个对象的内部状态，并在改对象之外保存这个状态。这样以后就可将该对象恢复到原先保存的状态。UML图：Originator（发起人）：负责创建一个备忘录Memento，用以记录当前时刻它的内部状态，并可以...
+						...
+					</p>
+                    		</div>
+			</div>	
+   		
+			<div class="md-timeline-block">
+                		<div class="md-timeline-date blue">
+                   			<div class="md-date">10月 11 2016</div>
+                		</div>
+
+                		<div class="md-timeline-content">
+                    			<div class="md-timeline-title"><a href="/2016/10/11/%E8%AF%BB%E3%80%8A%E5%A4%A7%E8%AF%9D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E3%80%8B%E4%B9%8B%E9%80%82%E9%85%8D%E5%99%A8%E6%A8%A1%E5%BC%8F/">读《大话设计模式》之适配器模式</a></div>
+					<div class="md-timeline-info">
+						<span class="md-timeline-info-span">Categories:
+							<a class="category-link" href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">设计模式</a>
+						</span>
+						<span class="md-timeline-info-span">Tags:
+							<a class="tag-link" href="/tags/%E3%80%8A%E5%A4%A7%E8%AF%9D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E3%80%8B/" rel="tag">《大话设计模式》</a>, <a class="tag-link" href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" rel="tag">设计模式</a>
+						</span>
+						
+					</div>
+					<p class="md-timeline-excerpt">
+						
+							一、模式概述：将一个类的接口转换成客户希望的另外一个接口。适配器的意思就是使得一个东西适合另一个东西的东西。如，不同国家有不同标准的电压（110V、220V），于是就需要电源适配器。
+UML图：Target：客户所期待的接口。（目标可以是具体的或抽象的类，也可以是接口）Adaptee：需要适配的类。Adapter：适配器类。（通过在内部包装一个Adaptee对象，把源接口转换成目标接口）Client：客户端。
+...
+						...
+					</p>
+                    		</div>
+			</div>	
+   		
+			<div class="md-timeline-block">
+                		<div class="md-timeline-date blue">
+                   			<div class="md-date">10月 10 2016</div>
+                		</div>
+
+                		<div class="md-timeline-content">
+                    			<div class="md-timeline-title"><a href="/2016/10/10/%E8%AF%BB%E3%80%8A%E5%A4%A7%E8%AF%9D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E3%80%8B%E4%B9%8B%E7%8A%B6%E6%80%81%E6%A8%A1%E5%BC%8F/">读《大话设计模式》之状态模式</a></div>
+					<div class="md-timeline-info">
+						<span class="md-timeline-info-span">Categories:
+							<a class="category-link" href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">设计模式</a>
+						</span>
+						<span class="md-timeline-info-span">Tags:
+							<a class="tag-link" href="/tags/%E3%80%8A%E5%A4%A7%E8%AF%9D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E3%80%8B/" rel="tag">《大话设计模式》</a>, <a class="tag-link" href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" rel="tag">设计模式</a>
+						</span>
+						
+					</div>
+					<p class="md-timeline-excerpt">
+						
+							一、模式概述：在很多情况下，一个对象的行为取决于它的一个或多个变化的属性，这些属性我们称之为状态，这个对象称之为状态对象。对于状态对象而言，它的行为依赖于它的状态。这样的一个对象，当它在于外部事件产生互动的时候，其内部状态就会发生改变，从而使得他的行为也随之发生改变** 所谓状态模式就是允许对象在内部状态发生改变时改变它的行为，对象看起来好像修改了它的类。**
+没图说个文明你我他。
+UML图：
+						...
+					</p>
+                    		</div>
+			</div>	
+   		
+			<div class="md-timeline-block">
+                		<div class="md-timeline-date blue">
+                   			<div class="md-date">3月 10 2016</div>
+                		</div>
+
+                		<div class="md-timeline-content">
+                    			<div class="md-timeline-title"><a href="/2016/03/10/%E8%AF%BB%E3%80%8A%E5%A4%A7%E8%AF%9D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E3%80%8B%E4%B9%8B%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/">读《大话设计模式》之抽象工厂模式</a></div>
+					<div class="md-timeline-info">
+						<span class="md-timeline-info-span">Categories:
+							<a class="category-link" href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">设计模式</a>
+						</span>
+						<span class="md-timeline-info-span">Tags:
+							<a class="tag-link" href="/tags/%E3%80%8A%E5%A4%A7%E8%AF%9D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E3%80%8B/" rel="tag">《大话设计模式》</a>, <a class="tag-link" href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" rel="tag">设计模式</a>
+						</span>
+						
+					</div>
+					<p class="md-timeline-excerpt">
+						
+							一、模式概述：提供一个创建一系列相关或互相依赖的接口，而无需指定它们具体的类。
+先来认识下什么是产品族： 位于不同产品等级结构中，功能相关联的产品组成的家族。
+UML图：
+
+抽象工厂角色： 这是工厂方法模式的核心，它与应用程序无关。是具体工厂角色必须实现的接口或者必须继承的父类。在java中它由抽象类或者接口来实现。
+
+具体工厂角色：它含有和具体业务逻辑有关的代码。由应用程序调用以创建对应的具体产品的对象。在java中它由具体的类来实现。
+
+抽象产品角色：它是具体产品继承的父类或者是实现的接口。在java中一般有抽象类或者接口来...
+						...
+					</p>
+                    		</div>
+			</div>	
+   		
+			<div class="md-timeline-block">
+                		<div class="md-timeline-date blue">
+                   			<div class="md-date">1月 22 2016</div>
+                		</div>
+
+                		<div class="md-timeline-content">
+                    			<div class="md-timeline-title"><a href="/2016/01/22/%E8%AF%BB%E3%80%8A%E5%A4%A7%E8%AF%9D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E3%80%8B%E4%B9%8B%E7%AE%80%E5%8D%95%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/">读《大话设计模式》之简单工厂模式</a></div>
+					<div class="md-timeline-info">
+						<span class="md-timeline-info-span">Categories:
+							<a class="category-link" href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">设计模式</a>
+						</span>
+						<span class="md-timeline-info-span">Tags:
+							<a class="tag-link" href="/tags/%E3%80%8A%E5%A4%A7%E8%AF%9D%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E3%80%8B/" rel="tag">《大话设计模式》</a>, <a class="tag-link" href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" rel="tag">设计模式</a>
+						</span>
+						
+					</div>
+					<p class="md-timeline-excerpt">
+						
+							一、模式概述：简单工厂模式是属于创建型模式，又叫做静态工厂方法（Static Factory Method）模式
+简单工厂模式是由一个工厂对象决定创建出哪一种产品类的实例。
+UML图：
+
+工厂（Creator）角色：简单工厂模式的核心，它负责实现创建所有实例的内部逻辑。工厂类的创建产品类的方法可以被外界直接调用，创建所需的产品对象。
+抽象产品（Product）角色：简单工厂模式所创建的所有对象的父类，它负责描述所有实例所共有的公共接口。
+具体产品（Concrete Product）角色：是简单工厂模式的创建目标，所有创建的对象都...
+						...
+					</p>
+                    		</div>
+			</div>	
+   			   	  		
+   	</section>
+
+<script type="text/ls-javascript" id="page-timeline-script">
+    var adjustFooter = function() {
+        if( ($('#bottom').offset().top + $('#bottom').outerHeight() )<$(window).height() ) {
+            var footerBottom = $(window).height() - $('#bottom').outerHeight() - $('#bottom').offset().top;
+            $('#bottom').css('bottom', '-' + footerBottom + 'px');
+        }
+    };
+    $(document).ready(function() {
+        adjustFooter();
+    });
+</script>
+
+
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/v_side.jpg);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/v_half.webp" alt="CodePoem's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        codepoetdream@gmail.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="mailto:codepoetdream@gmail.com" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    归档
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2021/06/">六月 2021<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/12/">十二月 2020<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/11/">十一月 2020<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/04/">四月 2020<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/03/">三月 2020<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2020/01/">一月 2020<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/11/">十一月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/10/">十月 2019<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/09/">九月 2019<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/08/">八月 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/05/">五月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/04/">四月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/02/">二月 2019<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/02/">二月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/12/">十二月 2016<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/11/">十一月 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/10/">十月 2016<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/03/">三月 2016<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2016/01/">一月 2016<span class="sidebar_archives-count">1</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">chrome_reader_mode</i>
+                
+                分类
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <li>
+                <a class="sidebar_archives-link" href="/categories/Android/">Android<span class="sidebar_archives-count">19</span></a></li><li><a class="sidebar_archives-link" href="/categories/Java/">Java<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/%E4%B8%87%E4%B8%88%E9%AB%98%E6%A5%BC%E5%B9%B3%E5%9C%B0%E8%B5%B7/">万丈高楼平地起<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/%E4%BA%8C%E7%BB%B4%E7%A0%81/">二维码<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/%E6%A8%A1%E6%9D%BF/">模板<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">设计模式<span class="sidebar_archives-count">8</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Pages  -->
+    
+        <li>
+            <a href="/tags" title="Tags">
+                
+                    <i class="material-icons sidebar-material-icons">label</i>
+                
+                Tags
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/timeline" title="Timeline">
+                
+                    <i class="material-icons sidebar-material-icons">timeline</i>
+                
+                Timeline
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/gallery" title="Gallery">
+                
+                    <i class="material-icons sidebar-material-icons">album</i>
+                
+                Gallery
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/links" title="Links">
+                
+                    <i class="material-icons sidebar-material-icons">link</i>
+                
+                Links
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/about" title="About">
+                
+                    <i class="material-icons sidebar-material-icons">person</i>
+                
+                About
+            </a>
+        </li>
+        
+    
+        <li>
+            <a href="/resume" title="Resume">
+                
+                    <i class="material-icons sidebar-material-icons">notes</i>
+                
+                Resume
+            </a>
+        </li>
+        
+    
+
+    <!-- Article Number  -->
+    
+        <li>
+            <a href="/archives">
+                文章总数
+                <span class="sidebar-badge">38</span>
+            </a>
+        </li>
+        
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+
+<!-- Theme Material -->
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+
+    <!-- Facebook -->
+    
+
+    <!-- Google + -->
+    
+
+    <!-- Weibo -->
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+        <a href="https://github.com/CodePoem" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn footer-sns-github">
+                <span class="visuallyhidden">Github</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+
+    <!-- V2EX -->
+    
+
+    <!-- Segmentfault -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©&nbsp;<span year></span>&nbsp;梦半觉
+            
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import JS File -->
+
+    <script>lsloader.load("lazyload_js","https://cdn.jsdelivr.net/gh/viosey/hexo-theme-material@latest/source/js/lazyload.min.js", true)</script>
+
+
+
+    <script>lsloader.load("js_js","https://cdn.jsdelivr.net/gh/viosey/hexo-theme-material@latest/source/js/js.min.js", true)</script>
+
+
+
+    <script>lsloader.load("np_js","https://cdn.jsdelivr.net/gh/viosey/hexo-theme-material@latest/source/js/nprogress.js", true)</script>
+
+
+<script type="text/ls-javascript" id="NProgress-script">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#FF3C3C'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #FF3C3C, 0 0 15px #FF3C3C'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#FF3C3C',
+        'border-left-color': '#FF3C3C'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+
+
+    <!-- Busuanzi -->
+    <script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+   <!-- 使用 DISQUS js 代码 -->
+
+
+
+
+
+
+<!-- UC Browser Compatible -->
+<script>
+	var agent = navigator.userAgent.toLowerCase();
+	if(agent.indexOf('ucbrowser')>0) {
+		document.write('
+<link rel="stylesheet" href="/css/uc.css">
+');
+	   alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+	}
+</script>
+
+<!-- Import prettify js  -->
+
+    
+
+
+    
+        <script>lsloader.load("hanabi","https://cdn.jsdelivr.net/gh/viosey/hexo-theme-material@latest/source/js/hanabi-browser-bundle.js", true)</script>
+    
+
+
+<!-- Window Load -->
+<!-- add class for prettify -->
+<script type="text/ls-javascript" id="window-load">
+    $(window).on('load', function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+
+    
+        
+    
+    
+        
+        
+        HanabiBrowser.start('pre code',true);
+    
+</script>
+
+<!-- MathJax Load-->
+
+
+<!-- Bing Background -->
+
+
+<script type="text/ls-javascript" id="lazy-load">
+    // Offer LazyLoad
+    queue.offer(function(){
+        $('.lazy').lazyload({
+            effect : 'show'
+        });
+    });
+
+    // Start Queue
+    $(document).ready(function(){
+        setInterval(function(){
+            queue.execNext();
+        },200);
+    });
+</script>
+
+<!-- Custom Footer -->
+
+
+
+<script>
+    var copyrightNow = new Date().getFullYear();
+    var textContent = document.querySelector('span[year]')
+
+    copyrightSince = 0000;
+    if (copyrightSince === copyrightNow||copyrightSince === 0000) {
+        textContent.textContent = copyrightNow
+    } else {
+        textContent.textContent = copyrightSince + ' - ' + copyrightNow
+    }
+
+    (function(){
+        var scriptList = document.querySelectorAll('script[type="text/ls-javascript"]')
+
+        for (var i = 0; i < scriptList.length; ++i) {
+            var item = scriptList[i];
+            lsloader.runInlineScript(item.id,item.id);
+        }
+    })()
+console.log('\n %c © Material Theme | Version: 1.5.6 | https://github.com/viosey/hexo-theme-material %c \n', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#455a64;background:#e0e0e0;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
+</script>
+
+                </main>
+            </div>
+        </body>
+    
+</html>
